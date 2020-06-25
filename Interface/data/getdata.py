@@ -4,7 +4,7 @@ from Interface.util.operationjson import OperationJson
 from Interface.data import dataconfig
 class GetData:
     def __init__(self):
-        self.opera_excel = OperationExcel()   #构造函数 将操作excel类实例化
+        self.opera_excel = OperationExcel()   #构造函数 将操作excel类实例化,如果想指定用例文件，就在这里传入文件路径
     #获取excel行数，也是用例case数
     def get_case_lines(self):
         return self.opera_excel.getlines()
@@ -53,6 +53,7 @@ class GetData:
     #通过获取关键字拿到data数据
     def get_data_json(self,row):
         opera_json = OperationJson()
+        print(self.get_request_data(row))
         request_data = opera_json.getdata(self.get_request_data(row))
         print('进入operajson类',request_data)
         return request_data

@@ -27,7 +27,7 @@ class OperationJson():
 
 
 if __name__=='__main__':
-    opers=OperationJson('../dataconfig/jsontest.json')
+    opers=OperationJson()
     print (opers.getdata('login'))     #获取id为1的在json文件中的值
 
 

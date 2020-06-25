@@ -17,7 +17,7 @@ class RunTest:
         for i in range(1,rows_count):
             url = self.data.get_request_url(i)      #获取当前行的url
             method = self.data.get_request_method(i)     #获取当前行的请求模式
-            is_run =self.data.get_is_run(i)
+            is_run =self.data.get_is_run(i)    #是否执行
             print('开始获取exceldata数据')
             data = self.data.get_data_json(i)
             header =self.data.is_header(i)
