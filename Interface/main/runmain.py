@@ -11,7 +11,7 @@ class RunTest:
     #程序执行的
     def go_on_run(self):
         res = None
-        #获取case用例表中的行数
+        #获取case用例表中的行数1
         rows_count = self.data.get_case_lines()
         #遍历 i 在这个行中，从1起 ，因为0行是标题行
         for i in range(1,rows_count):
