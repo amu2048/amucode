@@ -6,7 +6,8 @@ class RunMethod:
         #如果头部消息不为空进入
         if header !=None:
             #request框架，传入url,参数，头，并转将返回结果转换成json格式
-            res =requests.post(url=url,data=data,header=header).json()
+            print("发送请求",url,data,header)
+            res =requests.post(url=url,data=data,headers=header).json()
         else:
             res=requests.post(url=url,data=data).json()
         return res
@@ -16,7 +17,7 @@ class RunMethod:
         #如果头部消息不为空进入
         if header !=None:
             #request框架，传入url,参数，头，并转将返回结果转换成json格式
-            res =requests.get(url=url,data=data,header=header).json()
+            res =requests.get(url=url,data=data.json(),headers=header.json()).json()
         else:
             res=requests.get(url=url,data=data).json()
         return res

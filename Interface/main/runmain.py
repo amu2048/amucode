@@ -22,7 +22,9 @@ class RunTest:
             data = self.data.get_data_json(i)
             header =self.data.is_header(i)
             if is_run:
-               res = self.run_method.run_main(method,url,data,header)
+                print("遍历请求请求模式",method,"请求的路径",url,"请求的数据",data,"请求头",header)
+                res = self.run_method.run_main(method,url,data,header)
+            print("响应报文",res)
             return res
 
 

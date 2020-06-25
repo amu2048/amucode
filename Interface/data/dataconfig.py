@@ -50,9 +50,10 @@ def get_result():
 #获取头信息
 def get_header_value():
     header = {
-        "header":"1234",
-        "cookie":"Mushishi"
+        "contenttype":"application/json;charset=utf-8"
     }
+
+    return header
 
 
 
