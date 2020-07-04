@@ -35,7 +35,7 @@ def get_case_depend():
 #获取依赖的数据所在的列索引
 def get_data_depend():
     return  global_var.data_depend
-#获取以来的数据所属字段所在的列索引
+#获取依赖的数据所属字段所在的列索引
 def get_field_depend():
     return  global_var.field_depend
 #获取请求数据所在的列索引

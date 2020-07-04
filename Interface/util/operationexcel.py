@@ -25,7 +25,6 @@ class OperationExcel:
     #获取单元格内容 传入行，列
     def getcell(self,row,col):
         return  self.data.cell_value(row,col)
-
     #写入excel
     def writedata(self,row,col,value):
         read_data = xlrd.open_workbook(self.filename)  #打开用例表
@@ -38,9 +37,48 @@ class OperationExcel:
         #将原有表数据和添加新的数据结合一起再保存，覆盖原文件。
         write_data.save(self.filename)
 
+    #根据caseid找到对应的内容
+    def get_rows_data(self,case_id):
+        #根据case_id找到所在行号
+        row_num = self.get_row_num(case_id)
+        #获取该行的内容
+        rows_data = self.get_row_values(row_num)
+        return rows_data
 
+    #根据对应的caseid找到对应的行号
+    def get_row_num(self,case_id):
+        #设置初始值行号为0
+        num = 0
+        #获取caseid列的所有行的值
+        clols_data = self.get_cols_data()
+        #遍历 col_data 逐行遍历是否在这个列
+        for col_data in clols_data:
+            #第一次遍历是地0行，然后判断传入的参数case_id是否在这个第0行的值里面
+            print("caseid值：",case_id,"col_data值：",col_data)
+            if case_id in col_data:
+                #如果case_id在这个行的值里面证明找到了case_id所在的行号就返回 num
+                return num
+            #否则就是找到这个case_id 那就num加一换一行遍历
+            num =num +1
 
-
+    #根据行号，获取该行的内容
+    def get_row_values(self,row):
+        # 实例化 换取整个excel表的数据
+        tables = self.data
+        #根据xlrd框架的函数，row_values(row)根据行号获取行内容
+        row_data = tables.row_values(row)
+        return row_data
+    #获取某一列的内容
+    def get_cols_data(self,col_id=None):
+        #如果传入的例id不是空进入
+        if col_id != None:
+            #获取当前列的值
+            coldata = self.data.col_vaues(col_id)
+        #如果没指定获取某一列的值，那就默认使用0列的值，也是用例模板的caseid列
+        else:
+            coldata = self.data.col_values(0)
+            print("获取默认id列的所有值",coldata)
+        return coldata
 
 
 if __name__=='__main__':

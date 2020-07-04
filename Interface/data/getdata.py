@@ -2,6 +2,7 @@
 from Interface.util.operationexcel import OperationExcel
 from Interface.util.operationjson import OperationJson
 from Interface.data import dataconfig
+import  json
 class GetData:
     def __init__(self):
         self.opera_excel = OperationExcel()   #构造函数 将操作excel类实例化,如果想指定用例文件，就在这里传入文件路径
@@ -57,7 +58,7 @@ class GetData:
         #print(self.get_request_data(row))
         request_data = opera_json.getdata(self.get_request_data(row))
         #print('进入operajson类',request_data)
-        return request_data
+        return json.loads(request_data)
 
     #写入预期结果
     def write_result(self,row,value):
@@ -66,10 +67,41 @@ class GetData:
         #调用excel操作类的写入excel方法写入传进来的预期结果
         self.opera_excel.writedata(row,col,value)
 
+    #获取依赖数据的key
+    def get_depend_key(self,row):
+        #获取以来数据的列数
+        col = int(dataconfig.get_data_depend())
+        #根据行号获取这个以来数据的值
+        depent_key = self.opera_excel.getcell(row,col)
+        #判断是否为空
+        if depent_key == "":
+            return None
+        else:
+            return depent_key
 
+    #判断是否有case依赖
+    def is_depend(self,row):
+        #获取case依赖列号
+        col = int(dataconfig.get_case_depend())
+        #获取row行的数据依赖case数据
+        depend_case_id = self.opera_excel.getcell(row,col)
+        #如果这个行的数据以来case列内容为空则返回空
+        if depend_case_id == "":
+            return None
+        else:
+            return depend_case_id
 
-
-
+    #获取数据依赖字段
+    def get_depend_field(self,row):
+        # 获取数据依赖字段的列号
+        col = int(dataconfig.get_field_depend())
+        # 获取row行的数据依赖字段数据
+        data = self.opera_excel.getcell(row,col)
+        # 如果这个行的数据依赖字段列内容为空则返回空
+        if data == "":
+            return None
+        else:
+            return data
 
 
 
