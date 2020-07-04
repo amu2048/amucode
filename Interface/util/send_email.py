@@ -10,8 +10,8 @@ class SendEmail():
     global password
     global user_lists
     email_host = "smtp.163.com"
-    send_user = 'amu2048@163.com'
-    password = 'RYKLZAKTLZWSBUIP'
+    send_user = 'amutest@163.com'
+    password = 'TUMBOATDWPCYWVQL'
     #发送邮件设置
     def send_email(self,user_list,sub,content):
         #发件人
