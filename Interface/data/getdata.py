@@ -50,13 +50,24 @@ class GetData:
         if expect == '':
             return None
         return expect
+
     #通过获取关键字拿到data数据
     def get_data_json(self,row):
         opera_json = OperationJson()
-        print(self.get_request_data(row))
+        #print(self.get_request_data(row))
         request_data = opera_json.getdata(self.get_request_data(row))
-        print('进入operajson类',request_data)
+        #print('进入operajson类',request_data)
         return request_data
+
+    #写入预期结果
+    def write_result(self,row,value):
+        #获取断言的配置 列
+        col = int(dataconfig.get_result())
+        #调用excel操作类的写入excel方法写入传进来的预期结果
+        self.opera_excel.writedata(row,col,value)
+
+
+
 
 
 

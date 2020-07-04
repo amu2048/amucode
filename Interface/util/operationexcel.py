@@ -1,5 +1,6 @@
 #导入读取excel的包
 import xlrd
+from  xlutils.copy import copy
 
 class OperationExcel:
     def __init__(self,filename=None,sheetid=None):   #定义构造函数，可以自定义读取的函数和用例文件名
@@ -24,6 +25,23 @@ class OperationExcel:
     #获取单元格内容 传入行，列
     def getcell(self,row,col):
         return  self.data.cell_value(row,col)
+
+    #写入excel
+    def writedata(self,row,col,value):
+        read_data = xlrd.open_workbook(self.filename)  #打开用例表
+        #复制这份数据
+        write_data = copy(read_data)
+        #读取出这个表的数据内容
+        sheet_data = write_data.get_sheet(0)
+        #写入数据的行 列 和要写入的值
+        sheet_data.write(row,col,value)
+        #将原有表数据和添加新的数据结合一起再保存，覆盖原文件。
+        write_data.save(self.filename)
+
+
+
+
+
 
 if __name__=='__main__':
     opers=OperationExcel()
