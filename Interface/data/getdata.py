@@ -55,10 +55,12 @@ class GetData:
     #通过获取关键字拿到data数据
     def get_data_json(self,row):
         opera_json = OperationJson()
-        #print(self.get_request_data(row))
+        print(self.get_request_data(row))
         request_data = opera_json.getdata(self.get_request_data(row))
-        #print('进入operajson类',request_data)
-        return json.loads(request_data)
+
+        a = json.dumps(request_data)
+        print('进入operajson类a的类型为',type(a))
+        return a
 
     #写入预期结果
     def write_result(self,row,value):

@@ -1,3 +1,5 @@
+import requests
+
 from Interface.base.runmethod import RunMethod
 from Interface.data.getdata import GetData
 from Interface.util.com_util import CommonUtil
@@ -36,10 +38,12 @@ class RunTest:
                     depend_repinse_data = self.depend_data.get_data_for_key(i)
                     #获取依赖的key
                     depend_key = self.data.get_depend_field(i)
-                    #print("获取依赖的key：",depend_key)
+                    print("获取依赖的key：",depend_key)
                     request_data[depend_key] = depend_repinse_data
                 #发起请求
+                #print("发情的请求 数据格式",type(request_data),"头格式",type(header))
                 res = self.run_method.run_main(method, url, request_data, header)
+
                 #print(i,"的发送的请求为",request_data,"响应：",res)
                 #断言 is_contain函数自己写的判断预期结果是否在响应信息中
                 if self.com_util.is_contain(expect,res):
@@ -47,10 +51,9 @@ class RunTest:
                     self.data.write_result(i,"pass")
                     #统计有多少成功的用例
                     pass_cont.append(i)
-
                 else:
                     #用例不通过则写入响应数据
-                    self.data.write_result(i, res)
+                    self.data.write_result(i, str(res))
                     fail_cont.append(i)
         #调用邮件服务发送邮件，传入通过与失败用例的集合
         self.send_main.send_mail_main(pass_cont,fail_cont)

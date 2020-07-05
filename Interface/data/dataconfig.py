@@ -49,9 +49,7 @@ def get_result():
     return  global_var.result
 #获取头信息
 def get_header_value():
-    header = {
-        "contenttype":"application/json;charset=utf-8"
-    }
+    header = {'Content-Type': 'application/json'}
 
     return header
 

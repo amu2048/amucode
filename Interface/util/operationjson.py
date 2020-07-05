@@ -12,6 +12,7 @@ class OperationJson():
         try:
             #with方法省去关闭文件IO的繁琐，打开指定的json文件赋值给fp并用load函数读取它
             with open(self.filename,'r',encoding='utf-8')as fp:    # r 只读模式， w写模式 ， 指定编码encoding防止中文乱码
+
                 data=json.load(fp)
                 return data
         except json.decoder.JSONDecodeError:
@@ -28,7 +29,7 @@ class OperationJson():
 
 if __name__=='__main__':
     opers=OperationJson()
-    print (opers.getdata('login'))     #获取id为1的在json文件中的值
+    print (opers.getdata("gradeId"))     #获取id为1的在json文件中的值
 
 
 

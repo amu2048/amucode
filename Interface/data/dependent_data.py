@@ -34,13 +34,13 @@ class DependdentData():
         #获取这个依赖caseid所执行的结果响应信息
         response_data = self.run_dependent()
        # print("依赖数据的响应：",response_data)
-        #类似正则表达式一样，规则
+        #类似正则表达式一样，按照depend_data规则在response_data搜索对相应结果.jsonpath_rw框架的函数
         json_exe = parse(depend_data)
         #按照find的规则在依赖的case相应信息中获取以来数据想要的东西
         madle = json_exe.find(response_data)
         #print("madle的值",madle)
         #规格是一次循环取出字段按照规则返回
-        #print("fanhui",[math.value for math in madle] [0])
+        print("fanhui",[math.value for math in madle] [0])
         return  [math.value for math in madle] [0]
 
 
