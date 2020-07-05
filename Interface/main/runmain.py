@@ -5,6 +5,7 @@ from Interface.data.getdata import GetData
 from Interface.util.com_util import CommonUtil
 from Interface.data.dependent_data import DependdentData
 from Interface.util.send_email import SendEmail
+import json
 class RunTest:
     def __init__(self):
         #封装实例化，运行模式模型的实例化
@@ -39,7 +40,9 @@ class RunTest:
                     #获取依赖的key
                     depend_key = self.data.get_depend_field(i)
                     print("获取依赖的key：",depend_key)
+                    request_data =json.loads(request_data)
                     request_data[depend_key] = depend_repinse_data
+                    request_data = json.dumps(request_data)
                 #发起请求
                 #print("发情的请求 数据格式",type(request_data),"头格式",type(header))
                 res = self.run_method.run_main(method, url, request_data, header)
