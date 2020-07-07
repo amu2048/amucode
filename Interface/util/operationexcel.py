@@ -54,7 +54,7 @@ class OperationExcel:
         #遍历 col_data 逐行遍历是否在这个列
         for col_data in clols_data:
             #第一次遍历是地0行，然后判断传入的参数case_id是否在这个第0行的值里面
-            print("caseid值：",case_id,"col_data值：",col_data)
+            #print("caseid值：",case_id,"col_data值：",col_data)
             if case_id in col_data:
                 #如果case_id在这个行的值里面证明找到了case_id所在的行号就返回 num
                 return num
@@ -77,7 +77,7 @@ class OperationExcel:
         #如果没指定获取某一列的值，那就默认使用0列的值，也是用例模板的caseid列
         else:
             coldata = self.data.col_values(0)
-            print("获取默认id列的所有值",coldata)
+            #print("获取默认id列的所有值",coldata)
         return coldata
 
 

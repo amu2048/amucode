@@ -39,7 +39,7 @@ class RunTest:
                     depend_repinse_data = self.depend_data.get_data_for_key(i)
                     #获取依赖的key
                     depend_key = self.data.get_depend_field(i)
-                    print("获取依赖的key：",depend_key)
+                    #print("获取依赖的key：",depend_key)
                     request_data =json.loads(request_data)
                     request_data[depend_key] = depend_repinse_data
                     request_data = json.dumps(request_data)

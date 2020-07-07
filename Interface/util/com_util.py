@@ -12,7 +12,7 @@ class CommonUtil:
             self.str_one = str_one.encode('utf-8').decode("unicode_escape")
         if isinstance(str_two,str):
             self.str_two = str_two.encode('utf-8').decode("unicode_escape")
-        print("断言1",self.str_one, "断言2",self.str_two)
+        #print("断言1",self.str_one, "断言2",self.str_two)
         if self.str_one in self.str_two:
             flag = True
         else:

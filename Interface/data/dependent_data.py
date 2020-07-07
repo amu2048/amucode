@@ -26,7 +26,7 @@ class DependdentData():
         method = self.data.get_request_method(row_num)  # 获取当前行的请求模式
         url = self.data.get_request_url(row_num)  # 获取当前行的url
         res = run_method.run_main(method,url,request_data,header)
-        print("这里的格式",type(res))
+        #print("这里的格式",type(res))
         return json.loads(res)
     #根据以来数据的key获取执行依赖测试的case的响应数据，然后返回
     def get_data_for_key(self,row):
@@ -34,16 +34,16 @@ class DependdentData():
         depend_data = self.data.get_depend_key(row)
         #获取这个依赖caseid所执行的结果响应信息
         response_data = self.run_dependent()
-        print("依赖数据的响应response_data：" ,type(response_data))
+        #print("依赖数据的响应response_data：" ,type(response_data))
         #类似正则表达式一样，按照depend_data规则在response_data搜索对相应结果.jsonpath_rw框架的函数
         json_exe = parse(depend_data)
         response_data = json.loads(response_data)
-        print("response_data类型为",type(response_data))
+        #print("response_data类型为",type(response_data))
         #按照find的规则在依赖的case相应信息中获取以来数据想要的东西
         madle = json_exe.find(response_data)
         #print("madle的值",madle)
         #规格是一次循环取出字段按照规则返回
-        print("fanhui",[math.value for math in madle] [0])
+        #print("fanhui",[math.value for math in madle] [0])
         return  [math.value for math in madle] [0]
 
 
