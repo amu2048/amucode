@@ -1,4 +1,4 @@
-from Interface.util.com_util import CommonUtil
+from interface.util.com_util import CommonUtil
 #构建邮件服务
 import smtplib
 #邮件格式

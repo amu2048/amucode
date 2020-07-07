@@ -1,7 +1,7 @@
 
-from Interface.util.operationexcel import OperationExcel
-from Interface.util.operationjson import OperationJson
-from Interface.data import dataconfig
+from interface.util.operationexcel import OperationExcel
+from interface.util.operationjson import OperationJson
+from interface.data import dataconfig
 import  json
 class GetData:
     def __init__(self):
