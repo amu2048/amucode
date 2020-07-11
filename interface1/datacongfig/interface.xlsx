@@ -1,9 +1,0 @@
-ID	模块	URL	是否执行	请求类型	header	case依赖	依赖返回数据	数据依赖字段	请求数据	预期结果	实际结果
-test-1	明文加密调试接口	http://39.106.14.148:8200/InterfaceOne/encryption	yes	post	yes				pwd	"""statusCode"": ""2000"""	
-test-2	手机验证码	http://39.106.14.148:8200/InterfaceOne/SMSCode	yes	post	yes				phone	"""statusCode"": ""2000"""	
-test-3	注册	http://39.106.14.148:8200/InterfaceOne/register/index	yes	post	yes	test-2	data.smsVerificationCode	smsVerificationCode	register	"""statusCode"": ""2000"""	
-test-4	登录	http://39.106.14.148:8200/InterfaceOne/longin	yes	post	yes				login	"""statusCode"": ""2000"""	
-test-5	实名认证	http://39.106.14.148:8200/InterfaceOne/realcertification	yes	post	yes				shiming	"""statusCode"": ""2000"""	
-test-6	设置交易密码	http://39.106.14.148:8200/InterfaceOne/newpaypd	yes	post	yes				mima	"""statusCode"": ""2000"""	
-test-7	绑定银行卡	http://39.106.14.148:8200/InterfaceOne/bindingbankcard	yes	post	yes				bangka	"""statusCode"": ""2000"""	
-test-8	充值	http://39.106.14.148:8200/InterfaceOne/recharge	yes	post	yes				chongzhi	"""statusCode"": ""2000"""	

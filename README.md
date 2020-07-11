@@ -1,3 +1,4 @@
 # amucode
 各种自己写的代码储存
-interface文件时接口自动化框架搭建的工程包
+interface文件是接口自动化框架搭建的工程包
+UncleNiu文件夹是牛大爷管理系统文件夹
