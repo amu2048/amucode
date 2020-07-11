@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <title>阿木奇谭测试之TDP</title>
+
+        <!-- 加载样式表 -->
+        <link rel="stylesheet" href="http://fonts.useso.com/css?family=Open+Sans:300,300italic,400">  <!-- Google web font "Open Sans" -->
+        <link rel="stylesheet" href="{{ url_for('static',filename='tdp/bootstrap.min.css') }}">                                                <!-- Bootstrap style -->
+        <link rel="stylesheet" href="{{ url_for('static',filename='tdp/flexslider.css') }}">                                                   <!-- Flexslider style -->
+        <link rel="stylesheet" href="{{ url_for('static',filename='tdp/templatemo-style.css') }}">                                             <!-- Templatemo style -->
+
+        <!-- HTML5 Shim和Response.js，用于IE8支持HTML5元素和媒体查询 -->
+        <!-- 警告：如果通过文件查看页面，response.js将不起作用：/。/ -->
+        <!--[如果从IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    
+    <body class="page">
+        
+            
+            <!-- 背景图像 -->
+            <div class="page-bg-imgs-list">
+
+                <img src="{{ url_for('static',filename='tdp/img/story-bg-1.jpg') }}"    id="page-1-img" class="main-img" alt="About">
+                <img src="{{ url_for('static',filename='tdp/img/story-bg-2.jpg') }}" id="page-2-img" alt="功能未开放1">
+                <img src="{{ url_for('static',filename='tdp/img/story-bg-3.jpg') }}" id="page-3-img" alt="功能未开放2">
+                <img src="{{ url_for('static',filename='tdp/img/story-bg-4.jpg') }}" id="page-4-img" alt="功能未开放3">
+            </div>
+            
+            <div class="container-fluid">
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-5 col-xl-5">
+                        <p id ='tdptuichu' class="box-text box-text-nav-item flexbox-center" >
+                            <a href="{{ url_for('index') }}?name={{ fhuiname }}&pwd={{fhuipwd}}">[返回]</a>
+                        </p>
+                        <div class="header">
+
+                            <!-- 站点标题 -->
+                            <header class="box box-white">
+                                <a href="javascript:void(0)" class="js-site-title">
+                                    <h1 class="box-text site-title-text">阿木奇谭网</h1>    
+                                </a>            
+                            </header>
+                            
+                            <!-- 站点导航 -->
+                            <nav class="js-nav">
+                                <ul class="nav-items-container">
+
+                                    <li data-nav-item-id="page-1" class="block-keep-ratio block-keep-ratio-1-1 block-width-half box box-white box-nav-item js-nav-item pull-xs-left">
+                                        <a href="#page-1" class="block-keep-ratio-content box-nav-item-link">
+                                            <span class="box-text box-text-nav-item flexbox-center">阿木奇谭资源</span>
+                                        </a>
+                                    </li>
+
+                                    <li data-nav-item-id="page-2" class="block-keep-ratio block-keep-ratio-1-1 block-width-half box box-white box-nav-item js-nav-item pull-xs-right">
+                                        <a href="#page-2" class="block-keep-ratio-content box-nav-item-link">
+                                            <span class="box-text box-text-nav-item flexbox-center">功能未开放1</span>
+                                        </a>
+                                    </li>
+
+                                    <li data-nav-item-id="page-3" class="block-keep-ratio block-keep-ratio-1-1 block-width-half box box-white box-nav-item js-nav-item pull-xs-left">
+                                        <a href="#page-3" class="block-keep-ratio-content box-nav-item-link">
+                                            <span class="box-text box-text-nav-item flexbox-center">项目公告</span>
+                                        </a>
+                                    </li>
+
+                                    <li data-nav-item-id="page-4" class="block-keep-ratio block-keep-ratio-1-1 block-width-half box box-white box-nav-item js-nav-item pull-xs-right">
+                                        <a href="#page-4" class="block-keep-ratio-content box-nav-item-link">
+                                            <span class="box-text box-text-nav-item flexbox-center">功能未开放3</span>
+                                        </a>
+                                    </li>
+																		
+
+                                </ul>
+                            </nav>    
+                        </div> <!-- .标题 -->
+
+                    </div>
+                    
+                    <div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >阿木奇谭网</a></div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-7 col-xl-7">
+                        <div class="content-wrapper js-content-wrapper">
+                            <!-- 关于 -->
+                            <section data-page-id="page-1" class="content js-content">
+                                
+                                <header class="box box-black margin-b-20">
+                                    <h2 class="box-text page-title-text">阿木奇谭随书资源下载</h2>
+                                </header>
+                                
+                                <div class="content-text"><!-- 设置跳转页面和内容 -->
+                                    <p>阿木奇谭随书资源，点击 <a rel="nofollow" href="ziyuan" target="_parent">阿木奇谭随书资源</a>. 开始下载阿木奇谭关于测试的所有资源吧！记得好评哦*$_$*
+                                    </p>
+                                    
+                                </div>            
+
+                            </section> <!-- #关于 -->
+
+                            <!-- 功能未开放1 -->
+                            <section data-page-id="page-2" class="content content-gallery js-content">
+                                
+                                <header class="box box-black margin-b-20">
+                                    <h2 class="box-text page-title-text">功能未开放1</h2>
+                                </header>
+                                
+                                <div class="content-text content-text-gallery">
+                                    
+                                    <!-- <p>Credits go to <a rel="nofollow" href="http://unsplash.com">Unsplash</a> for images.</p> -->
+
+                                    <div class="flexslider-wrapper">
+
+                                        <div id="slider" class="flexslider">
+                                            <ul class="slides">
+                                                <li><img src="{{ url_for('static',filename='tdp/img/slider/slide1.jpg') }}" alt="Slide 1" /></li>
+                                                <li><img src="{{ url_for('static',filename='tdp/img/slider/slide2.jpg') }}" alt="Slide 2" /></li>
+                                                <li><img src="{{ url_for('static',filename='tdp//slider/slide3.jpg') }}" alt="Slide 3" /></li>
+                                                <li><img src="{{ url_for('static',filename='tdp/img/slider/slide4.jpg') }}" alt="Slide 4" /></li>
+                                                <li><img src="{{ url_for('static',filename='tdp/img/slider/slide5.jpg') }}" alt="Slide 5" /></li>
+                                                <li><img src="{{ url_for('static',filename='tdp/img/slider/slide6.jpg') }}" alt="Slide 6" /></li>
+                                            </ul>
+                                        </div> <!-- #滑块 -->
+                                      
+                                        <div id="carousel" class="flexslider">
+                                            <ul class="slides">
+                                                <li><img src="{{ url_for('static',filename='tdp/img/slider/thumb1.jpg') }}" alt="Thumbnail 1" /></li>
+                                                <li><img src="{{ url_for('static',filename='tdp/img/slider/thumb2.jpg') }}" alt="Thumbnail 2" /></li>
+                                                <li><img src="{{ url_for('static',filename='tdp/img/slider/thumb3.jpg') }}" alt="Thumbnail 3" /></li>
+                                                <li><img src="{{ url_for('static',filename='tdp/img/slider/thumb4.jpg') }}" alt="Thumbnail 4" /></li>
+                                                <li><img src="{{ url_for('static',filename='tdp/img/slider/thumb5.jpg') }}" alt="Thumbnail 5" /></li>
+                                                <li><img src="{{ url_for('static',filename='tdp/img/slider/thumb6.jpg') }}" alt="Thumbnail 6" /></li>
+                                            </ul>
+                                        </div>  <!-- #旋转木马 -->
+
+                                    </div>
+                                        
+                                </div>            
+
+                            </section> <!-- #画廊 -->
+                            
+                            <!-- 项目公告 -->
+                            <section data-page-id="page-3" class="content js-content">
+                                
+                                <header class="box box-black margin-b-20">
+                                    <h2 class="box-text page-title-text">项目公告</h2>
+                                </header>
+                                
+                                <div class="content-text">
+                                    <p>本栏展示练习实战项目公告 公告个项目部署的ip地址与端口，学员可以自行根据阿木奇谭一书去练习
+                                    </p>
+									<h4> 阿木奇谭网</h4>
+                                    <p>IP:  188.131.183.14
+									   用途：阿木奇谭测试读者福利网站。
+                                    </p>
+                                    <h4> InterfaceOne项目</h4>
+                                    <p>IP:  188.131.183.14  
+									   端口:8082 
+									   用途：接口测试、接口与自动化、接口工具。
+                                    </p>
+                                    <h4>ThreeNewBoard项目 </h4>
+                                    <p>IP:  188.131.183.14  
+									   端口:8081 
+									路径： <a rel="nofollow" href="http://188.131.183.14:8081/ThreeNewBoard/static/login.html" target="_parent">188.131.183.14:8081/ThreeNewBoard/static/login.html</a>.   
+									   用途：bug发现、UI自动化。用户账户的注册提前联系阿木审批。
+                                    </p>
+									<h4>阿木奇谭网禅道 </h4>
+                                    <p>IP:  188.131.183.14  
+									   端口:7000
+									   用途：bug提交、禅道的使用。用户账户联系阿木注册。
+                                    </p>
+                                </div>            
+
+                            </section> <!-- #服务 -->
+
+                            <!-- 功能未开放3 -->
+                            <section data-page-id="page-4" class="content js-content">
+                                
+                                <header class="box box-black margin-b-20">
+                                    <h2 class="box-text page-title-text">功能未开放3</h2>
+                                </header>
+                                
+                                <div class="content-text">
+                                    <p>In felis turpis, tincidunt a odio interdum, ornare interdum magna. Proin leo tortor, adipiscing et volutpat tincidunt, imperdiet sit amet purus.
+                                    </p>
+                                    <form action="index.html" method="post" class="contact-form">
+
+                                        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6 form-group-2-col-left">
+                                            <input type="text" id="contact_name" name="contact_name" class="form-control" placeholder="Name" required/>
+                                        </div>
+                                        <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6 form-group-2-col-right">
+                                            <input type="email" id="contact_email" name="contact_email" class="form-control" placeholder="Email" required/>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="contact_subject" name="contact_subject" class="form-control" placeholder="Subject" required/>
+                                        </div>
+                                        <div class="form-group">
+                                            <textarea id="contact_message" name="contact_message" class="form-control" rows="4" placeholder="Message" required></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary submit-btn">Send</button>
+
+                                    </form>                           
+                                </div>            
+
+                            </section> <!-- #接触 -->
+                           
+				
+					 </div>
+                    </div>
+
+                </div>
+                    
+                <!-- 页脚行 -->
+                <footer class="row footer js-footer">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+                        <p class="copyright-text">Copyright &copy; 2016 Company Name 
+                        
+                        | More Templates <a href="https://www.cnblogs.com/amuchen/" target="_blank" title="阿木博客园">阿木博客园</a> - Collect from <a href="1http://www.cssmoban.com/" title="暂不开放功能" target="_blank">暂不开放功能</a></p>  
+
+                    </div>                
+                </footer>
+
+            </div>  <!-- .集装箱 -->
+
+        <div id="preloader">
+            <div id="status">&nbsp;</div>
+        </div><!-- /#预加载器 -->      
+            
+        <!-- 加载JS文件 -->
+        <script src="{{ url_for('static',filename='tdp/js/jquery-1.11.3.min.js') }}"></script> <!-- jQuery -->
+        <script src="{{ url_for('static',filename='tdp/js/jquery.flexslider-min.js') }}"></script> <!-- Flex Slider -->
+        <script src="{{ url_for('static',filename='tdp/js/jquery.backstretch.min.js') }}"></script> <!-- Backstretch http://srobbin.com/jquery-plugins/backstretch/ -->
+        <script src="{{ url_for('static',filename='tdp/js/templatemo-script.js') }}"></script> <!-- Templatemo scripts -->
+    
+    </body>
+</html>

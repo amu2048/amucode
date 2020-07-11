@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="amuw" uuid="febaf992-c87a-465b-8d66-c235ed4bb9e7">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:G:\平板电脑的包\阿木\阿木云\pycharm\amuwangpy\lib\amuw.db</jdbc-url>
+    </data-source>
+  </component>
+</project>
