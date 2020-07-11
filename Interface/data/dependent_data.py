@@ -1,7 +1,7 @@
 #数据依赖相关问题的脚本
-from interface.util.operationexcel import OperationExcel
-from interface.base.runmethod import RunMethod
-from interface.data.getdata import GetData
+from util.operationexcel import OperationExcel
+from base.runmethod import RunMethod
+from data.getdata import GetData
 from jsonpath_rw import jsonpath,parse
 import json
 class DependdentData():

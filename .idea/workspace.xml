@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df0e818c-ddcd-4c7d-a482-00eb204451f6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/interface1/datacongfig/interface.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface1/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface1/util/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface1/util/operationexcel.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interface/dataconfig/interface.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Interface/dataconfig/interface.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interface/dataconfig/jsonconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/Interface/dataconfig/jsonconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +19,13 @@
     <SUITE FILE_PATH="coverage/amucode$test.coverage" NAME="test Coverage Results" MODIFIED="1593946702822" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Interface/util" />
     <SUITE FILE_PATH="coverage/amucode$operationjson.coverage" NAME="operationjson Coverage Results" MODIFIED="1593941527191" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Interface/util" />
     <SUITE FILE_PATH="coverage/amucode$send_email.coverage" NAME="send_email Coverage Results" MODIFIED="1593875161134" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Interface/util" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -36,7 +45,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/interface1" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -49,6 +58,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\阿木\codework\amucode\interface1" />
+      <recent name="D:\阿木\codework\amucode\interface" />
       <recent name="E:\work\amucode\Interface\dataconfig" />
     </key>
   </component>
@@ -194,6 +205,8 @@
       <workItem from="1594087941200" duration="480000" />
       <workItem from="1594093214138" duration="306000" />
       <workItem from="1594096840579" duration="2277000" />
+      <workItem from="1594120124988" duration="6227000" />
+      <workItem from="1594279459352" duration="77000" />
     </task>
     <task id="LOCAL-00001" summary="我">
       <created>1593066348296</created>
@@ -290,6 +303,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="修改后兼容了接口" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="739" y="261" key="FileChooserDialogImpl" timestamp="1594279513353">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="739" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1594279513353" />
     <state width="1877" height="697" key="GridCell.Tab.0.bottom" timestamp="1594099119655">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

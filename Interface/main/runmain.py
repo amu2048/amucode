@@ -1,10 +1,10 @@
 import requests
 
-from interface.base.runmethod import RunMethod
-from interface.data.getdata import GetData
-from interface.util.com_util import CommonUtil
-from interface.data.dependent_data import DependdentData
-from interface.util.send_email import SendEmail
+from base.runmethod import RunMethod
+from data.getdata import GetData
+from util.com_util import CommonUtil
+from data.dependent_data import DependdentData
+from util.send_email import SendEmail
 import json
 class RunTest:
     def __init__(self):
