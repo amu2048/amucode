@@ -227,7 +227,7 @@
 		
 		//检查注册码是否正确
 		//调后台方法检查注册码，这里写死为11111111
-		if(code !='amu'){
+		if(code !==111){
 			$.pt({
 		        target: $("#register-code"),
 		        position: 'r',
@@ -314,7 +314,7 @@
 		//调后台方法
 		
 		//检查注册码是否正确
-		if(code != 'amu'){
+		if(code !== 111){
 			$.pt({
 		        target: $("#forget-code"),
 		        position: 'r',
