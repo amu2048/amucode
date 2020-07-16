@@ -380,17 +380,23 @@ ul,ol{
     display: block;
     float: left;
     height: .2rem;
-    width: 33%;
+    line-height: .2rem;
+    width: 25%;
     /*background: red;*/
     /*margin: 15px 10px 10px 10px;*/
     /*padding: 20px;*/
-    text-align: center;
     font-size: 0.14rem;
     font-weight: 600;
     color: #61d2f7;
-    text-align: center;
     margin-bottom: .1rem;
+    padding: 0 .2rem;
+    box-sizing: border-box;
 }
+
+.gun span:first-child{
+    width:50%;
+}
+
 #FontScroll{
     width: 100%;
     height: 2.3rem;
@@ -407,7 +413,7 @@ ul,ol{
     height: .32rem;
     width: 100%;
     color: #ffffff;
-    text-align: center;
+    /*text-align: center;*/
     line-height: .32rem;
     /*border-bottom: 1px dashed #404040;*/
     /*width:33.3%;*/
@@ -423,7 +429,7 @@ ul,ol{
 }
 #FontScroll ul li:nth-child(1){
     /*background-color: #072951;*/
-    box-shadow: -10px 0px 15px #034c6a inset, /*å·¦è¾¹é˜´å½±*/
+    box-shadow: -10px 0px 150px #034c6a inset, /*å·¦è¾¹é˜´å½±*/
     10px 0px 15px #034c6a inset;
 
 }
@@ -437,30 +443,43 @@ ul,ol{
     display:inline-block;
     /*float: left;*/
     /*height: 20px;*/
-    width:31%;
+    width:25%;
     color: #ffffff;
-
+    float:left;
     /*background: red;*/
-
+    padding: 0 .2rem;
+    box-sizing:border-box;
+    line-height: .32rem;
 }
+
+.fontInner span:first-child{
+    width:50%;
+    font-weight: 600;
+}
+
 .fontInner span b{
     display: inline-block;
-    width: .75rem;
+    text-align: left;
+    /*width: .75rem;*/
+    width:100%;
     height: .2rem;
     /*border-radius: 0.03rem;*/
     color: #ffffff;
     line-height: .2rem;
     font-size: .1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 /*#FontScroll ul li:nth-child(1) .fontInner span b{
     background: #EB6841
 
 }*/
 
-#FontScroll ul li:nth-child(1) .fontInner span b{ background: #FE4365 }
-#FontScroll ul li:nth-child(2) .fontInner span b{ background: #3FB8AF }
-#FontScroll ul li:nth-child(3) .fontInner span b{ background: #83AF9B }
-#FontScroll ul li .fontInner span b{ background: #C8C8A9 }
+/*#FontScroll ul li:nth-child(1) .fontInner span b{ background: #FE4365 }*/
+/*#FontScroll ul li:nth-child(2) .fontInner span b{ background: #3FB8AF }*/
+/*#FontScroll ul li:nth-child(3) .fontInner span b{ background: #83AF9B }*/
+/*#FontScroll ul li .fontInner span b{ background: #C8C8A9 }*/
 
 /*#FontScroll ul li:nth-child(8n-4) .fontInner span b{ background: #20a8fe }
 #FontScroll ul li:nth-child(8n-3) .fontInner span b{ background: #EB6841 }
