@@ -15,7 +15,9 @@ def index():
     data = jsonify(data)
     rst = make_response(data)
     #print("响应1：", rst)
-    print("响应ceshi2",rst.json["ceshi2"]["tongbizengjia"])
+    #print("ditu:",rst.json["chinaDatas"])
+    #gongjulist = api.get_userfile()
+    #print(gongjulist["nicheng"])
     #rst.set_cookie('name',max_age=60 * 60)  # cookie参数是键值对成对出现的，可以通过键名获取值，max_age=60 * 60 * 0.25代表cookie有效时间15分钟
     # 添加跨域
     rst.headers['Access-Control-Allow-Origin'] = "*"

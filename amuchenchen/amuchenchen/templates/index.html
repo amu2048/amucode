@@ -9,8 +9,8 @@
     <script>
         $(function () {
             $('.myscroll').myScroll({
-                speed: 60, //数值越大，速度越慢
-                rowHeight: 38 //li的高度
+                speed: 40, //数值越大，速度越慢
+                rowHeight: 30 //li的高度
             });
         })
 
@@ -47,14 +47,11 @@
                     <span>阿木奇谭</span>
                 </div>
                 <div class="list">
-                    <p>阿木奇谭测试工具系统，因测试而生，为测试而忙，在这神奇的奇谭空间，只有你想不到，没有做不到。</p>
+                    <p>{{jianjie}}</p>
                     <ul>
-                        <li>智能分析</li>
-                        <li>辅助测试</li>
-                        <li>AI直观</li>
-                        <li>数据统计</li>
-                        <li>领导汇报</li>
-                        <li>前所未有</li>
+                        {% for gnlist in gnlist %}
+                        <li>{{gnlist}}</li>
+                        {%endfor%}
                     </ul>
                 </div>
             </div>
@@ -80,18 +77,19 @@
                 <div class="top-title">
                     <ul>
                         <li>
-                            <p>基地数量</p>
-                            <span>3</span>
-                            <span>6</span>
-                            <span>5</span>
-                            <b>个</b>
+                            <p>用户量</p>
+                            {% for i in usernum %}
+                            <span>{{i}}</span>
+                            {%endfor%}
+<!--
+                            <b>万</b>
                         </li>
-                        <li>
-                            <p>已完成</p>
-                            <span>8</span>
-                            <span>3</span>
-                            <b>%</b>
-                        </li>
+                        <li> -->
+<!--                            <p>新增率</p>-->
+<!--                            <span>8</span>-->
+<!--                            <span>3</span>-->
+<!--                            <b>%</b>-->
+<!--                        </li>-->
                     </ul>
                 </div>
                 <div class="top-bottom">
@@ -117,71 +115,48 @@
                 <div id="tab_header">
                     <ul>
                         <li class="selected">兵器库</li>
-                        <li>阿木尘</li>
+                        <li>奇谭令</li>
                     </ul>
                 </div>
                 <!--内容-->
                 <div id="tab_content">
                     <div class="dom" style="display: block">
-                        <ul>
-                            <li>
-                                <p>座收租金</p>
-                                <span>50万</span>
-                                <label>元</label>
-                            </li>
-                            <li>
-                                <p>座收租金</p>
-                                <span>50万</span>
-                                <label>元</label>
-                            </li>
-                            <li>
-                                <p>座收租金</p>
-                                <span>50万</span>
-                                <label>元</label>
-                            </li>
-                        </ul>
+<!--                        <ul>-->
+<!--                            <li>-->
+<!--                                <p>类型一</p>-->
+<!--                                <span>50万</span>-->
+<!--                                <label>元</label>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <p>类型二</p>-->
+<!--                                <span>50万</span>-->
+<!--                                <label>元</label>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <p>类型三</p>-->
+<!--                                <span>50万</span>-->
+<!--                                <label>元</label>-->
+<!--                            </li>-->
+<!--                        </ul>-->
                         <div class="list-t">
                             <ul>
+                                {% for i in gongju %}
                                 <li>
-                                    <span>顺风耳</span>
-                                    <p>短信接收</p>
+                                    <span>{{i.name}}</span>
+                                    <a href={{i.url}} > {{i.names}}</a>
                                 </li>
-                                <li>
-                                    <span>传信简</span>
-                                    <p>Email</p>
-                                </li>
-                                <li>
-                                    <span>50万</span>
-                                    <p>商铺</p>
-                                </li>
-                                <li>
-                                    <span>50万</span>
-                                    <p>商铺</p>
-                                </li>
-                                <li>
-                                    <span>50万</span>
-                                    <p>商铺</p>
-                                </li>
-                                <li>
-                                    <span>50万</span>
-                                    <p>商铺</p>
-                                </li>
+                                  {%endfor%}
                             </ul>
 
                         </div>
                     </div>
                     <div class="dom" style="display: none">
                         <div class="listStyle">
-
-                                <span>大棚：<strong>560</strong>个</span>
-                                <span>供应企业：<strong>36</strong>家</span>
-                                <span>经销商：<strong>540</strong>个</span>
-                                <span>供应链：<strong>15</strong>条</span>
-                                <span>蔬菜加工基地：<strong>20</strong>个</span>
-                                <span>售后卸载：<strong>29</strong>家</span>
-                                <span>冷藏基地：<strong>10</strong>个</span>
-                                <span>冷藏车：<strong>120</strong>台</span>
-                            </li>
+                             <span>昵称：<strong>{{userfile.nicheng}}</strong></span> <br>
+                             <span>职业：<strong>{{userfile.zhiye}}</strong></span><br>
+                             <span>地区：<strong>{{userfile.diqu}}</strong></span><br>
+                             <span>工龄：<strong>{{userfile.gongling}}</strong>   年</span><br>
+                             <span>我的职业目标：<strong>{{userfile.biaoqian}}</strong></span>
                         </div>
                     </div>
                 </div>
@@ -201,94 +176,103 @@
                     </div>
                     <div id="FontScroll" class="myscroll">
                         <ul>
+                            {% for i in buglist %}
                             <li>
                                 <div class="fontInner clearfix">
-                                    <span>1.iOS微信登入失败,需与后端沟通代码</span>
-                                    <span>激活</span>
-                                    <span>1</span>
+                                    <span>{{i.biaoti}}</span>
+                                    <span>{{i.zhuangtai}}</span>
+                                    <span>{{i.dengji}}</span>
                                 </div>
                             </li>
-                            <li>
-                                <div class="fontInner clearfix">
-                                    <span>
-                                        <b>2.安卓崩溃，登入发送验证码后闪退崩溃</b>
-                                    </span>
-                                    <span>激活</span>
-                                    <span>1</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="fontInner clearfix">
-                                    <span>
-                                        <b>3.音频播放失败，点击小学听力，开始播放，吓死你hi播放失败</b>
-                                    </span>
-                                    <span>关闭</span>
-                                    <span>2</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="fontInner clearfix">
-                                    <span>
-                                        <b>4.ios---生产环境---断网播放音频下载文件，播放不了</b>
-                                    </span>
-                                    <span>激活</span>
-                                    <span>2</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="fontInner clearfix">
-                                    <span>
-                                        <b>5.ios---生产环境---（建议）我的设置中选择年级 感觉是从底部向上弹出有那么一闪而过</b>
-                                    </span>
-                                    <span>已关闭</span>
-                                    <span>4</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="fontInner clearfix">
-                                    <span>
-                                        <b>6.断开网络，书架tab中 点击登录，应该提示网络异常</b>
-                                    </span>
-                                    <span>激活</span>
-                                    <span>3</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="fontInner clearfix">
-                                    <span>
-                                        <b>7.生产环境--ios--学科-书里面的资源拓展、音频、视频弄个固定排序</b>
-                                    </span>
-                                    <span>已解决</span>
-                                    <span>2</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="fontInner clearfix">
-                                    <span>
-                                        <b>8.ios-生产环境---书架中 曲一线文字遮盖（高一）</b>
-                                    </span>
-                                    <span>激活</span>
-                                    <span>2</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="fontInner clearfix">
-                                    <span>
-                                        <b>9.后台---我的反馈提交的图片运营后台不显示</b>
-                                    </span>
-                                    <span>激活</span>
-                                    <span>2</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="fontInner clearfix">
-                                    <span>
-                                        <b>10.我的界面我的缓存请改成我的下载与我的下载页一致性文字</b>
-                                    </span>
-                                    <span>已关闭</span>
-                                    <span>4</span>
-                                </div>
-                            </li>
+                            {%endfor%}
+<!--                            <li>-->
+<!--                                <div class="fontInner clearfix">-->
+<!--                                    <span>1.iOS微信登入失败,需与后端沟通代码</span>-->
+<!--                                    <span>激活</span>-->
+<!--                                    <span>1</span>-->
+<!--                                </div>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <div class="fontInner clearfix">-->
+<!--                                    <span>-->
+<!--                                        <b>2.安卓崩溃，登入发送验证码后闪退崩溃</b>-->
+<!--                                    </span>-->
+<!--                                    <span>激活</span>-->
+<!--                                    <span>1</span>-->
+<!--                                </div>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <div class="fontInner clearfix">-->
+<!--                                    <span>-->
+<!--                                        <b>3.音频播放失败，点击小学听力，开始播放，吓死你hi播放失败</b>-->
+<!--                                    </span>-->
+<!--                                    <span>关闭</span>-->
+<!--                                    <span>2</span>-->
+<!--                                </div>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <div class="fontInner clearfix">-->
+<!--                                    <span>-->
+<!--                                        <b>4.ios-&#45;&#45;生产环境-&#45;&#45;断网播放音频下载文件，播放不了</b>-->
+<!--                                    </span>-->
+<!--                                    <span>激活</span>-->
+<!--                                    <span>2</span>-->
+<!--                                </div>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <div class="fontInner clearfix">-->
+<!--                                    <span>-->
+<!--                                        <b>5.ios-&#45;&#45;生产环境-&#45;&#45;（建议）我的设置中选择年级 感觉是从底部向上弹出有那么一闪而过</b>-->
+<!--                                    </span>-->
+<!--                                    <span>已关闭</span>-->
+<!--                                    <span>4</span>-->
+<!--                                </div>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <div class="fontInner clearfix">-->
+<!--                                    <span>-->
+<!--                                        <b>6.断开网络，书架tab中 点击登录，应该提示网络异常</b>-->
+<!--                                    </span>-->
+<!--                                    <span>激活</span>-->
+<!--                                    <span>3</span>-->
+<!--                                </div>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <div class="fontInner clearfix">-->
+<!--                                    <span>-->
+<!--                                        <b>7.生产环境&#45;&#45;ios&#45;&#45;学科-书里面的资源拓展、音频、视频弄个固定排序</b>-->
+<!--                                    </span>-->
+<!--                                    <span>已解决</span>-->
+<!--                                    <span>2</span>-->
+<!--                                </div>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <div class="fontInner clearfix">-->
+<!--                                    <span>-->
+<!--                                        <b>8.ios-生产环境-&#45;&#45;书架中 曲一线文字遮盖（高一）</b>-->
+<!--                                    </span>-->
+<!--                                    <span>激活</span>-->
+<!--                                    <span>2</span>-->
+<!--                                </div>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <div class="fontInner clearfix">-->
+<!--                                    <span>-->
+<!--                                        <b>9.后台-&#45;&#45;我的反馈提交的图片运营后台不显示</b>-->
+<!--                                    </span>-->
+<!--                                    <span>激活</span>-->
+<!--                                    <span>2</span>-->
+<!--                                </div>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <div class="fontInner clearfix">-->
+<!--                                    <span>-->
+<!--                                        <b>10.我的界面我的缓存请改成我的下载与我的下载页一致性文字</b>-->
+<!--                                    </span>-->
+<!--                                    <span>已关闭</span>-->
+<!--                                    <span>4</span>-->
+<!--                                </div>-->
+<!--                            </li>-->
 
                         </ul>
                     </div>
