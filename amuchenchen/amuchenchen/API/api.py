@@ -1,28 +1,29 @@
-
+from amuchenchen.amuchenchen.API import readsqldata as d
 
 
 #首页的基本数据返回逻辑
 def get_index_ison():
     data = {
         #缺陷占比的统计图数据人的占比
-        "ceshi1": {
-            # 缺陷占比的统计图数据人的占比
-            "ydata": [{"name": '黄笑',"value": 11},
-                     {"name": '郑龙旭',"value": 22},
-                     {"name": '王皓月',"value": 8},
-                     {"name": '孟祥含',"value": 5},
-                     {"name": '谢明科',"value": 2},
-                     {"name": '鱼跃',"value": 8},
-                     {"name": '陈思凡',"value": 6},
-                     {"name": '周洪宇',"value": 5},
-                     {"name": '文龙',"value": 7},
-                     {"name": '潘征',"value": 3}
-                    ],
-            # 缺陷占比的统计图颜色
-            "color": ["#8d7fec", "#5085f2", "#e75fc3", "#f87be2", "#f2719a", "#fca4bb", "#f59a8f", "#fdb301", "#57e7ec", "#cf9ef1"],
-            # 缺陷占比的统计列表人名
-            "xdata": ['黄笑', "郑龙旭", "王皓月", "孟祥含", '谢明科', '鱼跃', '陈思凡', '周洪宇', '文龙', '潘征']
-        },
+        "ceshi1": d.get_ceshi_sql(),
+        #        {
+        #     # 缺陷占比的统计图数据人的占比
+        #     "ydata": [{"name": '黄笑',"value": 11},
+        #              {"name": '郑龙旭',"value": 22},
+        #              {"name": '王皓月',"value": 8},
+        #              {"name": '孟祥含',"value": 5},
+        #              {"name": '谢明科',"value": 2},
+        #              {"name": '鱼跃',"value": 8},
+        #              {"name": '陈思凡',"value": 6},
+        #              {"name": '周洪宇',"value": 5},
+        #              {"name": '文龙',"value": 7},
+        #              {"name": '潘征',"value": 3}
+        #             ],
+        #     # 缺陷占比的统计图颜色
+        #     "color": ["#8d7fec", "#5085f2", "#e75fc3", "#f87be2", "#f2719a", "#fca4bb", "#f59a8f", "#fdb301", "#57e7ec", "#cf9ef1"],
+        #     # 缺陷占比的统计列表人名
+        #     "xdata": ['黄笑', "郑龙旭", "王皓月", "孟祥含", '谢明科', '鱼跃', '陈思凡', '周洪宇', '文龙', '潘征']
+        # },
 
         #测试进度统计图
         "ceshi3":{ "value": 20.2, "text": '-',  "color": '#4ac7f5', "xAxis": ['测试进度'], "values": ['43'],},
