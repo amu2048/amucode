@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>阿木测试浮尘系统 </title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')   }}">
+
+    <script src="{{ url_for('static',filename='js/jquery.js')}}"></script>
+    <script>
+        $(function () {
+            $('.myscroll').myScroll({
+                speed: 40, //数值越大，速度越慢
+                rowHeight: 30 //li的高度
+            });
+        })
+
+        $(document).ready(function () {
+            var whei = $(window).width()
+            $("html").css({ fontSize: whei / 22 });
+            $(window).resize(function () {
+                var whei = $(window).width();
+                $("html").css({ fontSize: whei / 22 })
+            });
+        });
+    </script>
+</head>
+<body>
+
+<div class="main">
+
+    <!--头部-->
+    <div class="header">
+        <div class="header-left" id="time"></div>
+        <div class="header-cen">
+            <h1>阿木奇谭测试工具</h1>
+        </div>
+        <div class="header-right"></div>
+    </div>
+
+    <!--中间-->
+    <div class="content">
+        <!--左边-->
+        <div class="content-left fl">
+            <!--左上-->
+            <div class="left-top">
+                <div class="title">
+                    <span>阿木奇谭</span>
+                </div>
+                <div class="list">
+                    <p>{{jianjie}}</p>
+                    <ul>
+                        {% for gnlist in gnlist %}
+                        <li>{{gnlist}}</li>
+                        {%endfor%}
+                    </ul>
+                </div>
+            </div>
+            <!--左中-->
+            <div class="left-center">
+                <div class="title">
+                    <span>缺陷占比</span>
+                </div>
+                <div class="allnav" id="ceshi"></div>
+            </div>
+            <!--左下-->
+            <div class="left-bottom">
+                <div class="title">
+                    <span>注册/使用统计</span>
+                </div>
+                <div class="allnav" id="ceshi2"></div>
+            </div>
+        </div>
+        <!--中间-->
+        <div class="content-center fl">
+            <!--头部-->
+            <div class="center-top">
+                <div class="top-title">
+                    <ul>
+                        <li>
+                            <p>用户量</p>
+                            {% for i in usernum %}
+                            <span>{{i}}</span>
+                            {%endfor%}
+<!--
+                            <b>万</b>
+                        </li>
+                        <li> -->
+<!--                            <p>新增率</p>-->
+<!--                            <span>8</span>-->
+<!--                            <span>3</span>-->
+<!--                            <b>%</b>-->
+<!--                        </li>-->
+                    </ul>
+                </div>
+                <div class="top-bottom">
+                    <div class="allnav" id="ceshi8"></div>
+                </div>
+
+            </div>
+            <!--底部-->
+            <div class="center-bottom">
+                <div class="bottom-left fl">
+                    <div class="allnav" id="ceshi6"></div>
+                </div>
+                <div class="bottom-right fr">
+                    <div class="allnav" id="ceshi7" style="width: 100%;height: 100%;"></div>
+                </div>
+            </div>
+        </div>
+        <!--右边-->
+        <div class="content-right fr">
+            <!--右上-->
+            <div class="right-top">
+                <!--选项卡内容-->
+                <div id="tab_header">
+                    <ul>
+                        <li class="selected">兵器库</li>
+                        <li>奇谭令</li>
+                    </ul>
+                </div>
+                <!--内容-->
+                <div id="tab_content">
+                    <div class="dom" style="display: block">
+<!--                        <ul>-->
+<!--                            <li>-->
+<!--                                <p>类型一</p>-->
+<!--                                <span>50万</span>-->
+<!--                                <label>元</label>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <p>类型二</p>-->
+<!--                                <span>50万</span>-->
+<!--                                <label>元</label>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <p>类型三</p>-->
+<!--                                <span>50万</span>-->
+<!--                                <label>元</label>-->
+<!--                            </li>-->
+<!--                        </ul>-->
+                        <div class="list-t">
+                            <ul>
+                                {% for i in gongju %}
+                                <li>
+                                    <span>{{i.name}}</span>
+                                    <a href={{i.url}} > {{i.names}}</a>
+                                </li>
+                                  {%endfor%}
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="dom" style="display: none">
+                        <div class="listStyle">
+                             <span>昵称：<strong>{{userfile.nicheng}}</strong></span> <br>
+                             <span>职业：<strong>{{userfile.zhiye}}</strong></span><br>
+                             <span>地区：<strong>{{userfile.diqu}}</strong></span><br>
+                             <span>工龄：<strong>{{userfile.gongling}}</strong>   年</span><br>
+                             <span>我的职业目标：<strong>{{userfile.biaoqian}}</strong></span>
+                        </div>
+                    </div>
+                </div>
+                <!--选项卡内容-->
+            </div>
+            <!--右中-->
+            <div class="right-center">
+                <div class="title">
+                    <span>缺陷目录</span>
+                </div>
+
+                <div class="echart wenzi">
+                    <div class="gun">
+                        <span>bug标题</span>
+                        <span>bug状态</span>
+                        <span>bug等级</span>
+                    </div>
+                    <div id="FontScroll" class="myscroll">
+                        <ul>
+                            {% for i in buglist %}
+                            <li>
+                                <div class="fontInner clearfix">
+                                    <span>{{i.biaoti}}</span>
+                                    <span>{{i.zhuangtai}}</span>
+                                    <span>{{i.dengji}}</span>
+                                </div>
+                            </li>
+                            {%endfor%}
+<!--                            <li>-->
+<!--                                <div class="fontInner clearfix">-->
+<!--                                    <span>1.iOS微信登入失败,需与后端沟通代码</span>-->
+<!--                                    <span>激活</span>-->
+<!--                                    <span>1</span>-->
+<!--                                </div>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <div class="fontInner clearfix">-->
+<!--                                    <span>-->
+<!--                                        <b>2.安卓崩溃，登入发送验证码后闪退崩溃</b>-->
+<!--                                    </span>-->
+<!--                                    <span>激活</span>-->
+<!--                                    <span>1</span>-->
+<!--                                </div>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <div class="fontInner clearfix">-->
+<!--                                    <span>-->
+<!--                                        <b>3.音频播放失败，点击小学听力，开始播放，吓死你hi播放失败</b>-->
+<!--                                    </span>-->
+<!--                                    <span>关闭</span>-->
+<!--                                    <span>2</span>-->
+<!--                                </div>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <div class="fontInner clearfix">-->
+<!--                                    <span>-->
+<!--                                        <b>4.ios-&#45;&#45;生产环境-&#45;&#45;断网播放音频下载文件，播放不了</b>-->
+<!--                                    </span>-->
+<!--                                    <span>激活</span>-->
+<!--                                    <span>2</span>-->
+<!--                                </div>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <div class="fontInner clearfix">-->
+<!--                                    <span>-->
+<!--                                        <b>5.ios-&#45;&#45;生产环境-&#45;&#45;（建议）我的设置中选择年级 感觉是从底部向上弹出有那么一闪而过</b>-->
+<!--                                    </span>-->
+<!--                                    <span>已关闭</span>-->
+<!--                                    <span>4</span>-->
+<!--                                </div>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <div class="fontInner clearfix">-->
+<!--                                    <span>-->
+<!--                                        <b>6.断开网络，书架tab中 点击登录，应该提示网络异常</b>-->
+<!--                                    </span>-->
+<!--                                    <span>激活</span>-->
+<!--                                    <span>3</span>-->
+<!--                                </div>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <div class="fontInner clearfix">-->
+<!--                                    <span>-->
+<!--                                        <b>7.生产环境&#45;&#45;ios&#45;&#45;学科-书里面的资源拓展、音频、视频弄个固定排序</b>-->
+<!--                                    </span>-->
+<!--                                    <span>已解决</span>-->
+<!--                                    <span>2</span>-->
+<!--                                </div>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <div class="fontInner clearfix">-->
+<!--                                    <span>-->
+<!--                                        <b>8.ios-生产环境-&#45;&#45;书架中 曲一线文字遮盖（高一）</b>-->
+<!--                                    </span>-->
+<!--                                    <span>激活</span>-->
+<!--                                    <span>2</span>-->
+<!--                                </div>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <div class="fontInner clearfix">-->
+<!--                                    <span>-->
+<!--                                        <b>9.后台-&#45;&#45;我的反馈提交的图片运营后台不显示</b>-->
+<!--                                    </span>-->
+<!--                                    <span>激活</span>-->
+<!--                                    <span>2</span>-->
+<!--                                </div>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <div class="fontInner clearfix">-->
+<!--                                    <span>-->
+<!--                                        <b>10.我的界面我的缓存请改成我的下载与我的下载页一致性文字</b>-->
+<!--                                    </span>-->
+<!--                                    <span>已关闭</span>-->
+<!--                                    <span>4</span>-->
+<!--                                </div>-->
+<!--                            </li>-->
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--右下-->
+            <div class="right-bottom">
+                <div class="title">
+                    <span>进度统计</span>
+                </div>
+                <div class="right-bottom-t">
+                    <div class="b-left" id="ceshi3"></div>
+                    <div class="b-cent" id="ceshi4"></div>
+                    <div class="b-right" id="ceshi5"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+<script src="{{url_for('static',filename='js/echarts.min.js')}}"></script>
+<script src="{{url_for('static',filename='js/jquery.min.js')}}"></script>
+<!--<script src="js/data01.js"></script>-->
+<!--<script src="js/mapIndex.js"></script>-->
+
+
+<script src="{{url_for('static',filename='js/echart.js')}}"></script>
+<script src="{{url_for('static',filename='js/fontscroll.js')}}"></script>
+<script src="{{url_for('static',filename='js/china.js')}}"></script>
+
+
+
+
+
+<script>
+    //顶部时间
+    function getTime(){
+        var myDate = new Date();
+        var myYear = myDate.getFullYear(); //获取完整的年份(4位,1970-????)
+        var myMonth = myDate.getMonth()+1; //获取当前月份(0-11,0代表1月)
+        var myToday = myDate.getDate(); //获取当前日(1-31)
+        var myDay = myDate.getDay(); //获取当前星期X(0-6,0代表星期天)
+        var myHour = myDate.getHours(); //获取当前小时数(0-23)
+        var myMinute = myDate.getMinutes(); //获取当前分钟数(0-59)
+        var mySecond = myDate.getSeconds(); //获取当前秒数(0-59)
+        var week = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+        var nowTime;
+
+        nowTime = myYear+'-'+fillZero(myMonth)+'-'+fillZero(myToday)+'&nbsp;&nbsp;'+fillZero(myHour)+':'+fillZero(myMinute)+':'+fillZero(mySecond)+'&nbsp;&nbsp;'+week[myDay]+'&nbsp;&nbsp;';
+        //console.log(nowTime);
+        $('#time').html(nowTime);
+    };
+    function fillZero(str){
+        var realNum;
+        if(str<10){
+            realNum	= '0'+str;
+        }else{
+            realNum	= str;
+        }
+        return realNum;
+    }
+    setInterval(getTime,1000);
+</script>
+<script>
+ $(function () {
+     var allLis=document.getElementById("tab_header").getElementsByTagName("li");
+     var allDom = document.getElementById("tab_content").getElementsByClassName("dom");
+
+     // console.log(allLis, allDom);
+
+     // 2. 遍历监听
+     for(var i=0; i<allLis.length; i++){
+         var li = allLis[i];
+         li.index = i;
+
+         li.onclick = function () {
+             console.log(i);
+             for(var j=0; j<allLis.length; j++){
+                 allLis[j].className = '';
+                 allDom[j].style.display = 'none';
+             }
+
+             this.className = 'selected';
+             allDom[this.index].style.display = 'block';
+
+         }
+     }
+ })
+</script>
+
+</body>
+</html>
