@@ -1,5 +1,7 @@
 from flask import Flask, render_template
-from amuchenchen.APISERVER import apiconfig
+import os,sys
+sys.path.insert(0, os.path.abspath('..'))
+from APISERVER import apiconfig
 
 #定义app实例化flask
 app = Flask(__name__)
