@@ -10,7 +10,7 @@ def sqldo(sql):
 	print("开始执行数据库操作")
 	db =  pymysql.connect("39.106.14.148","root","AMU19930316amu","amuwang")     #使用 cursor() 方法创建一个游标对象 cursor
 	#print("链接数据库")
-	cursor = db.cursor()
+	cursor = db.cursor(cursor=pymysql.cursors.DictCursor)
 	sq=sql
 	print("连接数据库成功")
 	# 使用 execute()  方法执行 SQL 查询
@@ -27,7 +27,7 @@ def sqlin(sql):
 	#print("开始执行数据库操作")
 	db =  pymysql.connect("39.106.14.148","root","AMU19930316amu","amuwang")     #使用 cursor() 方法创建一个游标对象 cursor
 	print("开始添加注册信息数据库")
-	cursor = db.cursor()
+	cursor = db.cursor(cursor=pymysql.cursors.DictCursor)
 	sq=sql
 	# 使用 execute()  方法执行 SQL 查询
 	print("链接数据库城功，开始执行sql添加账户语句")
@@ -57,32 +57,39 @@ def index():
     print('查询语句是',sql)
     #try:
     print("ks")
-    das = sqlwork.SQL("select",sql)   #执行sql查找数据
+    das = sqldo(sql)   #执行sql查找数据
     print("查询结果为", das)
 
     # except:
     #     # 数据库异常返回5000
     #     print("数据库查询异常,错误码：11110",)
     #     return render_template('500.html',ma='11110')
+
     if das == None:
         #没有查到该用户 返回注册界面请注册
         return  render_template('login.html',tishi="该用户未注册，请先注册再登入。")
-    #elif das[1] == data['pwd']: #校验数据库结果索引为1 的字段的值 也就是密码 是否和传入的密码相同
-    elif data['pwd'] == str(das[0][2]):
+    #elif das[1] == data['pwd']: #校验数据库结果索引为1 的字段的值 也就是密码
+
+    elif data['pwd'] == das['pwd']:
         print("密码正确开始获取公告")
         # 用户名密码都正确返回首页，并返回其用户名das[2]
         sqla = 'select * from gonggao where ID ="1" '    #并查询公告数据库中的公告展示在首页
 
         #gonggao = sqldo(sqla)
-        gonggao = sqlwork.SQL("select",sqla)
+        gonggao = sqldo(sqla)
         print("查询出的公告为:",gonggao)
-        print("公告获取完成并加入")
-        return render_template('index.html', names=das[0][3], name=das[0][1], pwd=das[0][2], gonggao=gonggao[0][1])
+        print("公告获取完成并加入,开始获取阿木尘工具IP")
+        amuchensql = "select ip from ipconfig where name = 'amuchen'"
+        sqlamuchen = sqldo(amuchensql)
+        amuchenip = sqlamuchen['ip']
+        print("阿木尘ip",amuchenip)
+
+        return render_template('index.html', names=das['names'], name=das["name"], pwd=das["pwd"], gonggao=gonggao['content'],amuchen=amuchenip)
         #return render_template('index.html', names=das[2],name=das[0],pwd=das[1])
     else:
-        print('密码错误',das[0][0])
+        print('密码错误')
         # 密码错误 0001
-        return   '密码错误'
+        return  render_template('login.html', tishi='密码错误')
 
 '''返回测试TDP专页'''
 @app.route('/TDP')

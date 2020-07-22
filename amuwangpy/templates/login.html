@@ -133,18 +133,18 @@
         	});
 			flag = true;
 		}
-		{#//用户名只能是15位以下的字母或数字#}
-		{#var regExp = new RegExp("^[a-zA-Z0-9_]{1,15}$");#}
-		{#if(!regExp.test(username)){#}
-		{#	$.pt({#}
-        {#		target: $("#login-username"),#}
-        {#		position: 'r',#}
-        {#		align: 't',#}
-        {#		width: 'auto',#}
-        {#		height: 'auto',#}
-        {#		content:"用户名必须为15位以下的字母或数字"#}
-        {#	});#}
-		{#	flag = true;#}
+		// {#//用户名只能是15位以下的字母或数字#}
+		// {#var regExp = new RegExp("^[a-zA-Z0-9_]{1,15}$");#}
+		// {#if(!regExp.test(username)){#}
+		// {#	$.pt({#}
+        // {#		target: $("#login-username"),#}
+        // {#		position: 'r',#}
+        // {#		align: 't',#}
+        // {#		width: 'auto',#}
+        // {#		height: 'auto',#}
+        // {#		content:"用户名必须为15位以下的字母或数字"#}
+        // {#	});#}
+		// {#	flag = true;#}
 
 		
 		if(flag){
@@ -152,7 +152,7 @@
 		}else{
 			//如果符合验证就调用后台登录验证的方法
              window.location.href = "{{   url_for('index') }}?name="  +  username +"&pwd=" + password;
-			{#return #}
+			// {#return #}
 		}
 	}
 	
@@ -199,18 +199,18 @@
 				flag = true;
 			}
 		}
-		{#//用户名只能是15位以下的字母或数字#}
-		{#var regExp = new RegExp("^[a-zA-Z0-9_]{1,15}$");#}
-		{#if(!regExp.test(username)){#}
-		{#	$.pt({#}
-        {#		target: $("#register-username"),#}
-        {#		position: 'r',#}
-        {#		align: 't',#}
-        {#		width: 'auto',#}
-        {#		height: 'auto',#}
-        {#		content:"用户名必须为15位以下的字母或数字"#}
-        {#	});#}
-		{#	flag = true;#}
+		// {#//用户名只能是15位以下的字母或数字#}
+		// {#var regExp = new RegExp("^[a-zA-Z0-9_]{1,15}$");#}
+		// {#if(!regExp.test(username)){#}
+		// {#	$.pt({#}
+        // {#		target: $("#register-username"),#}
+        // {#		position: 'r',#}
+        // {#		align: 't',#}
+        // {#		width: 'auto',#}
+        // {#		height: 'auto',#}
+        // {#		content:"用户名必须为15位以下的字母或数字"#}
+        // {#	});#}
+		// {#	flag = true;#}
 
 		//检查用户名是否已经存在
 		//调后台代码检查用户名是否已经被注册
@@ -218,7 +218,7 @@
 		//检查注册码是否正确
 		//调后台方法检查注册码，这里写死为11111111
 
-       if((code/2) != 2){
+       if(code != 'amu'){
 			$.pt({
 		        target: $("#register-code"),
 		        position: 'r',
