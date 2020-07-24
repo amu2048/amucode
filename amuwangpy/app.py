@@ -1,7 +1,7 @@
 from flask import Flask,url_for,request,render_template
 import pymysql
 from lib import sqlwork
-
+import hashlib
 import datetime
 app = Flask(__name__)
 #数据库查询功能，传入sql语句即可
@@ -40,8 +40,10 @@ def sqlin(sql):
 	#关闭数据库链接
 	db.close()
 	return data
-
-
+def md5(pwd):
+    a= hashlib.md5(pwd.encode('utf-8'))
+    print('加密的密码',a.hexdigest())
+    return a.hexdigest()
 '''入口'''
 @app.route('/')
 def login():
@@ -70,7 +72,7 @@ def index():
         return  render_template('login.html',tishi="该用户未注册，请先注册再登入。")
     #elif das[1] == data['pwd']: #校验数据库结果索引为1 的字段的值 也就是密码
 
-    elif data['pwd'] == das['pwd']:
+    elif md5(data['pwd']) == das['pwd']:
         print("密码正确开始获取公告")
         # 用户名密码都正确返回首页，并返回其用户名das[2]
         sqla = 'select * from gonggao where ID ="1" '    #并查询公告数据库中的公告展示在首页
@@ -133,7 +135,7 @@ def zhuce():
     if das == None:
         try:
             print('未注册添加表数据')
-            sql = "insert into user(name, pwd,names,indata) values('"+da['name'] + "','" + da['pwd'] +"','"+"','"+datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')+"')"
+            sql = "insert into user(name, pwd,names,indata) values('"+da['name'] + "','" + md5(da['pwd']) +"','"+"','"+datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')+"')"
             print('执行添加sql',sql)
             sqlin(sql)  # 执行添加数据
             print("查询是否添加成功")
