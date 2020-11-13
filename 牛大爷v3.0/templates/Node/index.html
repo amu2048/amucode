@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href={{ url_for('static',filename='Css/bootstrap.css')}} />
+    <link rel="stylesheet" type="text/css" href={{ url_for('static',filename='Css/bootstrap-responsive.css')}} />
+    <link rel="stylesheet" type="text/css" href={{ url_for('static',filename='Css/style.css')}} />
+    <script type="text/javascript" src={{ url_for('static',filename='Js/jquery.js')}} ></script>
+    <script type="text/javascript" src={{ url_for('static',filename='Js/jquery.sorted.js')}}></script>
+    <script type="text/javascript" src={{ url_for('static',filename='Js/bootstrap.js')}}></script>
+    <script type="text/javascript" src={{ url_for('static',filename='Js/ckform.js')}}></script>
+    <script type="text/javascript" src={{ url_for('static',filename='Js/common.js')}}></script>
+
+    <style type="text/css">
+        body {
+            padding-bottom: 40px;
+        }
+        .sidebar-nav {
+            padding: 9px 0;
+        }
+
+        @media (max-width: 980px) {
+            /* Enable use of floated navbar text */
+            .navbar-text.pull-right {
+                float: none;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+<form class="form-inline definewidth m20" action="{{ url_for('goumaijilu') }}" method="post">
+    购买批次：
+    <input type="text" name="picihao" id="picihao"class="abc input-default" placeholder="" value="">&nbsp;&nbsp;
+    肉牛编号：
+    <input type="text" name="bianhao" id="bianhao"class="abc input-default" placeholder="" value="">&nbsp;&nbsp;
+    购买日期：
+    <input type="text" name="goudata" id="goudata"class="abc input-default" placeholder="" value="">&nbsp;&nbsp;
+    购买总价：
+    <input type="text" name="gzongjia" id="gzongjia"class="abc input-default" placeholder="" value="">&nbsp;&nbsp;<br>
+    购买体重：
+    <input type="text" name="gtizhong" id="gtizhong"class="abc input-default" placeholder="" value="">&nbsp;&nbsp;
+    购买单价：
+    <input type="text" name="gdanjia" id="gdanjia"class="abc input-default" placeholder="" value="">&nbsp;&nbsp;
+    购买地点：
+    <input type="text" name="goumaidi" id="goumaidi"class="abc input-default" placeholder="" value="">&nbsp;&nbsp;
+    &nbsp;交易人&nbsp;&nbsp;：
+    <input type="text" name="jiaoyiren" id="jiaoyiren"class="abc input-default" placeholder="" value="">&nbsp;&nbsp;<br>
+    购买备注：
+    <input type="text" name="beizhu" id="beizhu"class="abc input-default" placeholder="" value="">&nbsp;&nbsp;
+    <button type="submit" class="btn btn-primary">查询</button>&nbsp;&nbsp;
+    <button type="button" class="btn btn-success" id="addnew">新增购买</button>
+</form>
+<table class="table table-bordered table-hover definewidth m10" >
+    <thead>
+    <tr>
+        {% for i in biaoti %}
+            <th>{{ i }}</th>
+        {% endfor %}
+
+        <th>管理操作</th>
+    </tr>
+    </thead>
+             {% for i in shuju %}
+                 <tr>
+                    {% for j in i %}
+                        <td>{{ j }}</td>
+                    {% endfor %}
+                    <td>
+                        <a href="{{ url_for('Nodeedit') }}">编辑</a>
+                    </td>
+                  </tr>
+             {% endfor %}
+
+       </table>
+<div class="inline pull-right page">
+         10122 条记录 1/507 页  <a href='#'>下一页</a>     <span class='current'>1</span><a href='#'>2</a><a href='/chinapost/index.php?m=Label&a=index&p=3'>3</a><a href='#'>4</a><a href='#'>5</a>  <a href='#' >下5页</a> <a href='#' >最后一页</a>    </div>
+</body>
+</html>
+<script>
+    $(function () {
+        {#新增数据#}
+		$('#addnew').click(function(){
+
+				window.location.href="{{ url_for('Nodeadd') }}";
+		 });
+
+
+    });
+
+	function del(id)
+	{
+		
+		
+		if(confirm("确定要删除吗？"))
+		{
+		
+			var url = "{{ url_for('Nodeindex') }}";
+			
+			window.location.href=url;		
+		
+		}
+	
+	
+	
+	
+	}
+</script>

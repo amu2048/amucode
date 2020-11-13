@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" />
+<script src={{url_for('static',filename='Js/jquery-1.8.0.js')}}></script>  <!--引用根目录的Js文件下的公共jquery-3.4.1.min.js文件 -->
+<script src={{url_for('static',filename='Js/login.js')}}></script>
+<title>牛大爷管理云系统</title>
+<link href={{url_for('static',filename='Css/login.css')}} rel="stylesheet" type="text/css" /> <!--引用根目录的Css下的login.css布局cs文件-->
+</head>
+<body>
+    <div id="login">
+{#        <a>公告定位</a>#}
+        <marquee scrollamount="4"> <a style="font-size:25px; tect-decoation:none;   color:#fe0000" >欢迎使用阿木云科技出品的牛大爷养牛管理系统，更多关于科学养殖信息请登入阿木云科技公司官方网站</a> </marquee>
+		<!--上方的布局，欢迎图片 -->
+	     <div id="top">
+		      <div id="top_left"><img src={{url_for('static',filename="images/login_03.gif")}} /></div>
+			  <div id="top_center" >  </div>
+		 </div>
+		 <div id="center">
+			 <!-- 登入界面的布局 -->
+		      <div id="center_left"></div>
+			  <div id="center_middle">
+                {#    这个是标签提示区域              #}
+				<div  id="biaoqian"></div>
+                    {#	以下是登入框		       #}
+                  <div id="user">账   户
+			         <input  id="userv" type="text" name="textfield" value="请输入您的账号" />
+			       </div>
+				   <div id="password">密   码
+				     <input id="passwordv" type="password" name="textfield2"  value="" />
+				   </div>
+				   <div id="btn" ><a id="lg">登录</a> <a id="del">清空</a></div>
+			  
+			  </div>
+			  <div id="center_right"></div>		 
+		 </div>
+		 <div id="down">
+		      <div id="down_left">
+			      <div id="inf">
+                       <span class="inf_text">系统版本</span>
+					   <span class="copyright">牛大爷管理系统 2019 v1.0</span>
+			      </div>
+			  </div>
+			  <div id="down_center"></div>		 
+		 </div>
+
+	</div>
+</body>
+</html>

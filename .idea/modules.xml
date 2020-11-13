@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/amucode.iml" filepath="$PROJECT_DIR$/.idea/amucode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/牛大爷v2.0.7/.idea/牛大爷v2.0.7.iml" filepath="$PROJECT_DIR$/牛大爷v2.0.7/.idea/牛大爷v2.0.7.iml" />
     </modules>
   </component>
 </project>
