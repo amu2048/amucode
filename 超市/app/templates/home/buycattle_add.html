@@ -1,0 +1,158 @@
+{% extends "home/home.html" %}
+{% block content %}
+
+<div class="content-wrapper">
+        <!--内容-->
+        <section class="content-header">
+            <h1>牛大爷养殖管理系统</h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> 买卖管理</a></li>
+                <li class="active">添加购买记录</li>
+            </ol>
+        </section>
+        <section class="content" id="showcontent">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">添加购买记录</h3>
+                        </div>
+                        <form role="form" method="post">
+
+                            <!-- 闪现消息提醒-->
+                                <div >
+                                    {% for msg in get_flashed_messages() %}
+                                        <p style="color:red;font-size:14px; text-align:center ">{{msg}}</p>
+                                    {% endfor %}
+                                </div>
+                            <div class="box-body">
+                            <!--购买记录-->
+                            <div>
+                                <label >肉牛编号：</label>
+                                {{ form.cattleid}}
+                                {% for err in form.cattleid.errors %}
+                                             <span>
+                                                 <font style="color:red ">{{err}}</font>
+                                            </span>
+                                {% endfor %}
+                            </div>
+                            <div>
+                                <label>肉牛昵称：</label>
+                                {{ form.cattlename}}
+                                    {% for err in form.cattlename.errors %}
+                                             <span>
+                                                 <font style="color:red ">{{err}}</font>
+                                            </span>
+                                    {% endfor %}
+                            </div>
+                            <div>
+                                <label>购买时间：</label>
+                                {{ form.buyday}}
+                                    {% for err in form.buyday.errors %}
+                                             <span>
+                                                 <font style="color:red ">{{err}}</font>
+                                            </span>
+                                    {% endfor %}
+                            </div>
+                            <div>
+                                <label>购买总价：</label>
+                                {{ form.buyprice}}
+                                    {% for err in form.buyprice.errors %}
+                                             <span>
+                                                 <font style="color:red ">{{err}}</font>
+                                            </span>
+                                    {% endfor %}
+                                <span style="color: black">元</span>
+                            </div>
+                            <div>
+                                <label>购买体重：</label>
+                                {{ form.buyweight}}
+                                    {% for err in form.buyweight.errors %}
+                                             <span>
+                                                 <font style="color:red ">{{err}}</font>
+                                            </span>
+                                    {% endfor %}
+                                <span style="color: black">公斤Kg</span>
+                            </div>
+                             <div>
+                                <label>购买运费：</label>
+                                {{ form.buyfreight}}
+                                    {% for err in form.buyfreight.errors %}
+                                             <span>
+                                                 <font style="color:red ">{{err}}</font>
+                                            </span>
+                                    {% endfor %}
+                                 <span style="color: black">元</span>
+                            </div>
+                             <div>
+                                <label>购买地点：</label>
+                                {{ form.buycity}}
+                                    {% for err in form.buycity.errors %}
+                                             <span>
+                                                 <font style="color:red ">{{err}}</font>
+                                            </span>
+                                    {% endfor %}
+                            </div>
+                            <div class="">
+                                <label>购买批次号：</label>
+                                {{ form.buynum}}
+                                    {% for err in form.buynum.errors %}
+                                             <span>
+                                                 <font style="color:red ">{{err}}</font>
+                                            </span>
+                                    {% endfor %}
+                            </div>
+                             <div>
+                                <label>购买联系人：</label>
+                               {{ form.buycontatcs}}
+                                    {% for err in form.buycontatcs.errors %}
+                                             <span>
+                                                 <font style="color:red ">{{err}}</font>
+                                            </span>
+                                    {% endfor %}
+                            </div>
+                             <div>
+                                <label>备注：</label>
+                                {{ form.remarks}}
+                                    {% for err in form.remarks.errors %}
+                                             <span>
+                                                 <font style="color:red ">{{err}}</font>
+                                            </span>
+                                    {% endfor %}
+                            </div>
+                                <div>
+                                <label>肉牛图片：</label>
+                                {{ form.buycattlefild}}
+                                    {% for err in form.buycattlefild.errors %}
+                                             <span>
+                                                 <font style="color:red ">{{err}}</font>
+                                            </span>
+                                    {% endfor %}
+                            </div>
+
+                            <div>
+                                {{ form.submit }}
+                                {{form.csrf_token}}
+
+                            </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock  %}
+{% block js %}
+<!--日期选择框-->
+<script>
+    $(document).ready(function(){
+        $('#input_release_time').datepicker({
+            autoclose: true,
+            format: 'yyyy-mm-dd',
+            language: 'zh-CN',
+        });
+    });
+</script>
+{% endblock %}
+
