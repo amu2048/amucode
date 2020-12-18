@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>牛大爷养殖数据管理系统</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='login/css/style.css')}}"/>
+
+</head>
+<body class="login_bg">
+
+<section class="loginBox">
+    <header class="loginHeader">
+        <h1>牛大爷账号申请</h1>
+    </header>
+    <!--注册表单 -->
+
+    <div class="providerAdd">
+        <form method="post" enctype=multipart/form-data>
+            <!-- 闪现消息提醒-->
+            <div >
+                {% for msg in get_flashed_messages() %}
+                    <p style="color:red;font-size:14px; text-align:center ">{{msg}}</p>
+                {% endfor %}
+            </div>
+
+            <!--表单处理-->
+            <div class="">
+                <label><a style="color: red">* </a>账号：</label>
+                {{ form.userId}}
+                {% for err in form.userId.errors %}
+                         <span>
+                             <font style="color:red ">{{err}}</font>
+                        </span>
+                {% endfor %}
+            </div>
+            <div>
+                <label><a style="color: red">* </a>姓名：</label>
+                {{ form.userName}}
+            </div>
+            <div>
+                <label><a style="color: red">* </a>密码：</label>
+                 {{ form.userpassword}}
+                {% for err in form.userpassword.errors %}
+                         <span>
+                             <font style="color:red ">{{err}}</font>
+                        </span>
+                {% endfor %}
+            </div>
+            <div>
+                <label><a style="color: red">* </a>确认密码：</label>
+                 {{ form.userRemi}}
+                {% for err in form.userRemi.errors %}
+                         <span>
+                             <font style="color:red ">{{err}}</font>
+                        </span>
+                {% endfor %}
+
+            </div>
+            <div>
+                <label>性别：</label>
+                 {{ form.sex}}
+            </div>
+            <div>
+                <label>微信：</label>
+                 {{ form.weixin}}
+            </div>
+            <div>
+            <div>
+                <label>生日：</label>
+                 {{ form.birthday}}
+            </div>
+            <div>
+                <label><a style="color: red">* </a>电话：</label>
+                 {{ form.userphone}}
+                {% for err in form.userphone.errors %}
+                         <span>
+                             <font style="color:red ">{{err}}</font>
+                        </span>
+                {% endfor %}
+
+            </div>
+            <div>
+                <label>地址：</label>
+                 {{ form.userAddress}}
+            </div>
+            <div>
+                <label>{{ form.face.label}}:</label>
+                 {{ form.face}}
+            </div>
+            <div>
+                <label>简介：</label>
+                 <div>
+                     {{ form.info}}
+                 </div>
+            </div>
+            <div class="providerAddBtn">
+                <!--<a href="#">保存</a>-->
+                <a href="{{url_for('home.login')}}">返回</a>
+                {{form.csrf_token}}
+                {{ form.submit}}
+                <!--<input type="button" value="返回" onload="{{url_for('home.login')}}"/>-->
+
+            </div>
+        </form>
+    </div>
+    <script src="{{url_for('static',filename='admin/plugins/jQuery/jQuery-2.2.0.min.js')}}"></script>
+    <script src="{{url_for('static',filename='admin/plugins/slimScroll/jquery.slimscroll.min.js')}}"></script>
+    <script src="{{url_for('static',filename='admin/dist/js/demo.js')}}"></script>
+    <script src="{{url_for('static',filename='admin/plugins/datepicker/locales/bootstrap-datepicker.zh-CN.js')}}" charset="UTF-8"></script>
+    <script src="{{url_for('static',filename='/js/echarts.min.js')}}"></script>
+    <script>
+    $(document).ready(function(){
+        $('#input_release_time').datepicker({
+            autoclose: true,
+            format: 'yyyy-mm-dd',
+            language: 'zh-CN',
+        });
+    });
+    </script>
+</section>
+</body>
+</html>

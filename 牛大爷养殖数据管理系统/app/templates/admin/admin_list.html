@@ -1,0 +1,80 @@
+{% extends "admin/home.html" %}
+<!--导入"ui/home_page.html"文件，方便实用里面的分页功能-->
+{% import "ui/home_page.html" as pg %}
+{% block content %}
+
+<div class="content-wrapper">
+        <!--内容-->
+        <section class="content-header">
+            <h1>牛大爷养殖管理系统</h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> 管理员管理</a></li>
+                <li class="active">管理员列表</li>
+            </ol>
+        </section>
+        <section class="content" id="showcontent">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="box box-primary">
+                        <div class="box-header">
+                            <h3 class="box-title">管理员列表</h3>
+                            <div class="box-tools">
+                                <div class="input-group input-group-sm" style="width: 150px;">
+                                    <input type="text" name="table_search" class="form-control pull-right"
+                                           placeholder="请输入关键字...">
+
+                                    <div class="input-group-btn">
+                                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-body table-responsive no-padding">
+                            {% for msg in get_flashed_messages(category_filter=["ok"]) %}
+                                <div class="alert alert-success alert-dismissable">
+                                    <button type="reset" class="close" data-dismiss="alert"></button>
+                                    <h4><i class="icon fa fa-check"></i> 操作成功</h4>
+                                    {{ msg }}
+                                </div>
+                            {% endfor %}
+                            <table class="table table-hover">
+                                <tbody>
+                                <tr>
+                                    <th>编号</th>
+                                    <th>账号</th>
+                                    <th>姓名</th>
+                                    <th>手机</th>
+                                    <th>地址</th>
+                                    <th>注册时间</th>
+                                    <th>操作事项</th>
+                                </tr>
+                                {% for x in range(page_data.items|count) %}
+                                <tr>
+                                    <td>{{20*(page_data.page -1)+x+1}}</td>
+                                    <td>{{page_data.items[x].account}}</td>
+                                    <td>{{page_data.items[x].name}}</td>
+                                    <td>{{page_data.items[x].phone}}</td>
+                                    <td>{{page_data.items[x].address}}</td>
+                                    <td>{{page_data.items[x].addriqi}}</td>
+                                    <td>
+                                        <a class="label label-success" href="{{url_for('admin.admin_view',id=page_data.items[x].id)}}">查看</a>
+
+                                        <a class="label label-danger" href="{{url_for('admin.admin_del',id=page_data.items[x].id)}}">删除</a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="box-footer clearfix">
+                            {{ pg.page(page_data,'admin.admin_list') }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--内容-->
+    </div>
+{% endblock %}

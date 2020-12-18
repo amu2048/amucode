@@ -1,0 +1,84 @@
+{% extends "home/public.html" %}
+{% block content %}
+
+    <div class="location">
+                <strong>你现在所在的位置是:</strong>
+                <span>买卖管理</span>
+            </div>
+    <!--搜索部分 -->
+    <div class="search">
+                <span>肉牛名称：</span>
+                <input type="text" placeholder="请输入肉牛的名称"/>
+
+                <span>购买批次号：</span>
+                <input type="text" placeholder="请输入肉牛的批次号"/>
+
+                <span>供应商：</span>
+                <select name="tigong" >
+                    <option value="">--请选择--</option>
+                    <option value="">北京市粮油总公司</option>
+                    <option value="">邯郸市五得利面粉厂</option>
+                </select>
+
+                <span>是否付款：</span>
+                <select name="fukuan">
+                    <option value="">--请选择--</option>
+                    <option value="">已付款</option>
+                    <option value="">未付款</option>
+                </select>
+
+                <input type="button" value="查询"/>
+                <a href="{{url_for('home.billAdd')}}">购买记录</a>
+                <a href="{{url_for('home.billoutAdd')}}">出栏记录</a>
+            </div>
+    <!--表格 买卖记录表格展示-->
+    <table class="providerTable" cellpadding="0" cellspacing="0">
+                <tr class="firstTr">
+                    <th width="5%">序号</th>
+                    <th width="10%">肉牛ID</th>
+                    <th width="15%">昵称</th>
+                    <th width="10%">购买总价<a style="font-size:14px"  >（元）</a></th>
+                    <th width="10%">体重<a style="font-size:14px" >（斤）</a></th>
+                    <th width="10%">单价<a style="font-size:14px"  >（斤/元）</a></th>
+                    <th width="10%">购买日期</th>
+                    <th width="10%">批次号</th>
+                    <th width="30%">操作</th>
+                </tr>
+            {% for us in buy %}
+                <tr>
+                    <td>{{us.id}}</td>
+                    <td>{{us.nameid}}</td>
+                    <td>{{us.name}}</td>
+                    <td>{{us.price}}</td>
+                    <td>{{us.weight}}</td>
+                    <td>{{us.unitprice}}</td>
+                    <td>{{us.data}}</td>
+                    <td>{{us.num}}</td>
+                    <td>
+                        <a href="{{url_for('home.billView')}}"><img src="{{url_for('static',filename='img/read.png')}}" alt="查看" title="查看"/></a>
+                        <a href="{{url_for('home.billUpdate')}}"><img src="{{url_for('static',filename='img/xiugai.png')}}" alt="修改" title="修改"/></a>
+                        <a href="#" class="removeBill"><img src="{{url_for('static',filename='img/schu.png')}}" alt="删除" title="删除"/></a>
+                    </td>
+                </tr>
+            {% endfor %}
+    </table>
+    <!--点击删除按钮后弹出的页面-->
+    <div class="zhezhao"></div>
+
+    <div class="remove" id="removeBi">
+        <div class="removerChid">
+            <h2>提示</h2>
+            <div class="removeMain">
+                <p>你确定要删除该订单吗？</p>
+                <a href="#" id="yes">确定</a>
+                <a href="#" id="no">取消</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block js %}
+<script>
+   document.getElementById("m-1").id="active";
+</script>
+{% endblock  %}

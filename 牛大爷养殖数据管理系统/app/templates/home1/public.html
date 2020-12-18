@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>牛大爷养殖数据管理系统</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/public.css')}}"/>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}"/>
+</head>
+<body>
+<!--头部-->
+    <header class="publicHeader">
+        <h1>牛大爷养殖数据管理系统</h1>
+        <div class="publicHeaderR">
+            <p><span>下午好！</span><span style="color: #fff21b">{{name}}</span> , 欢迎你！</p>
+            <a href="{{url_for('home.logout')}}">退出</a>
+        </div>
+    </header>
+<!--时间-->
+    <section class="publicTime">
+        <span id="time">2021年1月1日 11:11  星期一</span>
+        <a href="#">温馨提示：关注阿木奇谭，交流更多知识!</a>
+    </section>
+<!--主体内容-->
+    <section class="publicMian ">
+        <!--左侧菜单-->
+        <div class="left">
+            <h2 class="leftH2"><span class="span1"></span>小牧 <span></span></h2>
+            <nav>
+            <ul class="list">
+                <li id="m-1"><a href="{{url_for('home.billList')}}">买卖管理</a></li>
+                <li id="m-2"> <a href="{{url_for('home.providerList')}}">成本管理</a></li>
+                <li id="m-3"><a href="{{url_for('home.userList')}}">用户管理</a></li>
+                <li id="m-4"><a href="{{url_for('home.password')}}">密码修改</a></li>
+                <li id="m-5"><a href="{{url_for('home.login')}}">退出系统</a></li>
+            </ul>
+        </nav>
+        </div>
+        <!--右侧内容：可以替换-->
+        <div class="right">
+            <!--如下语句块：意思以下部分提供给继承此模板来填充-->
+            {% block content %}
+            {% endblock%}
+        </div>
+    </section>
+
+    <footer class="footer">
+    </footer>
+    <div style="text-align:center;">
+        <p>阿木域科技 </a></p>
+    </div>
+
+<script src="{{url_for('static',filename='js/jquery.js')}}"></script>
+<script src="{{url_for('static',filename='js/js.js')}}"></script>
+<script src="{{url_for('static',filename='js/time.js')}}"></script>
+{% block js %}  {% endblock  %}
+</body>
+</html>

@@ -1,0 +1,83 @@
+{% extends "admin/home.html" %}
+{% block content %}
+<div class="content-wrapper">
+        <!--内容-->
+        <section class="content-header">
+            <h1>牛大爷养殖管理系统</h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> 管理员管理</a></li>
+                <li class="active">添加管理员</li>
+            </ol>
+        </section>
+        <section class="content" id="showcontent">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">添加管理员</h3>
+                        </div>
+                        <form method="post" enctype= multipart/form-data >
+                            <div >
+                                {% for msg in get_flashed_messages() %}
+                                    <p style="color:red;font-size:14px; text-align:center ">{{msg}}</p>
+                                {% endfor %}
+                            </div>
+
+                                <div class="form-group">
+                                    <label >管理员账号</label>
+                                    <div>{{ form.account}}</div>
+                                </div>
+                            <div class="form-group">
+                                    <label >管理员姓名</label>
+                                    <div>{{ form.userName}}</div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="input_pwd">管理员密码</label>
+                                    {{ form.userpassword}}
+                                </div>
+                                <div class="form-group">
+                                    <label for="input_re_pwd">管理员重复密码</label>
+                                   {{ form.userRemi}}
+                                    {% for err in form.userRemi.errors %}
+                                    <span>
+                                        <font style="color:red ">{{err}}</font>
+                                    </span>
+                                    {% endfor %}
+                                </div>
+                                <div class="form-group">
+                                    <label for="input_re_pwd">管理员微信</label>
+                                   {{ form.weixin}}
+                                </div>
+                                <div class="form-group">
+                                    <label for="input_re_pwd">管理员电话</label>
+                                   {{ form.userphone}}
+                                     {% for err in form.userphone.errors %}
+                                    <span>
+                                        <font style="color:red ">{{err}}</font>
+                                    </span>
+                                    {% endfor %}
+                                </div>
+                                <div class="form-group">
+                                    <label for="input_re_pwd">管理员地址</label>
+                                   {{ form.userAddress}}
+                                </div>
+                                <div class="form-group">
+                                    <label for="input_re_pwd">管理员头像</label>
+                                   {{ form.face}}
+                                </div>
+                                 <div class="form-group">
+                                    <label for="input_re_pwd">管理员简介</label>
+                                   {{ form.info}}
+                                </div>
+                            <div>
+                                {{form.csrf_token}}
+                                {{ form.submit }}
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--内容-->
+    </div>
+{% endblock %}
