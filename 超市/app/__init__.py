@@ -9,6 +9,7 @@ app =Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://root:123456@127.0.0.1:3306/2021"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = True
 
+UPLOAD_FOLDER = r'D:\file'
 #seesion令牌
 app.config["SECRET_KEY"] = "1993"
 #开启调试模式

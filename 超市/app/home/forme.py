@@ -5,7 +5,8 @@ StringField:标签
 PasswordField:密码框
 SubmitField: 登入按钮
 """
-from wtforms import StringField, PasswordField, SubmitField,SelectField,TextField,FileField
+from wtforms import StringField, PasswordField, SubmitField,SelectField,TextAreaField
+from flask_wtf.file import FileAllowed ,FileField,FileRequired# 验证文件后缀名FileField
 """导入验证器
 DataRequired:提示
 ValidationError:自定义ERR提示
@@ -68,7 +69,7 @@ class RegistFrom(FlaskForm):
         description="账号",
         render_kw={
             "placeholder":"账号唯一作为登录账号使用",
-            "required":"required"
+            "required":"required",
         }
     )
     userName = StringField(
@@ -79,7 +80,7 @@ class RegistFrom(FlaskForm):
         description="账号",
         render_kw={
             "placeholder": "请输入真实姓名",
-            "required": "required"
+            "required": "required",
         }
     )
     userpassword = PasswordField(
@@ -91,7 +92,7 @@ class RegistFrom(FlaskForm):
         description="密码",
         render_kw={
             "placeholder":"密码长度必须大于6位小于20位",
-            "required":"required"
+            "required":"required",
         }
     )
     userRemi = PasswordField(
@@ -104,7 +105,7 @@ class RegistFrom(FlaskForm):
         description="确认密码",
         render_kw={
             "placeholder": "两次密码须一致",
-            "required": "required"
+            "required": "required",
         }
     )
     sex =SelectField(
@@ -117,6 +118,13 @@ class RegistFrom(FlaskForm):
         default=1,
         coerce=int
     )
+    weixin = StringField(
+        label='微信',
+        validators=[DataRequired('请填写微信号')],
+        description="微信",
+        render_kw={
+        }
+    )
     birthday = StringField(
         label="生日",
         validators=[
@@ -124,19 +132,21 @@ class RegistFrom(FlaskForm):
         ],
         description="生日",
         render_kw={
-            "placeholder": "请输入您的生日"
+            "class": "form-group",
+            "id": "input_release_time",
+            "placeholder": "请输入您的生日",
         }
     )
     userphone = StringField(
         label="电话",
         validators=[
             DataRequired("请输入您的电话!"),
-            regexp("1[345678]\\d{9}",message="手机格式不正确！")
+            regexp("1[345678]\\d{9}",message="手机格式不正确！"),
         ],
         description="电话",
         render_kw={
             "placeholder": "请输入您的电话",
-            "required": "required"
+            "required": "required",
         }
     )
     userAddress = StringField(
@@ -147,7 +157,28 @@ class RegistFrom(FlaskForm):
         description="地址",
         render_kw={
             "placeholder": "请输入您的联系地址",
-            "required": "required"
+            "required": "required",
+        }
+    )
+    face = FileField(
+        label="头像",
+        validators=[
+            # 文件必须选择;
+            FileRequired(),
+            # 指定文件上传的格式;
+            FileAllowed(['png', 'jpg', 'jpeg', 'gif'], "只接收png/jpg/jpeg/gif格式的头像")
+        ]
+    )
+    info = TextAreaField(
+        label="简介",
+        validators=[
+            DataRequired("说点什么吧!")
+        ],
+        description="简介",
+        render_kw={
+            "class": "form-group",
+            "rows" : "10",
+            "id": "input_info",
         }
     )
     submit = SubmitField(
@@ -281,16 +312,16 @@ class BuycattleFrom(FlaskForm):
             "placeholder": "请输入备注"
         }
     )
-    buycattlefild = FileField(
-        label="肉牛图片",
-        validators=[
-            DataRequired("请输选择肉牛图片")
-        ],
-        render_kw={
-            "class": "form-group",
-            "placeholder": "请输选择肉牛图片"
-        }
-    )
+    # buycattlefild = FileField(
+    #     label="肉牛图片",
+    #     validators=[
+    #         DataRequired("请输选择肉牛图片")
+    #     ],
+    #     render_kw={
+    #         "class": "form-group",
+    #         "placeholder": "请输选择肉牛图片"
+    #     }
+    # )
     submit = SubmitField(
         "保存",
         render_kw={
@@ -414,16 +445,16 @@ class SellcattleFrom(FlaskForm):
         }
     )
 
-    sellcattlefild = FileField(
-        label="肉牛图片",
-        validators=[
-            DataRequired("请输选择肉牛图片")
-        ],
-        render_kw={
-            "class": "form-group",
-            "placeholder": "请输选择肉牛图片"
-        }
-    )
+    # sellcattlefild = FileField(
+    #     label="肉牛图片",
+    #     validators=[
+    #         DataRequired("请输选择肉牛图片")
+    #     ],
+    #     render_kw={
+    #         "class": "form-group",
+    #         "placeholder": "请输选择肉牛图片"
+    #     }
+    # )
     submit = SubmitField(
         "保存",
         render_kw={
@@ -432,7 +463,7 @@ class SellcattleFrom(FlaskForm):
     )
     def validate_cattleid(self,field):
         #获取表单数据
-        print("进入validate_cattleid函数")
+        print("进入出栏validate_cattleid函数")
         cattleid = field.data
         #调用用户user模型sql 查询这账号 数据
         na = Sales.query.filter_by( cattleid = cattleid ).count()
@@ -481,3 +512,48 @@ class PwdFrom(FlaskForm):
         if not  user.chek_pwd(old_pwd):
             print("001")
             raise ValidationError("旧密码错误！")
+#添加权限
+class ActhForm(FlaskForm):
+    name = StringField(
+        label="卖出联系人",
+        validators=[
+            DataRequired("请输入卖出时联系人!")
+        ],
+        description="卖出联系人",
+        render_kw={
+            "class": "form-group",
+            "placeholder": "请输入卖出时联系人"
+        }
+    )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

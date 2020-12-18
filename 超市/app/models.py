@@ -14,7 +14,7 @@ class Users(db.Model):
     phone = db.Column(db.String(11), unique=True)  # 电话
     address = db.Column(db.String(255))  # 用户家庭地址
     weixin = db.Column(db.String(100))  # 邮箱
-    info = db.Column(db.Text)  # 简介 Text文本类型
+    info = db.Column(db.String(255))  # 简介 Text文本类型
     face = db.Column(db.String(255))  # 头像
     auth = db.Column(db.String(255))  # 菜单权限
     addriqi = db.Column(db.DateTime, default=datetime.now)  # 添加时间

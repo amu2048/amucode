@@ -111,19 +111,9 @@
                                             </span>
                                     {% endfor %}
                             </div>
-                                <div>
-                                <label>肉牛图片：</label>
-                                {{ form.sellcattlefild}}
-                                    {% for err in form.sellcattlefild.errors %}
-                                             <span>
-                                                 <font style="color:red ">{{err}}</font>
-                                            </span>
-                                    {% endfor %}
-                            </div>
-
                             <div>
-                                {{ form.submit }}
                                 {{form.csrf_token}}
+                                {{ form.submit }}
 
                             </div>
                             </div>

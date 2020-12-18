@@ -10,15 +10,25 @@ from flask import render_template, redirect, url_for, flash, session,request,Res
 #从表单脚本中导入 LoginForm 用于表单数据的验证
 from app.home.forme import LoginForm,RegistFrom,BuycattleFrom,SellcattleFrom,PwdFrom
 #导入数据库模型 导入user 用于读写user表数据
-from app.models import Users,Userlog,Sales
+from app.models import Users,Userlog,Sales,Oplog
 from werkzeug.security import generate_password_hash
 import uuid
 from app import db
+import  datetime
+import time
+
 from functools import wraps
-
+import os
+UPLOAD_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)),r'static\limg\userimg')
 '''=====公共部分 登录注册退出 ====='''
-#上下文应用处理器
-
+#上下文应用处理器 封装全局变量
+@home.context_processor
+def tpl_extra():
+    #定义一个当前时间的类返回时间
+    data = dict(
+        online_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    )
+    return data
 
 
 #定义一个装饰器 访问路由时先验证这个装饰器内的逻辑
@@ -61,8 +71,8 @@ def login():
             '''
             return redirect(url_for("home.login"))
         #如果密码一致 存入session把用户名存到session中 并返回主页模板
-
-        session["birthday"] = user.birthday
+        session["userface"] = user.face  #前端获取头像名称
+        session["account"] = user.account
         session["username"] = user.name
         session["lcs"] = "1993"  #此项未了防止有人破解seesion 特意增加个盐
         #写入会员登录日志
@@ -80,22 +90,35 @@ def login():
 #注册
 @home.route("/register",methods=["GET","POST"])
 def register():
+    #from werkzeug.datastructures import CombinedMultiDict
+    #form = RegistFrom(CombinedMultiDict([request.form, request.files]))
     form = RegistFrom()
     if form.validate_on_submit():
+        print('进入注册提交的数据')
         data = form.data
-        print('注册提交的数据',data)
-        print('uuid:',uuid.uuid4().hex)
+        # 获取上传文件的文件名;
+        filena = form.face.data.filename
+        #print(str(filename))
+        filename = data['userId'] + filena
+        # 将上传的文件保存到服务器;
+        form.face.data.save(os.path.join( UPLOAD_PATH, filename))
+        print("上传成功")
+        flash("上传成功", 'ok')
         user =Users(
             account = data['userId'],
             name = data['userName'],
             pwd = generate_password_hash(data['userpassword']),
             sex = data['sex'],
+            weixin= data['weixin'],
             birthday = data['birthday'],
             phone = data['userphone'],
             address = data['userAddress'],
+            face = filename,
+            info = data['info'],
             uuid = uuid.uuid4().hex
         )
         db.session.add(user)
+        print("保存数据")
         db.session.commit()
         flash("注册成功,请点击返回按钮去登录","ok")
     return render_template('home/register.html',form=form)
@@ -126,6 +149,13 @@ def logout():
     session.pop("username",None)
     session.pop("lcs", None)
     session.pop("birthday", None)
+    userlog = Userlog(
+        account=session['account'],
+        ip=request.remote_addr,
+        op = '用户 %s 退出' % (session['account'])
+    )
+    db.session.add(userlog)
+    db.session.commit()
     return redirect(url_for("home.login"))
 
 '''=====首页====='''
@@ -134,9 +164,8 @@ def logout():
 @admin_login_req
 def index():
     print("返回index")
-    global sessionuserid
-    sessionuserid=session["username"]
-    return render_template("home/index.html",names = sessionuserid)
+    print(" session['userface']", session["userface"])
+    return render_template("home/index.html")
     #return render_template("home/index.html",name=names)
 '''=====买卖管理====='''
 #买卖记录列表
@@ -158,10 +187,14 @@ def cattle_del( id=None):
     db.session.delete(sales)
     db.session.commit()
     flash("删除买卖成功！", "ok")
+    oplog = Oplog(
+        account=session["account"],
+        ip=request.remote_addr,
+        op="删除买卖记录:肉牛id：%s " % (id)
+    )
+    db.session.add(oplog)
+    db.session.commit()
     return redirect(url_for('home.cattle_list', page=1))
-
-
-
 #添加购买记录
 @home.route("/buycattle_add",methods=["GET","POST"])
 @admin_login_req
@@ -184,12 +217,18 @@ def buycattle_add():
             buycontatcs=data['buycontatcs'],
             buycity=data['buycity'],
             buyfreight=data['buyfreight'],
-            buycattlefild=data['buycattlefild'],
             remarks=data['remarks']
             )
         db.session.add(sales)
         db.session.commit()
         flash("添加成功,请点击返回按钮去查看", "ok")
+        oplog =Oplog(
+            account=session["account"],
+            ip= request.remote_addr,
+            op="添加购买记录:肉牛id：%s ，肉牛昵称： %s ，购买总价：%s，购买时体重： %s " %(data['cattleid'],data['cattlename'],data['buyprice'],data['buyweight'])
+        )
+        db.session.add(oplog)
+        db.session.commit()
     return render_template("home/buycattle_add.html",form=form)
 #添加出栏记录
 @home.route("/sellcattle_add",methods=["GET","POST"])
@@ -211,11 +250,18 @@ def sellcattle_add():
         result.sellcontatcs = data['sellcontatcs']
         result.sellcity = data['sellcity']
         result.sellfreight = data['sellfreight']
-        result.sellcattlefild = data['sellcattlefild']
+        #result.sellcattlefild = data['sellcattlefild']
         print("添加出栏记录", result)
         db.session.commit()
         flash("添加成功,请点击返回按钮去查看", "ok")
-    return render_template("home/sellcattle_add.html",form=form,sessionuserid = sessionuserid)
+        oplog = Oplog(
+            account=session["account"],
+            ip=request.remote_addr,
+            op="添加出栏记录:肉牛id：%s ，肉牛昵称： %s ，出售总价：%s，出售时体重： %s " %(data['cattleid'],data['cattlename'],data['sellprice'],data['sellweight'])
+        )
+        db.session.add(oplog)
+        db.session.commit()
+    return render_template("home/sellcattle_add.html",form=form)
 
 '''=====会员管理====='''
 #会员列表 传入查看的页码
@@ -242,15 +288,25 @@ def user_del(id = None):
     db.session.delete(user)
     db.session.commit()
     flash("删除会员成功！","ok")
+    oplog = Oplog(
+        account=session["account"],
+        ip=request.remote_addr,
+        op="删除会员:会员id：%s " % (id)
+    )
+    db.session.add(oplog)
+    db.session.commit()
     return redirect(url_for('home.user_list',page=1))
 
 
 '''=====日志管理====='''
 #操作日志列表
-@home.route("/oplog_list")
+@home.route("/oplog_list/<int:page>/",methods=["GET"])
 @admin_login_req
-def oplog_list():
-    return render_template("home/oplog_list.html")
+def oplog_list(page = None):
+    if page is None:
+        page=1
+    page_data = Oplog.query.order_by(Oplog.addriqi.desc()).paginate(page=page,per_page=10)
+    return render_template("home/oplog_list.html",page_data=page_data)
 #管理员登录日志列表
 @home.route("/adminloginlog_list")
 @admin_login_req
@@ -294,6 +350,7 @@ def role_list():
 @home.route("/admin_add")
 @admin_login_req
 def admin_add():
+
     return render_template("home/admin_add.html")
 #管理员列表
 @home.route("/admin_list")

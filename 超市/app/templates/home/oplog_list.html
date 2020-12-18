@@ -1,4 +1,5 @@
 {% extends "home/home.html" %}
+{% import "ui/home_page.html" as pg %}
 {% block content %}
 
 <div class="content-wrapper">
@@ -33,30 +34,26 @@
                                 <tbody>
                                 <tr>
                                     <th>编号</th>
-                                    <th>管理员</th>
+                                    <th>操作人</th>
+                                    <th>操作内容</th>
                                     <th>操作时间</th>
-                                    <th>操作原因</th>
                                     <th>操作IP</th>
                                 </tr>
+                                 {% for op in page_data.items %}
                                 <tr>
-                                    <td>1</td>
-                                    <td>admin</td>
-                                    <td>2017-06-01</td>
-                                    <td>添加一个标签：科幻</td>
-                                    <td>192.168.4.1</td>
+                                    <td>{{op.id}}</td>
+                                    <td>{{op.account}}</td>
+                                    <td>{{op.op}}</td>
+                                    <td>{{op.addriqi}}</td>
+                                    <td>{{op.ip}}</td>
                                 </tr>
+                                {% endfor %}
                                 </tbody>
                             </table>
                         </div>
                         <div class="box-footer clearfix">
                             <ul class="pagination pagination-sm no-margin pull-right">
-                                <li><a href="#">首页</a></li>
-                                <li><a href="#">上一页</a></li>
-                                <li><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">下一页</a></li>
-                                <li><a href="#">尾页</a></li>
+                                {{ pg.page(page_data,'home.cattle_list') }}
                             </ul>
                         </div>
                     </div>
