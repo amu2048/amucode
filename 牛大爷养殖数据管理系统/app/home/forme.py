@@ -5,7 +5,7 @@ StringField:标签
 PasswordField:密码框
 SubmitField: 登入按钮
 """
-from wtforms import StringField, PasswordField, SubmitField,SelectField,TextAreaField
+from wtforms import StringField, PasswordField, SubmitField,SelectField,TextAreaField,DateField
 from flask_wtf.file import FileAllowed ,FileField,FileRequired# 验证文件后缀名FileField
 """导入验证器
 DataRequired:提示
@@ -75,7 +75,7 @@ class RegistFrom(FlaskForm):
     userName = StringField(
         label="姓名",
         validators=[
-            DataRequired("请输入您的姓名!" )
+            DataRequired("请输入您的真实姓名!" )
         ],
         description="账号",
         render_kw={
@@ -110,7 +110,6 @@ class RegistFrom(FlaskForm):
     )
     sex =SelectField(
         label='性别',
-        validators=[DataRequired('请选择性别')],
         render_kw={
             'class': 'form-control'
         },
@@ -120,23 +119,20 @@ class RegistFrom(FlaskForm):
     )
     weixin = StringField(
         label='微信',
-        validators=[DataRequired('请填写微信号')],
         description="微信",
         render_kw={
         }
     )
-    birthday = StringField(
+    birthday  = StringField(
         label="生日",
-        validators=[
-            DataRequired("请输入您的生日!")
-        ],
         description="生日",
         render_kw={
             "class": "form-group",
-            "id": "input_release_time",
-            "placeholder": "请输入您的生日",
+            "id":"input_release_time",
+            "placeholder": "请选择时间"
         }
     )
+
     userphone = StringField(
         label="电话",
         validators=[
@@ -151,29 +147,23 @@ class RegistFrom(FlaskForm):
     )
     userAddress = StringField(
         label="地址",
-        validators=[
-            DataRequired("请输入您的联系地址!")
-        ],
         description="地址",
         render_kw={
             "placeholder": "请输入您的联系地址",
-            "required": "required",
+
         }
     )
     face = FileField(
         label="头像",
         validators=[
             # 文件必须选择;
-            FileRequired(),
+
             # 指定文件上传的格式;
             FileAllowed(['png', 'jpg', 'jpeg', 'gif'], "只接收png/jpg/jpeg/gif格式的头像")
         ]
     )
     info = TextAreaField(
         label="简介",
-        validators=[
-            DataRequired("说点什么吧!")
-        ],
         description="简介",
         render_kw={
             "class": "form-group",
@@ -207,20 +197,13 @@ class BuycattleFrom(FlaskForm):
         ],
         description="肉牛编号",
         render_kw={
-
-            "class": "form-group",
             "placeholder": "请输入肉牛编号"
         }
     )
     cattlename = StringField(
         label="肉牛昵称",
-        validators=[
-
-            DataRequired("请输入肉牛昵称!")
-        ],
         description="肉牛昵称",
         render_kw={
-            "class": "form-group",
             "placeholder":"肉牛昵称"
         }
     )
@@ -231,7 +214,6 @@ class BuycattleFrom(FlaskForm):
         ],
         description="购买时间",
         render_kw={
-            "class": "form-group",
             "id":"input_release_time",
             "placeholder": "购买时间"
         }
@@ -243,85 +225,59 @@ class BuycattleFrom(FlaskForm):
         ],
         description="购买总价",
         render_kw={
-            "class": "form-group",
             "placeholder": "请输入购买总价"
         }
     )
     buyweight = StringField(
         label="购买体重",
-        validators=[
-            DataRequired("请输入购买时的体重!")
-        ],
         description="购买时体重",
         render_kw={
-            "class": "form-group",
             "placeholder": "请输入购买时的体重"
         }
     )
     buyfreight = StringField(
         label="购买运费",
-        validators=[
-            DataRequired("请输入购买时的运费!")
-        ],
         description="购买时体重",
         render_kw={
-            "class": "form-group",
             "placeholder": "请输入购买时的运费"
         }
     )
     buycity = StringField(
         label="购买地点",
-        validators=[
-            DataRequired("请输入购买时的地点!")
-        ],
         description="购买时地点",
         render_kw={
-            "class": "form-group",
             "placeholder": "请输入购买时的地点"
         }
     )
     buynum = StringField(
         label="购买批次号",
-        validators=[
-            DataRequired("请输入购买批次号!")
-        ],
         description="购买批次号",
         render_kw={
-            "class": "form-group",
             "placeholder": "请输入购买批次号"
         }
     )
     buycontatcs = StringField(
         label="购买联系人",
-        validators=[
-            DataRequired("请输入购买时购买联系人!")
-        ],
         description="购买时联系人",
         render_kw={
-            "class": "form-group",
             "placeholder": "请输入购买时购买联系人"
         }
     )
     remarks = StringField(
         label="备注",
-        validators=[
-            DataRequired("请输入备注!")
-        ],
         render_kw={
-            "class": "form-group",
             "placeholder": "请输入备注"
         }
     )
-    # buycattlefild = FileField(
-    #     label="肉牛图片",
-    #     validators=[
-    #         DataRequired("请输选择肉牛图片")
-    #     ],
-    #     render_kw={
-    #         "class": "form-group",
-    #         "placeholder": "请输选择肉牛图片"
-    #     }
-    # )
+    buycattlefild  = FileField(
+        label="肉牛图片",
+        validators=[
+            # 文件必须选择;
+            #FileRequired(),
+            # 指定文件上传的格式;
+            FileAllowed(['png', 'jpg', 'jpeg', 'gif'], "只接收png/jpg/jpeg/gif格式的头像")
+        ]
+    )
     submit = SubmitField(
         "保存",
         render_kw={
@@ -343,11 +299,11 @@ class BuycattleFrom(FlaskForm):
 class SellcattleFrom(FlaskForm):
     print("进入PurchaseFrom表单信息")
     cattleid = StringField(
-        label="肉牛编号",
+        label="肉牛ID",
         validators=[
             DataRequired("请输入肉牛编号!")
         ],
-        description="肉牛编号",
+        description="肉牛ID",
         render_kw={
 
             "class": "form-group",
@@ -391,9 +347,6 @@ class SellcattleFrom(FlaskForm):
     )
     sellweight = StringField(
         label="出栏体重",
-        validators=[
-            DataRequired("请输入出栏时的体重!")
-        ],
         description="出栏时体重",
         render_kw={
             "class": "form-group",
@@ -402,9 +355,6 @@ class SellcattleFrom(FlaskForm):
     )
     sellfreight = StringField(
         label="出栏运费",
-        validators=[
-            DataRequired("请输入购出栏时的运费!")
-        ],
         description="出栏时的运费",
         render_kw={
             "class": "form-group",
@@ -413,9 +363,6 @@ class SellcattleFrom(FlaskForm):
     )
     sellcity = StringField(
         label="卖出地点",
-        validators=[
-            DataRequired("请输入出售时的地点!")
-        ],
         description="出售时地点",
         render_kw={
             "class": "form-group",
@@ -424,9 +371,6 @@ class SellcattleFrom(FlaskForm):
     )
     sellnum = StringField(
         label="出栏批次号",
-        validators=[
-            DataRequired("请输入出栏批次号!")
-        ],
         description="出栏批次号",
         render_kw={
             "class": "form-group",
@@ -435,9 +379,6 @@ class SellcattleFrom(FlaskForm):
     )
     sellcontatcs = StringField(
         label="卖出联系人",
-        validators=[
-            DataRequired("请输入卖出时联系人!")
-        ],
         description="卖出联系人",
         render_kw={
             "class": "form-group",
@@ -445,16 +386,13 @@ class SellcattleFrom(FlaskForm):
         }
     )
 
-    # sellcattlefild = FileField(
-    #     label="肉牛图片",
-    #     validators=[
-    #         DataRequired("请输选择肉牛图片")
-    #     ],
-    #     render_kw={
-    #         "class": "form-group",
-    #         "placeholder": "请输选择肉牛图片"
-    #     }
-    # )
+    sellcattlefild = FileField(
+            label="肉牛图片",
+            validators=[
+                # 指定文件上传的格式;
+                FileAllowed(['png', 'jpg', 'jpeg', 'gif'], "只接收png/jpg/jpeg/gif格式的头像")
+            ]
+        )
     submit = SubmitField(
         "保存",
         render_kw={
@@ -526,7 +464,67 @@ class ActhForm(FlaskForm):
         }
     )
 
+#修改个人资料
+class UserupFrom(FlaskForm):
+    weixin = StringField(
+        label='微信',
+        description="微信",
+        render_kw={"placeholder": "请输入微信号"
+        }
+    )
+    birthday  = StringField(
+        label="生日",
+        description="生日",
+        render_kw={
+            "class": "form-group",
+             "id":"input_release_time",
+            "placeholder": "请选择时间"
+        }
+    )
 
+    userphone = StringField(
+        label="电话",
+
+        description="电话",
+        render_kw={
+            "placeholder": "请输入您的电话",
+        }
+    )
+    userAddress = StringField(
+        label="地址",
+        description="地址",
+        render_kw={
+            "placeholder": "请输入您的联系地址",
+
+        }
+    )
+    face = FileField(
+        label="头像",
+        validators=[
+            # 文件必须选择;
+
+            # 指定文件上传的格式;
+            FileAllowed(['png', 'jpg', 'jpeg', 'gif'], "只接收png/jpg/jpeg/gif格式的头像")
+        ]
+    )
+    info = TextAreaField(
+        label="简介",
+        description="简介",
+        render_kw={
+            "style" : "width: 500px",
+            "id":"input_info",
+            "rows" : "10",
+        }
+    )
+    submit = SubmitField(
+        "保存修改"
+    )
+    #验证电话号是否唯一
+    def validate_userphone(self,field):
+        userphone=field.data
+        userphone = Users.query.filter_by(phone = userphone).count()
+        if userphone == 1:
+            raise ValidationError("手机号已备占用！")
 
 
 

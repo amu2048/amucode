@@ -1,0 +1,58 @@
+{% extends "home/home.html" %}
+{% block content %}
+
+<div class="content-wrapper">
+        <!--内容-->
+        <section class="content-header">
+            <h1>牛大爷养殖管理系统</h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> 买卖记录</a></li>
+                <li class="active">查看记录</li>
+            </ol>
+        </section>
+        <section class="content" id="showcontent">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="box box-primary">
+                        <div class="box-header">
+                            <h3 class="box-title">肉牛详情</h3>
+                        </div>
+                        <div class="box-body table-responsive no-padding">
+                            <table class="table table-hover">
+                                <tbody>
+                                <tr>
+                                    <td class="td_bd">肉牛ID：</td>
+                                    <td>{{sales.id}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_bd">肉牛昵称：</td>
+                                    <td>{{sales.cattlename}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_bd">购买时图片：</td>
+                                    <td>
+                                        <img style="width: 100px" src="{{ url_for('static',filename='limg/cattleimg/' + sales.buycattlefild )}}">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td_bd">出栏时图片：</td>
+                                    <td>
+                                        <img style="width: 100px" src="{{ url_for('static',filename='limg/cattleimg/' + sales.sellcattlefild )}}">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td_bd">肉牛简介：</td>
+                                    <td><li>此牛于{{sales.buyday}}，在 [{{sales.buycity}}] 购买。以{{sales.buyprice}}元，合计单价{{sales.buyunitprice}}元购买成功。</li>
+                                    <li>此牛于{{sales.sellday}}，在 [{{sales.sellcity}}] 出售。以{{sales.sellprice}}元，合计单价{{sales.sellunitprice}}元出售成功。</li></td>
+
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--内容-->
+    </div>
+{% endblock %}

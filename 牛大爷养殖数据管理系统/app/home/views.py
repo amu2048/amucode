@@ -8,17 +8,24 @@ session:就是session啊
 """
 from flask import render_template, redirect, url_for, flash, session,request
 #从表单脚本中导入 LoginForm 用于表单数据的验证
-from app.home.forme import LoginForm,RegistFrom,BuycattleFrom,SellcattleFrom,PwdFrom
+from app.home.forme import LoginForm,RegistFrom,BuycattleFrom,SellcattleFrom,PwdFrom,UserupFrom
 #导入数据库模型 导入user 用于读写user表数据
-from app.models import Users,Userlog,Sales,Oplog
+from app.models import Users,Userlog,Sales,Oplog,Notice
 from werkzeug.security import generate_password_hash
 import uuid
 from app import db
 import  datetime
-
+import random
 from functools import wraps
 import os
-UPLOAD_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)),r'static\limg\userimg')
+#用户头像上传的保存地址
+UPLOAD_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)),r'static\limg\faceimg')
+#生产liunx
+#UPLOAD_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)),r'static/limg/faceimg')
+#买卖记录肉牛保存的地址
+SALES_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)),r'static\limg\cattleimg')
+#生产地址
+#SALES_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)),r'static/limg/cattleimg')
 '''=====公共部分 登录注册退出 ====='''
 #上下文应用处理器 封装全局变量
 @home.context_processor
@@ -29,16 +36,13 @@ def tpl_extra():
     )
     return data
 
-
 #定义一个装饰器 访问路由时先验证这个装饰器内的逻辑
 def home_login_req(f):
     @wraps(f)
     #自定义函数
     def decorated_function(*args,**kwargs):
         #判断 sessi中是否存在lcs令牌
-
-        print("开始判断是否在seesion：",session)
-        if "username" not in session:
+        if "lcshome" not in session:
             #如果不存在则返回登录界面
             print("不在seesion中")
             return redirect(url_for("home.login",next=request.url))
@@ -54,8 +58,9 @@ def login():
     if form.validate_on_submit(): #提交表单 要验证 前端在提交按钮下添加代码{{form.csrf_token}} app.config设置令牌
         print("进入form.validate_on_submit()")
         data = form.data  #获取表单提交的信息
+        print("提交的数据是：",data)
         user = Users.query.filter_by(account=data["account"]).first()
-        print('数据库中的姓名',user.name)
+        print('数据库中的姓名1',user.name)
         #调用user中的函数chek_pwd 判断输入的密码和数据库加密后的是否一致 不一致就进入if
         if not user.chek_pwd(data["mima"]):
             flash("密码错误,请重新输入！","err")
@@ -72,7 +77,7 @@ def login():
         session["userface"] = user.face  #前端获取头像名称
         session["account"] = user.account
         session["username"] = user.name
-        session["lcs"] = "1993"  #此项未了防止有人破解seesion 特意增加个盐
+        session["lcshome"] = "q1993"  #此项防止存在管理员的缓存导致可以访问其他页面
         #写入会员登录日志
         userlog =Userlog(
             account=user.account,
@@ -82,7 +87,7 @@ def login():
         db.session.add(userlog)
         db.session.commit()
 
-        return redirect(url_for("home.index"))
+        return redirect(url_for("home.index",page=1))
     print("返回登录login界面")
     return render_template('home/login.html',form=form)
 #注册
@@ -94,31 +99,51 @@ def register():
     if form.validate_on_submit():
         print('进入注册提交的数据')
         data = form.data
-        # 获取上传文件的文件名;
-        filena = form.face.data.filename
-        #print(str(filename))
-        filename = data['userId'] + filena
-        # 将上传的文件保存到服务器;
-        form.face.data.save(os.path.join( UPLOAD_PATH, filename))
-        print("上传成功")
-        flash("上传成功", 'ok')
-        user =Users(
-            account = data['userId'],
-            name = data['userName'],
-            pwd = generate_password_hash(data['userpassword']),
-            sex = data['sex'],
-            weixin= data['weixin'],
-            birthday = data['birthday'],
-            phone = data['userphone'],
-            address = data['userAddress'],
-            face = filename,
-            info = data['info'],
-            uuid = uuid.uuid4().hex
-        )
-        db.session.add(user)
-        print("保存数据")
-        db.session.commit()
-        flash("注册成功,请点击返回按钮去登录","ok")
+        if data['face'] != None:
+            # 获取上传文件的文件名;
+            filena = form.face.data.filename
+            # print(str(filename))
+            filename = uuid.uuid4().hex + filena
+            # 将上传的文件保存到服务器;
+            form.face.data.save(os.path.join( UPLOAD_PATH, filename))
+            print("touxiang 上传成功")
+            user =Users(
+                account = data['userId'],
+                name = data['userName'],
+                pwd = generate_password_hash(data['userpassword']),
+                sex = data['sex'],
+                weixin= data['weixin'],
+                birthday = data['birthday'],
+                phone = data['userphone'],
+                address = data['userAddress'],
+                face = filename,
+                info = data['info'],
+                uuid = uuid.uuid4().hex
+            )
+            db.session.add(user)
+            print("保存数据")
+            db.session.commit()
+            flash("注册成功,请点登录","ok")
+        else:
+            filename = str(random.randint(0,5)) + '.png'
+            user = Users(
+                account=data['userId'],
+                name=data['userName'],
+                pwd=generate_password_hash(data['userpassword']),
+                sex=data['sex'],
+                weixin=data['weixin'],
+                birthday=data['birthday'],
+                phone=data['userphone'],
+                address=data['userAddress'],
+                face=filename,
+                info=data['info'],
+                uuid=uuid.uuid4().hex
+            )
+            db.session.add(user)
+            print("保存数据")
+            db.session.commit()
+            flash("注册成功,请登录", "ok")
+        return redirect(url_for('home.login'))
     return render_template('home/register.html',form=form)
 @home.route("/pwd_up",methods=["GET","POST"])
 @home_login_req
@@ -143,10 +168,6 @@ def pwd_up():
 @home_login_req
 def logout():
     print("进入退出函数")
-    #退出时 把本地缓存的seesion密码去掉
-    session.pop("username",None)
-    session.pop("lcs", None)
-    session.pop("birthday", None)
     userlog = Userlog(
         account=session['account'],
         ip=request.remote_addr,
@@ -154,17 +175,25 @@ def logout():
     )
     db.session.add(userlog)
     db.session.commit()
+    # 退出时 把本地缓存的seesion密码去掉
+    session.pop("username", None)
+    session.pop("userface", None)
+    session.pop("account", None)
+    session.pop("lcshome", None)
     return redirect(url_for("home.login"))
 
 '''=====首页====='''
 #首页
-@home.route("/index")
+@home.route("/index/<int:page>/",methods=["GET","POST"])
 @home_login_req
-def index():
-    print("返回index")
-    print(" session['userface']", session["userface"])
-    return render_template("home/index.html")
-    #return render_template("home/index.html",name=names)
+def index(page=None ):
+    if page is None:
+        page = 1
+    #获取公告 状态为1启用状态的公告数据
+    notice = Notice.query.filter_by(state = 1 ).order_by(Notice.priority).paginate(page=page,per_page=10)
+
+    return render_template("home/index.html",notice=notice)
+
 '''=====买卖管理====='''
 #买卖记录列表
 @home.route("/cattle_list/<int:page>/",methods=["GET"])
@@ -177,6 +206,14 @@ def cattle_list(page=None ):
     page_data = Sales.query.filter_by(account = session["account"] ).order_by(Sales.addriqi.desc()).paginate(page=page,per_page=10)
 
     return render_template("home/cattle_list.html",page_data=page_data)
+#查看买卖记录
+@home.route("/cattle_view/<int:id>/",methods=["GET"])
+@home_login_req
+def cattle_view(id = None):
+    sales = Sales.query.get_or_404(int(id))
+    return render_template("home/cattle_view.html", sales=sales)
+
+
 #删除记录
 @home.route("/cattle_del/<int:id>/",methods=["GET"])
 @home_login_req
@@ -202,25 +239,48 @@ def buycattle_add():
         print("触发添加肉牛")
         data = form.data
         print("接收到的表单数据为：",data)
-        buyunitprice = format(float(data['buyprice']) / (float(data['buyweight'])*2), '.2f')
+        if data['buyweight'] != '':
+            buyweight = data['buyweight']
+            buyunitprice = format(float(data['buyprice']) / (float(buyweight) * 2), '.2f')
+        else:
+            buyunitprice = data['buyprice']
+            buyweight = 0
+            print("否则buyweight=", buyweight)
+        if data['buyfreight'] != '':
+            buyfreight = data['buyfreight']
+        else:
+            buyfreight = 0
+            print("否则buyweight=", buyweight)
         print("接收添加购买记录的单价",buyunitprice)
+        if data['buycattlefild'] != None:
+            # 获取上传文件的文件名;
+            filena = form.buycattlefild.data.filename
+            # print(str(filename))
+            filename = uuid.uuid4().hex  + filena
+            # 将上传的文件保存到服务器;
+            form.buycattlefild.data.save(os.path.join( SALES_PATH, filename))
+        else:
+            filename =  'no.png'
+
         sales = Sales(
             account = session['account'],
             cattleid=data['cattleid'],
             cattlename=data['cattlename'],
             buyprice=data['buyprice'],
-            buyweight=data['buyweight'],
+            buyweight=buyweight,
             buyunitprice=buyunitprice,
             buyday=data['buyday'],
             buynum=data['buynum'],
             buycontatcs=data['buycontatcs'],
             buycity=data['buycity'],
-            buyfreight=data['buyfreight'],
+            buyfreight=buyfreight,
+            buycattlefild=filename,
+            sellcattlefild='no.png',
             remarks=data['remarks']
             )
         db.session.add(sales)
         db.session.commit()
-        flash("添加成功,请点击返回按钮去查看", "ok")
+        flash("添加购买记录成功", "ok")
         oplog =Oplog(
             account=session["account"],
             ip= request.remote_addr,
@@ -228,6 +288,7 @@ def buycattle_add():
         )
         db.session.add(oplog)
         db.session.commit()
+        return redirect(url_for('home.cattle_list',page=1))
     return render_template("home/buycattle_add.html",form=form)
 #添加出栏记录
 @home.route("/sellcattle_add",methods=["GET","POST"])
@@ -237,22 +298,40 @@ def sellcattle_add():
     if form.validate_on_submit():
         print("触发添加肉牛出栏记录")
         data = form.data
+        if data['sellweight'] != '':
+            sellweight = data['sellweight']
+            sellunitprice = format(float(data['sellprice']) / (float(data['sellweight']) * 2), '.2f')
+        else:
+            sellunitprice = data['sellprice']
+            sellweight = 0
+
+        if data['sellfreight'] != '':
+            sellfreight = data['sellfreight']
+        else:
+            sellfreight = 0
+
         print("接收到的表单数据为：", data)
-        sellunitprice = format(float(data['sellprice']) / (float(data['sellweight']) * 2), '.2f')
-        print("添加出栏记录data['cattleid'] ",data['cattleid'] )
-        result = Sales.query.filter_by( account = session['account'],cattleid = data['cattleid'] ).first()
+        if data['sellcattlefild'] != None:
+            # 获取上传文件的文件名;
+            filena = form.sellcattlefild.data.filename
+            # uuid唯一值 + 文件名 构成这个图片唯一名字
+            filename = uuid.uuid4().hex + filena
+            # 将上传的文件保存到服务器;
+            form.sellcattlefild.data.save(os.path.join( SALES_PATH, filename))
+        else:
+            filename = 'no.png'
+        result = Sales.query.filter_by(account=session['account'], cattleid=data['cattleid']).first()
         result.sellprice = data['sellprice']
-        result.sellweight = data['sellweight']
+        result.sellweight = sellweight
         result.sellunitprice = sellunitprice
         result.sellday = data['sellday']
         result.sellnum = data['sellnum']
         result.sellcontatcs = data['sellcontatcs']
         result.sellcity = data['sellcity']
-        result.sellfreight = data['sellfreight']
-        #result.sellcattlefild = data['sellcattlefild']
-        print("添加出栏记录", result)
+        result.sellfreight = sellfreight
+        result.sellcattlefild = filename
         db.session.commit()
-        flash("添加成功,请点击返回按钮去查看", "ok")
+        flash('添加出栏记录成功', "ok")
         oplog = Oplog(
             account=session["account"],
             ip=request.remote_addr,
@@ -260,6 +339,7 @@ def sellcattle_add():
         )
         db.session.add(oplog)
         db.session.commit()
+        return redirect(url_for('home.cattle_list',page=1))
     return render_template("home/sellcattle_add.html",form=form)
 
 '''=====会员管理====='''
@@ -269,8 +349,56 @@ def sellcattle_add():
 def user_view(id=None):
     #get_or_404获取指定id的数据
     user  = Users.query.get_or_404(int(id))
+    return render_template("home/user_view.html",user=user)
+#修改个人资料
 
+@home.route("/userUpdate/",methods=["GET","POST"])
+@home_login_req
+def userUpdate():
+    form = UserupFrom()
+    if form.validate_on_submit():
+        print("触发修改个人信息")
+        data = form.data
+        result = Users.query.filter_by(account=session['account']).first()
+        if data['weixin'] != '':
+            print("更新weixin")
+            result.weixin = data['weixin']
+        if data['birthday'] != '':
+            print("更新birthday")
+            result.birthday = data['birthday']
+        if data['userAddress'] != '':
+            print("更新userAddress")
+            result.userAddress = data['userAddress']
+        if data['face'] != None:
+            print("更新face")
+            # 获取上传文件的文件名;
+            filena = form.face.data.filename
+            # print(str(filename))
+            filename = uuid.uuid4().hex + filena
+            # 将上传的文件保存到服务器;
+            form.face.data.save(os.path.join(UPLOAD_PATH, filename))
+            print("图片上传成功")
+            result.face = filename
+            session["userface"] = filename
+        if data['info'] != '':
+            print("更新info")
+            result.info = data['info']
+        if data['userphone'] != '':
+            print( "获取的手机号：",data['userphone'])
+            result.phone = data['userphone']
+        db.session.commit()
+        print("提交数据库开始修改数据")
+        flash("修改成功,请点击返回去查看", "ok")
 
+        oplog = Oplog(
+            account=session["account"],
+            ip=request.remote_addr,
+            op="修改个人信息 "
+        )
+        db.session.add(oplog)
+        db.session.commit()
+
+    return render_template("home/userUpdate.html",form=form)
 
 '''=====日志管理====='''
 #操作日志列表

@@ -1,0 +1,19 @@
+
+.td_l {
+    float: left;
+    width: 80%;
+}
+.td_r {
+    float: right;
+}
+.tabl{
+    width: 40%;
+    max-width: 80%;
+    margin-bottom: 20px
+}
+.tabl > tbody > tr > td, .tabl > tbody > tr > th, .tabl > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #ddd
+}

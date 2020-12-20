@@ -1,0 +1,99 @@
+{% extends "home/home.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{url_for('static',filename='admin/bootstrap/css/bootstrap.min.css')}}">
+<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='admin/plugins/datepicker/datepicker3.css')}}">
+<div class="content-wrapper">
+        <!--内容-->
+        <section class="content-header">
+            <h1>牛大爷养殖管理系统</h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> 会员管理</a></li>
+                <li class="active">查看会员</li>
+            </ol>
+        </section>
+        <section class="content" id="showcontent">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="box box-primary">
+                        <div class="box-header">
+                            <h3 class="box-title">会员详情</h3>
+                        </div>
+                        <div class="box-body table-responsive no-padding">
+                           <form  method="post" enctype="multipart/form-data">
+                               <div>
+                                   {% for msg in get_flashed_messages() %}
+                                   <p style="color:red;font-size:14px; text-align:center ">{{msg}}</p>
+                                   {% endfor %}
+                               </div>
+                            <table class="table table-hover">
+                                <tbody>
+                                <tr>
+                                    <td class="td_bd">账号：</td>
+                                    <td>{{ session.account}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_bd">姓名：</td>
+                                    <td>{{ session.username}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_bd">微信：</td>
+                                    <td>{{form.weixin}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_bd">手机：</td>
+                                    <td>
+                                        {{form.userphone}}
+                                        {% for err in form.userphone.errors %}
+                                        <span>
+                                            <font style="color:red ">{{err}}</font>
+                                        </span>
+                                        {% endfor%}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td_bd">生日：</td>
+                                    <td>{{form.birthday}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_bd">头像：</td>
+                                    <td>
+
+                                        <img style="width: 50px" class="img-responsive img-rounded" src="{{ url_for('static',  filename='limg/faceimg/' + session.userface )}}">
+                                        {{form.face}}
+                                    </td>
+                                </tr>
+                                 <tr>
+                                    <td class="td_bd">家庭地址：</td>
+                                    <td>{{form.userAddress}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_bd">个性简介：</td>
+                                    <td>{{form.info}}</td>
+                                </tr>
+                                 <tr>
+                                    <td>{{form.csrf_token}} {{form.submit}}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                               </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--内容-->
+    </div>
+ <script src="{{url_for('static',filename='admin/plugins/jQuery/jQuery-2.2.0.min.js')}}"></script>
+    <script src="{{url_for('static',filename='admin/plugins/datepicker/bootstrap-datepicker.js')}}"></script>
+    <script src="{{url_for('static',filename='admin/plugins/datepicker/locales/bootstrap-datepicker.zh-CN.js')}}" charset="UTF-8"></script>
+
+<script>
+                    $(document).ready(function () {
+                        $('#input_release_time').datepicker({
+                            autoclose: true,
+                            format: 'yyyy-mm-dd',
+                            language: 'zh-CN',
+                        });
+                    });
+                    </script>
+{% endblock %}

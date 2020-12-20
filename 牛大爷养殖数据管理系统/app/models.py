@@ -108,7 +108,7 @@ class Sales(db.Model):
     __table_args__ = {'extend_existing': True}
     id = db.Column(db.Integer, primary_key=True)  # 序号 primary_key 键
     account = db.Column(db.String(255))  # 所属用户
-    cattleid = db.Column(db.Integer)  #肉牛唯一识别ID
+    cattleid = db.Column(db.Integer)  #肉牛唯一识别ID可以重复根据所属用户不重复
     cattlename = db.Column(db.String(255))#昵称
     buyprice = db.Column(db.Integer)  # 购买时总价
     sellprice = db.Column(db.Integer)  # 出栏时总价
@@ -141,8 +141,11 @@ class Notice(db.Model):
     __tablename__ = "notice"
     __table_args__ = {'extend_existing': True}
     id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(255))  # 公告标题
     table = db.Column(db.String(255))  #公告内容
+    url = db.Column(db.String(255))  #点击公告跳转的连接
     state = db.Column(db.Integer)   #公告有效状态
+    priority = db.Column(db.Integer)   #公告有优先级
     addriqi = db.Column(db.DateTime,  default=datetime.now)  # 添加时间
     def __repr__(self):
         return  "<User %r>" % self.id

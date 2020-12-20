@@ -8,16 +8,20 @@ session:就是session啊
 """
 from flask import render_template, redirect, url_for, flash, session,request,Response
 #从表单脚本中导入 LoginForm 用于表单数据的验证
-from app.admin.forme import LoginForm,PwdFrom,AdminaddFrom
+from app.admin.forme import LoginForm,PwdFrom,AdminaddFrom,NoticeaddForm,NoticeupForm
 #导入数据库模型 导入user 用于读写user表数据
-from app.models import Admin,Adminlog,Sales,Oplog,Users,Userlog
+from app.models import Admin,Adminlog,Sales,Oplog,Users,Userlog,Notice
 from werkzeug.security import generate_password_hash
 import uuid
 from app import db
 import  datetime
 from functools import wraps
 import os
-UPLOAD_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)),r'static\limg\adminimg')
+import random
+#管理员头像地址
+ADMIN_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)),r'static\limg\userimg')
+#生产Linux地址
+ADMIN_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)),r'static/limg/faceimg')
 '''=====公共部分 登录注册退出 ====='''
 #上下文应用处理器 封装全局变量
 @admin.context_processor
@@ -35,7 +39,7 @@ def admin_login_req(f):
     def decorated_function(*args,**kwargs):
         #判断 sessi中是否存在lcs令牌
         print("开始判断是否在seesion：",session)
-        if "username" not in session:
+        if "lcsadmin" not in session:
             #如果不存在则返回登录界面
             print("不在seesion中")
             return redirect(url_for("admin.login",next=request.url))
@@ -69,7 +73,8 @@ def login():
         session["userface"] = admins.face  #前端获取头像名称
         session["account"] = admins.account
         session["username"] = admins.name
-        session["lcs"] = "1993"  #此项未了防止有人破解seesion 特意增加个盐
+        session["lcsadmin"] = "1993"  #此项未了防止有人破解seesion 特意增加个盐
+        print("登录成功IP",request.remote_addr)
         #写入会员登录日志
         adminlog =Adminlog(
             account=admins.account,
@@ -114,7 +119,7 @@ def logout():
     session.pop("userface", None)
     session.pop("account", None)
     session.pop("username", None)
-    session.pop("lcs", None)
+    session.pop("lcsadmin", None)
     return redirect(url_for("admin.login"))
 
 '''=====首页====='''
@@ -134,7 +139,13 @@ def cattle_list(page=None ):
     #按时间倒序查询 使用自带分页助手paginate返回页码和按多少页分页
     page_data = Sales.query.order_by(Sales.addriqi.desc()).paginate(page=page,per_page=20)
     return render_template("admin/cattle_list.html",page_data=page_data)
-
+#查看买卖记录
+@admin.route("/cattle_view/<int:id>/",methods=["GET"])
+@admin_login_req
+def cattle_view(id=None):
+    #get_or_404获取指定id的数据
+    sales  = Sales.query.get_or_404(int(id))
+    return render_template("admin/cattle_view.html",sales=sales)
 '''=====会员管理====='''
 #会员列表
 @admin.route("/user_list/<int:page>/",methods=["GET"])
@@ -197,16 +208,89 @@ def userloginlog_list(page=None):
     return render_template("admin/userloginlog_list.html",page_data=page_data)
 
 '''=====权限管理=====未实现'''
-#添加权限
-@admin.route("/auth_add")
+#公告列表
+@admin.route("/notice_list/<int:page>/",methods=["GET"])
 @admin_login_req
-def auth_add():
-    return render_template("home/auth_add.html")
-#权限列表
-@admin.route("/auth_list")
+def notice_list(page=None):
+    if page is None:
+        page = 1
+    #获取公告 状态为1启用状态的公告数据
+    notice = Notice.query.filter_by().order_by(Notice.priority).paginate(page=page,per_page=10)
+    return render_template("admin/notice_list.html",notice=notice)
+#添加公告
+@admin.route("/notice_add",methods=["GET","POST"])
 @admin_login_req
-def auth_list():
-    return render_template("home/auth_list.html")
+def notice_add():
+    form = NoticeaddForm()
+    if form.validate_on_submit():
+        print("添加公告")
+        data = form.data
+        notice = Notice(
+            title=data['title'],
+            table = data['table'],
+            url = data['url'],
+            priority = data['priority'],
+            state = data['state']
+        )
+        db.session.add(notice)
+        print("保存数据")
+        db.session.commit()
+        flash("公告添加成功，请返回查看", "ok")
+
+
+
+
+
+    return render_template("admin/notice_add.html",form=form)
+
+#编辑公告
+@admin.route("/notice_up/<int:id>/",methods=["GET","POST"])
+@admin_login_req
+def notice_up(id):
+    form = NoticeupForm()
+    if form.validate_on_submit():
+        print("触发修改公告")
+        data =form.data
+        result = Notice.query.filter_by(id = id).first()
+        if data['title'] !=  None:
+            result.title = data['title']
+        if data['url'] != '':
+            result.title = data['url']
+        result.priority = data['priority']
+        result.state = data['state']
+        result.table = data['table']
+
+        db.session.commit()
+        print("提交数据库开始修改数据")
+        flash("修改成功,请点击返回去查看", "ok")
+
+        adminlog = Adminlog(
+            account=session["account"],
+            ip=request.remote_addr,
+            op="修改公告: 公告内容：%s " %(data['table'])
+        )
+        db.session.add(adminlog)
+        db.session.commit()
+    return render_template("admin/notice_up.html",form=form)
+#删除公告
+@admin.route("/notice_del/<int:id>/",methods=["GET","POST"])
+@admin_login_req
+def notice_del(id):
+    notice = Notice.query.get_or_404(int(id))
+    db.session.delete(notice)
+    db.session.commit()
+    flash("公告删除成功！", "ok")
+    adminlog = Adminlog(
+        account=session["account"],
+        ip=request.remote_addr,
+        op="删除公告 "
+    )
+    db.session.add(adminlog)
+    db.session.commit()
+    return redirect(url_for('admin.notice_list', page=1))
+
+
+
 
 '''=====角色管理====='''
 #添加角色
@@ -229,15 +313,15 @@ def admin_add():
     if form.validate_on_submit():
         print("添加管理员")
         data = form.data
-        # 获取上传文件的文件名;
-        print("开始获取头衔名")
-        filena = form.face.data.filename
-        # print(str(filename))
-        filename = data['account'] + filena
-        # 将上传的文件保存到服务器;
-        form.face.data.save(os.path.join(UPLOAD_PATH, filename))
-        print("上传成功")
-        flash("上传成功", 'ok')
+        if data['face'] != None:
+            # 获取上传文件的文件名;
+            filena = form.face.data.filename
+            # print(str(filename))
+            filename = uuid.uuid4().hex + filena
+            # 将上传的文件保存到服务器;
+            form.face.data.save(os.path.join(ADMIN_PATH, filename))
+        else:
+            filename = str(random.randint(0, 5)) + '.png'
         admin = Admin(
             account=data['account'],
             name=data['userName'],
@@ -253,6 +337,13 @@ def admin_add():
         print("保存数据")
         db.session.commit()
         flash("注册成功,请点击返回按钮去登录", "ok")
+        adminlog = Adminlog(
+            account=session["account"],
+            ip=request.remote_addr,
+            op="添加管理员: %s " %(data['account'])
+        )
+        db.session.add(adminlog)
+        db.session.commit()
 
     return render_template("admin/admin_add.html",form =form)
 
@@ -269,8 +360,8 @@ def admin_list(page=None):
 @admin_login_req
 def admin_view(id=None):
     #get_or_404获取指定id的数据
-    user  = Users.query.get_or_404(int(id))
-    return render_template("admin/admin_view.html",user=user)
+    admin  = Admin.query.get_or_404(int(id))
+    return render_template("admin/admin_view.html",user=admin)
 #删除管理员
 @admin.route("/admin_del/<int:id>/",methods=["GET"])
 @admin_login_req
@@ -280,12 +371,12 @@ def admin_del(id = None):
     db.session.commit()
     flash("删除会员成功！","ok")
     print("删除",admin.name)
-    oplog = Oplog(
+    adminlog = Adminlog(
         account=session["account"],
         ip=request.remote_addr,
         op="删除会员:会员id：%s ,会员账号：%s " % (id,admin.name)
     )
-    db.session.add(oplog)
+    db.session.add(adminlog)
     db.session.commit()
     return redirect(url_for('admin.admin_list',page=1))
 

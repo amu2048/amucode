@@ -51,6 +51,7 @@
                                     <th>买/卖批次</th>
                                     <th>买/卖人</th>
                                     <th>买/卖地点</th>
+                                    <th>操作</th>
                                 </tr>
                                 {% for x in range(page_data.items|count) %}
                                 <tr>
@@ -139,6 +140,9 @@
                                         {% elif page_data.items[x].buycity != None and page_data.items[x].sellcity != None   %}
                                             {{page_data.items[x].buycity}}&nbsp; / &nbsp;{{page_data.items[x].sellcity}}
                                         {% endif%}
+                                    </td>
+                                    <td>
+                                        <a class="label label-success" href="{{url_for('admin.cattle_view',id=page_data.items[x].id)}}">查看</a>
                                     </td>
                                 </tr>
                                 {% endfor %}

@@ -48,13 +48,13 @@ class LoginForm(FlaskForm):
         "登录"
     )
     #自定义处理器 传入表单上传的数据 获取user的值
-    def validate_user(self,field):
+    def validate_account(self,field):
         #获取表单数据
-        print("进入validate_user函数")
-        user = field.data
+        print("进入validate_account函数")
+        account = field.data
         #调用用户user模型sql 查询这账号 数据
-        na = Users.query.filter_by( account = user).count()
-        print(na)
+        na = Admin.query.filter_by( account = account ).count()
+        print("数据库中",account,'的用户个数',na)
         #如果 获取的数据为0条 证明无此账号
         if na == 0:
             #wtforms.validators中导入ValidationError 自定义err提示
@@ -109,8 +109,7 @@ class AdminaddFrom(FlaskForm):
         ],
         description="管理员账号",
         render_kw={
-            "id" : "input_pwd",
-            "class":"form - control",
+            "style": "width: 40%",
             "placeholder":"账号唯一作为登录账号使用",
             "required":"required",
         }
@@ -122,6 +121,7 @@ class AdminaddFrom(FlaskForm):
         ],
         description="账号",
         render_kw={
+            "style": "width: 40%",
             "class": "form - control",
             "placeholder": "请输入真实姓名",
             "required": "required",
@@ -135,7 +135,7 @@ class AdminaddFrom(FlaskForm):
         ],
         description="密码",
         render_kw={
-            "class": "form - control",
+            "style": "width: 40%",
             "placeholder":"密码长度必须大于6位小于20位",
             "required":"required",
         }
@@ -149,17 +149,17 @@ class AdminaddFrom(FlaskForm):
         ],
         description="确认密码",
         render_kw={
-            "class": "form - control",
+            "style": "width: 40%",
             "placeholder": "两次密码须一致",
             "required": "required",
         }
     )
     weixin = StringField(
         label='微信',
-        validators=[DataRequired('请填写微信号')],
         description="微信",
         render_kw={
-            "class": "form - control",
+            "style": "width: 40%",
+            "placeholder": "请输入您的微信号",
         }
     )
     userphone = StringField(
@@ -170,46 +170,39 @@ class AdminaddFrom(FlaskForm):
         ],
         description="电话",
         render_kw={
-            "class": "form - control",
+            "style": "width: 40%",
             "placeholder": "请输入您的电话",
             "required": "required",
         }
     )
     userAddress = StringField(
         label="地址",
-        validators=[
-            DataRequired("请输入您的联系地址!")
-        ],
         description="地址",
         render_kw={
-            "class": "form - control",
+            "style": "width: 40%",
             "placeholder": "请输入您的联系地址",
-            "required": "required",
         }
     )
     face = FileField(
         label="头像",
         validators=[
             # 文件必须选择;
-            FileRequired(),
+            #FileRequired(),
             # 指定文件上传的格式;
             FileAllowed(['png', 'jpg', 'jpeg', 'gif'], "只接收png/jpg/jpeg/gif格式的头像")
         ]
     )
     info = TextAreaField(
         label="简介",
-        validators=[
-            DataRequired("说点什么吧!")
-        ],
         description="简介",
         render_kw={
-            "class":"form - control",
-            "rows" : "10",
+            "style": "width:100%",
+            "rows" : "5",
             "id": "input_info",
         }
     )
     submit = SubmitField(
-        "注册"
+        "添加"
     )
     #验证账号是否被注册
     def validate_account(self,field):
@@ -227,6 +220,109 @@ class AdminaddFrom(FlaskForm):
         if userphone == 1:
             print("手机号已存在")
             raise ValidationError("手机号已备占用！")
+
+
+#添加公告
+class NoticeaddForm(FlaskForm):
+    title = StringField(
+        label="公告标题",
+        description="公告标题",
+        render_kw={
+            "class": "form-control",
+            "placeholder": "请输入公告标题"
+        }
+    )
+    table = StringField(
+        label="公告内容",
+        validators=[
+            DataRequired("请输入公告内容!")
+        ],
+        description="公告内容",
+        render_kw={
+            "class": "form-control",
+            "placeholder": "请输入公告内容"
+        }
+    )
+    url = StringField(
+        label="跳转外链",
+        description="跳转外链",
+        render_kw={
+            "class": "form-control",
+            "placeholder": "请输入跳转外链"
+        }
+    )
+    state = SelectField(
+        label='启用状态',
+        render_kw={
+            'class': 'form-control'
+        },
+        choices=[(1, '启用'), (2, '失效')],
+        default=1,
+        coerce=int
+    )
+    priority = SelectField(
+        label='优先级',
+        render_kw={
+            'class': 'form-control'
+        },
+        choices=[(1, '一级（最前）'), (2, '二级'), (3, '三级'), (4, '四级'), (5, '五级（最后）')],
+        default=1,
+        coerce=int
+    )
+    submit = SubmitField(
+        "添加"
+    )
+#编辑公告
+class NoticeupForm(FlaskForm):
+    title = StringField(
+        label="公告标题",
+        description="公告标题",
+        render_kw={
+            "class": "form-control",
+            "placeholder": "请输入公告标题"
+        }
+    )
+    table = StringField(
+        label="公告内容",
+        validators=[
+            DataRequired("请输入公告内容!")
+        ],
+        description="公告内容",
+        render_kw={
+            "class": "form-control",
+            "placeholder": "请输入公告内容"
+        }
+    )
+    url = StringField(
+        label="跳转外链",
+        description="跳转外链",
+        render_kw={
+            "class": "form-control",
+            "placeholder": "请输入跳转外链"
+        }
+    )
+    state = SelectField(
+        label='启用状态',
+        render_kw={
+            'class': 'form-control'
+        },
+        choices=[(1, '启用'), (2, '失效')],
+        default=1,
+        coerce=int
+    )
+    priority = SelectField(
+        label='优先级',
+        render_kw={
+            'class': 'form-control'
+        },
+        choices=[(1, '一级（最前）'), (2, '二级'),(3, '三级'), (4, '四级'),(5, '五级（最后）')],
+        default=1,
+        coerce=int
+    )
+    submit = SubmitField(
+        "保存"
+    )
+
 #添加权限
 class ActhForm(FlaskForm):
     name = StringField(

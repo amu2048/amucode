@@ -21,11 +21,15 @@
                             <table class="table table-hover">
                                 <tbody>
                                 <tr>
-                                    <td class="td_bd">编号：</td>
+                                    <td class="td_bd">ID：</td>
                                     <td>{{user.id}}</td>
                                 </tr>
                                 <tr>
-                                    <td class="td_bd">昵称：</td>
+                                    <td class="td_bd">账号：</td>
+                                    <td>{{user.account}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_bd">姓名：</td>
                                     <td>{{user.name}}</td>
                                 </tr>
                                 <tr>
@@ -37,14 +41,22 @@
                                     <td>{{user.phone}}</td>
                                 </tr>
                                 <tr>
+                                    <td class="td_bd">生日：</td>
+                                    <td>{{user.birthday}}</td>
+                                </tr>
+                                <tr>
                                     <td class="td_bd">头像：</td>
                                     <td>
-                                        <img data-src="holder.js/100x100" class="img-responsive" alt="">
+                                        <img style="width: 100px" src="{{ url_for('static',  filename='limg/faceimg/' + user.face )}}">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="td_bd">注册时间：</td>
                                     <td>{{user.addriqi}}</td>
+                                </tr>
+                                 <tr>
+                                    <td class="td_bd">家庭地址：</td>
+                                    <td>{{user.address}}</td>
                                 </tr>
                                 <tr>
                                     <td class="td_bd">唯一标志符：</td>
@@ -54,6 +66,7 @@
                                     <td class="td_bd">个性简介：</td>
                                     <td>{{user.info}}</td>
                                 </tr>
+
                                 </tbody>
                             </table>
                         </div>

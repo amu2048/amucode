@@ -2,14 +2,18 @@ from flask import Flask,render_template
 # 安装Flask-SQLAlchemy包   用于处理数据库的
 from flask_sqlalchemy import SQLAlchemy
 import pymysql
+#使用ngiux部署时 需要下面这个才能获取IP地址 否则获取的只会是当前服务器地址
+from werkzeug.middleware.proxy_fix import ProxyFix
 #启动flask并开启调试模式
 app =Flask(__name__)
+#添加配置 获取请求的IP
+app.wsgi_app = ProxyFix(app.wsgi_app, num_proxies=1)
 
 # 用flask的配置参数 设置连接数据库地址
 app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://root:123456@127.0.0.1:3306/2021"
+#生产地址
+#app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://root:AMU19930316amu@39.106.14.148:3306/NDY3"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = True
-
-UPLOAD_FOLDER = r'D:\file'
 #seesion令牌
 app.config["SECRET_KEY"] = "1993"
 #开启调试模式

@@ -55,7 +55,7 @@
                                 {% for x in range(page_data.items|count) %}
                                 <tr>
                                     <td>{{10*(page_data.page -1)+x+1}}</td>
-                                    <td>{{page_data.items[x].account}}</td>
+
                                     <td>{{page_data.items[x].cattleid}}</td>
                                     <td>{{page_data.items[x].cattlename}}</td>
                                     <td>
@@ -141,7 +141,7 @@
                                         {% endif%}
                                     </td>
                                     <td>
-                                        <!--<a class="label label-success">编辑</a>-->
+                                        <a class="label label-success" href="{{url_for('home.cattle_view',id=page_data.items[x].id)}}">查看</a>
                                         &nbsp;
                                         <a class="label label-danger" href="{{url_for('home.cattle_del',id=page_data.items[x].id)}}">删除</a>
                                     </td>

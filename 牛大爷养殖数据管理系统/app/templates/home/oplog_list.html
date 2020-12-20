@@ -37,7 +37,7 @@
                                     <th>操作人</th>
                                     <th>操作内容</th>
                                     <th>操作时间</th>
-                                    <th>操作IP</th>
+
                                 </tr>
                                  {% for x in range(page_data.items|count)%}
                                 <tr>
@@ -45,7 +45,7 @@
                                     <td>{{page_data.items[x].account}}</td>
                                     <td>{{page_data.items[x].op}}</td>
                                     <td>{{page_data.items[x].addriqi}}</td>
-                                    <td>{{page_data.items[x].ip}}</td>
+
                                 </tr>
                                 {% endfor %}
                                 </tbody>

@@ -17,7 +17,7 @@
                         <div class="box-header with-border">
                             <h3 class="box-title">添加出栏记录</h3>
                         </div>
-                        <form role="form" method="post">
+                        <form method="post" enctype="multipart/form-data">
 
                             <!-- 闪现消息提醒-->
                                 <div >
@@ -28,7 +28,7 @@
                             <div class="box-body">
                             <!--购买记录-->
                             <div>
-                                <label >肉牛编号：</label>
+                                <label style="width: 6%">肉牛ID：</label>
                                 {{ form.cattleid}}
                                 {% for err in form.cattleid.errors %}
                                              <span>
@@ -37,7 +37,7 @@
                                 {% endfor %}
                             </div>
                             <div>
-                                <label>肉牛昵称：</label>
+                                <label style="width: 6%">肉牛昵称：</label>
                                 {{ form.cattlename}}
                                     {% for err in form.cattlename.errors %}
                                              <span>
@@ -46,7 +46,7 @@
                                     {% endfor %}
                             </div>
                             <div>
-                                <label>出栏时间：</label>
+                                <label style="width: 6%">出栏时间：</label>
                                 {{ form.sellday}}
                                     {% for err in form.sellday.errors %}
                                              <span>
@@ -55,37 +55,37 @@
                                     {% endfor %}
                             </div>
                             <div>
-                                <label>卖出总价：</label>
+                                <label style="width: 6%" >卖出总价：</label>
                                 {{ form.sellprice}}
                                     {% for err in form.sellprice.errors %}
                                              <span>
                                                  <font style="color:red ">{{err}}</font>
                                             </span>
                                     {% endfor %}
-                                <span style="color: black">元</span>
+                                <span style="color: black"> 元</span>
                             </div>
                             <div>
-                                <label>出栏体重：</label>
+                                <label style="width: 6%">出栏体重：</label>
                                 {{ form.sellweight}}
                                     {% for err in form.sellweight.errors %}
                                              <span>
                                                  <font style="color:red ">{{err}}</font>
                                             </span>
                                     {% endfor %}
-                                <span style="color: black">公斤Kg</span>
+                                <span style="color: black"> 公斤Kg</span>
                             </div>
                              <div>
-                                <label>出栏运费：</label>
+                                <label style="width: 6%"">出栏运费：</label>
                                 {{ form.sellfreight}}
                                     {% for err in form.sellfreight.errors %}
                                              <span>
                                                  <font style="color:red ">{{err}}</font>
                                             </span>
                                     {% endfor %}
-                                 <span style="color: black">元</span>
+                                 <span style="color: black"> 元</span>
                             </div>
                              <div>
-                                <label>卖出地点：</label>
+                                <label style="width: 6%">卖出地点：</label>
                                 {{ form.sellcity}}
                                     {% for err in form.sellcity.errors %}
                                              <span>
@@ -94,7 +94,7 @@
                                     {% endfor %}
                             </div>
                             <div class="">
-                                <label>出栏批次号：</label>
+                                <label style="width: 6%">出栏批次号：</label>
                                 {{ form.sellnum}}
                                     {% for err in form.sellnum.errors %}
                                              <span>
@@ -103,7 +103,7 @@
                                     {% endfor %}
                             </div>
                              <div>
-                                <label>卖出联系人：</label>
+                                <label style="width: 6%">卖出联系人：</label>
                                {{ form.sellcontatcs}}
                                     {% for err in form.sellcontatcs.errors %}
                                              <span>
@@ -111,10 +111,20 @@
                                             </span>
                                     {% endfor %}
                             </div>
+                                <div>
+                                <label style="width: 6%">肉牛图片：</label>
+                               {{ form.sellcattlefild}}
+                                    {% for err in form.sellcattlefild.errors %}
+                                             <span>
+                                                 <font style="color:red ">{{err}}</font>
+                                            </span>
+                                    {% endfor %}
+                            </div>
+
+                                <div><label></label></div>
                             <div>
                                 {{form.csrf_token}}
                                 {{ form.submit }}
-
                             </div>
                             </div>
                         </form>
