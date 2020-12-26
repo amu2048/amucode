@@ -31,7 +31,7 @@
                                 <tr>
                                     <td style="width: 8%" class="td_bd">肉牛ID：</td>
                                     <td>
-                                        {{ form.cattleid}}
+                                        {{ form.cattleid}}<a style="color: red"> *(必填) </a>
                                         {% for err in form.cattleid.errors %}
                                         <span>
                                             <font style="color:red ">{{err}}</font>
@@ -52,17 +52,13 @@
                                 <tr>
                                     <td class="td_bd">购买时间：</td>
                                     <td>
-                                        {{ form.buyday}}
+                                        {{ form.buyday}}<a style="color: red"> *(必填) </a>
                                         {% for err in form.buyday.errors %}
                                         <span>
                                             <font style="color:red ">{{err}}</font>
                                         </span>
                                         {% endfor %}
                                     </td>
-                                </tr>
-                                <tr>
-                                    <td class="td_bd">购买总价：</td>
-                                    <td>{{ form.buyprice}}</td>
                                 </tr>
                                  <tr>
                                     <td class="td_bd">购买总价：</td>
@@ -73,16 +69,16 @@
                                         <font style="color:red ">{{err}}</font>
                                     </span>
                                     {% endfor %}
-                                    <span style="color: black">元</span>
+                                    <span style="color: black"> 元 <a style="color: red"> *(必填) </a></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="td_bd">购买体重：</td>
-                                    <td>{{ form.buyweight}}</td>
+                                    <td>{{ form.buyweight}}<span style="color: black"> Kg</span></td>
                                 </tr>
                                  <tr>
                                     <td class="td_bd">购买运费：</td>
-                                    <td>{{ form.buyfreight}}<span style="color: black">元</span></td>
+                                    <td>{{ form.buyfreight}}<span style="color: black"> 元</span></td>
                                 </tr>
                                 <tr>
                                     <td class="td_bd">购买地点：</td>
@@ -95,6 +91,18 @@
                                  <tr>
                                     <td class="td_bd">购买联系人：</td>
                                     <td> {{ form.buycontatcs}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_bd">联系手机号：</td>
+                                    <td>
+                                        {{ form.buyphone}}
+                                        {% for err in form.buyphone.errors %}
+                                    <span>
+                                        <font style="color:red ">{{err}}</font>
+                                    </span>
+                                    {% endfor %}
+
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td class="td_bd">备注：</td>

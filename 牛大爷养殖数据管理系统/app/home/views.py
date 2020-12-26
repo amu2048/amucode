@@ -8,7 +8,7 @@ session:就是session啊
 """
 from flask import render_template, redirect, url_for, flash, session,request
 #从表单脚本中导入 LoginForm 用于表单数据的验证
-from app.home.forme import LoginForm,RegistFrom,BuycattleFrom,SellcattleFrom,PwdFrom,UserupFrom
+from app.home.forme import LoginForm,RegistFrom,BuycattleFrom,SellcattleFrom,PwdFrom,UserupFrom,CattleupFrom
 #导入数据库模型 导入user 用于读写user表数据
 from app.models import Users,Userlog,Sales,Oplog,Notice
 from werkzeug.security import generate_password_hash
@@ -19,13 +19,13 @@ import random
 from functools import wraps
 import os
 #用户头像上传的保存地址
-UPLOAD_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)),r'static\limg\faceimg')
+#UPLOAD_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)),r'static\limg\faceimg')
 #生产liunx
-#UPLOAD_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)),r'static/limg/faceimg')
+UPLOAD_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)),r'static/limg/faceimg')
 #买卖记录肉牛保存的地址
-SALES_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)),r'static\limg\cattleimg')
+#SALES_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)),r'static\limg\cattleimg')
 #生产地址
-#SALES_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)),r'static/limg/cattleimg')
+SALES_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)),r'static/limg/cattleimg')
 '''=====公共部分 登录注册退出 ====='''
 #上下文应用处理器 封装全局变量
 @home.context_processor
@@ -162,7 +162,6 @@ def pwd_up():
         return redirect(url_for("home.logout"))
     return render_template("home/pwd_up.html",form=form)
 
-
 # 退出
 @home.route("/logout",methods=["GET","POST"])
 @home_login_req
@@ -206,13 +205,139 @@ def cattle_list(page=None ):
     page_data = Sales.query.filter_by(account = session["account"] ).order_by(Sales.addriqi.desc()).paginate(page=page,per_page=10)
 
     return render_template("home/cattle_list.html",page_data=page_data)
+#修改买卖记录
+@home.route("/cattle_up/<int:id>/",methods=["GET","POST"])
+@home_login_req
+def cattle_up(id = None):
+    sales = Sales.query.get_or_404(int(id))
+    form = CattleupFrom(
+        cattlename=sales.cattlename,
+        buyprice = sales.buyprice,
+        sellprice=sales.sellprice,
+        buyweight=sales.buyweight,
+        sellweight=sales.sellweight,
+        buyunitprice=sales.buyunitprice,
+        sellunitprice=sales.sellunitprice,
+        buyday = sales.buyday,
+        sellday=sales.sellday,
+        buynum=sales.buynum,
+        sellnum=sales.sellnum,
+        buycity=sales.buycity,
+        sellcity=sales.sellcity,
+        buycontatcs=sales.buycontatcs,
+        sellcontatcs=sales.sellcontatcs,
+        buyphone=sales.buyphone,
+        sellphone=sales.sellphone
+    )
+    if form.validate_on_submit():
+        print("进入修改买卖记录")
+        data = form.data
+        print("buyprice ", data['buyprice'])
+        result = Sales.query.filter_by(id=id).first()
+        if data['buyprice'] != "":
+            result.buyprice = data['buyprice']
+        else:
+            result.buyprice = 0
+        if data['sellprice'] != "":
+            result.sellprice = data['sellprice']
+        else:
+            result.sellprice = 0
+        if data['cattlename'] != "":
+            result.cattlename = data['cattlename']
+        if data['buyweight'] != "":
+            result.buyweight = data['buyweight']
+        else:
+            result.buyweight = 0
+        if data['sellweight'] != "":
+            result.sellweight = data['sellweight']
+        else:
+            result.sellweight = 0
+        if data['buyunitprice'] != "":
+            result.buyunitprice = data['buyunitprice']
+        else:
+            result.buyunitprice = 0
+        if data['sellunitprice'] != "":
+            result.sellunitprice = data['sellunitprice']
+        else:
+            result.sellunitprice = 0
+        if data['buyday'] != "":
+            result.buyday = data['buyday']
+        else:
+            result.buyday = ''
+        if data['sellday'] != "":
+            result.sellday = data['sellday']
+        else:
+            result.sellday = ''
+        if data['buynum'] != "":
+            result.buynum = data['buynum']
+        else:
+            result.buynum = ''
+        if data['sellnum'] != "":
+            result.sellnum = data['sellnum']
+        else:
+            result.sellnum = ''
+        if data['buycity'] != "":
+            result.buycity = data['buycity']
+        else:
+            result.buycity = ''
+        if data['sellcity'] != "":
+            result.sellcity = data['sellcity']
+        else:
+            result.sellcity = ''
+        if data['buycontatcs'] != "":
+            result.buycontatcs = data['buycontatcs']
+        else:
+            result.buycontatcs = ''
+        if data['sellcontatcs'] != "":
+            result.sellcontatcs = data['sellcontatcs']
+        else:
+            result.sellcontatcs = ''
+        if data['buyphone'] != "":
+            result.buyphone = data['buyphone']
+        else:
+            result.buyphone = ''
+        if data['sellphone'] != "":
+            result.sellphone = data['sellphone']
+        else:
+            result.sellphone = ''
+
+        db.session.commit()
+        print("提交数据库开始修改买卖记录数据")
+        flash("修改成功,请点击返回去查看", "ok")
+        oplog = Oplog(
+            account=session["account"],
+            ip=request.remote_addr,
+            op="修改买卖记录 %s " %( id )
+        )
+        db.session.add(oplog)
+        db.session.commit()
+        return redirect(url_for('home.cattle_list',page=1))
+
+    return render_template("home/cattle_up.html", form =form )
 #查看买卖记录
 @home.route("/cattle_view/<int:id>/",methods=["GET"])
 @home_login_req
 def cattle_view(id = None):
     sales = Sales.query.get_or_404(int(id))
-    return render_template("home/cattle_view.html", sales=sales)
+    if sales.buycity != "":
+        buycity=sales.buycity
+    else:
+        buycity='XXX'
+    if sales.sellcity != "":
+        sellcity=sales.sellcity
+    else:
+        sellcity='XXX'
+    #肉牛简介分析封装字典格式返回 前端 肉牛简介显示
+    beefinfobuy="此牛于 %s 日，在 %s 购买。以 %s 元计单价 %s 元/公斤购买成功。" %(sales.buyday,buycity,sales.buyprice,sales.buyunitprice)
+    beefinfosell="此牛于 %s 日，在 %s 出售。以 %s 元计单价 %s 元/公斤出售成功。" %(sales.sellday,sellcity,sales.sellprice,sales.sellunitprice)
+    beefinfo = {}
+    if sales.sellprice == None:
+        beefinfo['buy'] = beefinfobuy
+    else:
+        beefinfo['buy'] = beefinfobuy
+        beefinfo['sell'] = beefinfosell
 
+    return render_template("home/cattle_view.html", sales=sales,beefinfo=beefinfo)
 
 #删除记录
 @home.route("/cattle_del/<int:id>/",methods=["GET"])
@@ -234,7 +359,7 @@ def cattle_del( id=None):
 @home.route("/buycattle_add",methods=["GET","POST"])
 @home_login_req
 def buycattle_add():
-    form = BuycattleFrom()
+    form = BuycattleFrom(cattleid='2001')
     if form.validate_on_submit():
         print("触发添加肉牛")
         data = form.data
@@ -244,12 +369,12 @@ def buycattle_add():
             buyunitprice = format(float(data['buyprice']) / (float(buyweight) * 2), '.2f')
         else:
             buyunitprice = data['buyprice']
-            buyweight = 0
+            buyweight = None
             print("否则buyweight=", buyweight)
         if data['buyfreight'] != '':
             buyfreight = data['buyfreight']
         else:
-            buyfreight = 0
+            buyfreight = None
             print("否则buyweight=", buyweight)
         print("接收添加购买记录的单价",buyunitprice)
         if data['buycattlefild'] != None:
@@ -272,6 +397,7 @@ def buycattle_add():
             buyday=data['buyday'],
             buynum=data['buynum'],
             buycontatcs=data['buycontatcs'],
+            buyphone=data['buyphone'],
             buycity=data['buycity'],
             buyfreight=buyfreight,
             buycattlefild=filename,
@@ -291,11 +417,13 @@ def buycattle_add():
         return redirect(url_for('home.cattle_list',page=1))
     return render_template("home/buycattle_add.html",form=form)
 #添加出栏记录
-@home.route("/sellcattle_add",methods=["GET","POST"])
+@home.route("/sellcattle_add/<int:id>/",methods=["GET","POST"])
 @home_login_req
-def sellcattle_add():
+def sellcattle_add(id=None):
     form = SellcattleFrom()
+    beef = Sales.query.get_or_404(int(id))
     if form.validate_on_submit():
+
         print("触发添加肉牛出栏记录")
         data = form.data
         if data['sellweight'] != '':
@@ -303,12 +431,11 @@ def sellcattle_add():
             sellunitprice = format(float(data['sellprice']) / (float(data['sellweight']) * 2), '.2f')
         else:
             sellunitprice = data['sellprice']
-            sellweight = 0
-
+            sellweight = None
         if data['sellfreight'] != '':
             sellfreight = data['sellfreight']
         else:
-            sellfreight = 0
+            sellfreight = None
 
         print("接收到的表单数据为：", data)
         if data['sellcattlefild'] != None:
@@ -320,13 +447,14 @@ def sellcattle_add():
             form.sellcattlefild.data.save(os.path.join( SALES_PATH, filename))
         else:
             filename = 'no.png'
-        result = Sales.query.filter_by(account=session['account'], cattleid=data['cattleid']).first()
+        result = Sales.query.filter_by(id =int(id)).first()
         result.sellprice = data['sellprice']
         result.sellweight = sellweight
         result.sellunitprice = sellunitprice
         result.sellday = data['sellday']
         result.sellnum = data['sellnum']
         result.sellcontatcs = data['sellcontatcs']
+        result.sellphone = data['sellphone']
         result.sellcity = data['sellcity']
         result.sellfreight = sellfreight
         result.sellcattlefild = filename
@@ -335,12 +463,12 @@ def sellcattle_add():
         oplog = Oplog(
             account=session["account"],
             ip=request.remote_addr,
-            op="添加出栏记录:肉牛id：%s ，肉牛昵称： %s ，出售总价：%s，出售时体重： %s " %(data['cattleid'],data['cattlename'],data['sellprice'],data['sellweight'])
+            op="添加出栏记录:肉牛数据id：%s ，出售总价：%s，出售时体重： %s " %( id,data['sellprice'],data['sellweight'])
         )
         db.session.add(oplog)
         db.session.commit()
         return redirect(url_for('home.cattle_list',page=1))
-    return render_template("home/sellcattle_add.html",form=form)
+    return render_template("home/sellcattle_add.html",form=form,beef=beef)
 
 '''=====会员管理====='''
 #查看会员详情
@@ -350,8 +478,8 @@ def user_view(id=None):
     #get_or_404获取指定id的数据
     user  = Users.query.get_or_404(int(id))
     return render_template("home/user_view.html",user=user)
-#修改个人资料
 
+#修改个人资料
 @home.route("/userUpdate/",methods=["GET","POST"])
 @home_login_req
 def userUpdate():

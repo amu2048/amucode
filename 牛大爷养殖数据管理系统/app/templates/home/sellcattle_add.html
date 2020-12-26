@@ -28,26 +28,16 @@
                             <div class="box-body">
                             <!--购买记录-->
                             <div>
-                                <label style="width: 6%">肉牛ID：</label>
-                                {{ form.cattleid}}
-                                {% for err in form.cattleid.errors %}
-                                             <span>
-                                                 <font style="color:red ">{{err}}</font>
-                                            </span>
-                                {% endfor %}
+                                <label class= "form-group" style="width: 8%">肉牛ID：</label>
+                                {{ beef.cattleid}}
                             </div>
                             <div>
-                                <label style="width: 6%">肉牛昵称：</label>
-                                {{ form.cattlename}}
-                                    {% for err in form.cattlename.errors %}
-                                             <span>
-                                                 <font style="color:red ">{{err}}</font>
-                                            </span>
-                                    {% endfor %}
+                                <label class= "form-group" style="width: 8%">肉牛昵称：</label>
+                                {{ beef.cattlename}}
                             </div>
                             <div>
-                                <label style="width: 6%">出栏时间：</label>
-                                {{ form.sellday}}
+                                <label style="width: 8%">出栏时间：</label>
+                                {{ form.sellday}} <a style="color: red"> *(必填) </a>
                                     {% for err in form.sellday.errors %}
                                              <span>
                                                  <font style="color:red ">{{err}}</font>
@@ -55,27 +45,27 @@
                                     {% endfor %}
                             </div>
                             <div>
-                                <label style="width: 6%" >卖出总价：</label>
+                                <label style="width: 8%" >卖出总价：</label>
                                 {{ form.sellprice}}
                                     {% for err in form.sellprice.errors %}
                                              <span>
                                                  <font style="color:red ">{{err}}</font>
                                             </span>
                                     {% endfor %}
-                                <span style="color: black"> 元</span>
+                                <span style="color: black"> 元 <a style="color: red"> *(必填) </a></span>
                             </div>
                             <div>
-                                <label style="width: 6%">出栏体重：</label>
+                                <label style="width: 8%">出栏体重：</label>
                                 {{ form.sellweight}}
                                     {% for err in form.sellweight.errors %}
                                              <span>
                                                  <font style="color:red ">{{err}}</font>
                                             </span>
                                     {% endfor %}
-                                <span style="color: black"> 公斤Kg</span>
+                                <span style="color: black"> Kg</span>
                             </div>
                              <div>
-                                <label style="width: 6%"">出栏运费：</label>
+                                <label style="width: 8%">出栏运费：</label>
                                 {{ form.sellfreight}}
                                     {% for err in form.sellfreight.errors %}
                                              <span>
@@ -85,7 +75,7 @@
                                  <span style="color: black"> 元</span>
                             </div>
                              <div>
-                                <label style="width: 6%">卖出地点：</label>
+                                <label style="width: 8%">卖出地点：</label>
                                 {{ form.sellcity}}
                                     {% for err in form.sellcity.errors %}
                                              <span>
@@ -94,7 +84,7 @@
                                     {% endfor %}
                             </div>
                             <div class="">
-                                <label style="width: 6%">出栏批次号：</label>
+                                <label style="width: 8%">出栏批次号：</label>
                                 {{ form.sellnum}}
                                     {% for err in form.sellnum.errors %}
                                              <span>
@@ -103,7 +93,7 @@
                                     {% endfor %}
                             </div>
                              <div>
-                                <label style="width: 6%">卖出联系人：</label>
+                                <label style="width: 8%">卖出联系人：</label>
                                {{ form.sellcontatcs}}
                                     {% for err in form.sellcontatcs.errors %}
                                              <span>
@@ -111,9 +101,19 @@
                                             </span>
                                     {% endfor %}
                             </div>
-                                <div>
-                                <label style="width: 6%">肉牛图片：</label>
-                               {{ form.sellcattlefild}}
+                                <div class = "form-group">
+                                <label style="width: 8%">联系手机号：</label>
+                               {{ form.sellphone}}
+                                    {% for err in form.sellphone.errors %}
+                                             <span>
+                                                 <font style="color:red ">{{err}}</font>
+                                            </span>
+                                    {% endfor %}
+                            </div>
+
+                                <div >
+                                <label  style="width: 8%">肉牛图片：</label>
+                                    <label class = "form-group" >{{ form.sellcattlefild}}</label>
                                     {% for err in form.sellcattlefild.errors %}
                                              <span>
                                                  <font style="color:red ">{{err}}</font>
@@ -125,6 +125,11 @@
                             <div>
                                 {{form.csrf_token}}
                                 {{ form.submit }}
+                                 <tr>
+                                       <td >
+                                           <a class="btn btn-primary" href="{{url_for('home.cattle_list',page=1)  }}" type="submit">返回</a>
+                                       </td>
+                                  </tr>
                             </div>
                             </div>
                         </form>

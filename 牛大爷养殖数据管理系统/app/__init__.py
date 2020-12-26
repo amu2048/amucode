@@ -7,7 +7,7 @@ from werkzeug.middleware.proxy_fix import ProxyFix
 #启动flask并开启调试模式
 app =Flask(__name__)
 #添加配置 获取请求的IP
-app.wsgi_app = ProxyFix(app.wsgi_app, num_proxies=1)
+#app.wsgi_app = ProxyFix(app.wsgi_app, num_proxies=1)
 
 # 用flask的配置参数 设置连接数据库地址
 app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://root:123456@127.0.0.1:3306/2021"

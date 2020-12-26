@@ -121,7 +121,9 @@ class Sales(db.Model):
     buynum = db.Column(db.String(255))  # 购买批次
     sellnum = db.Column(db.String(255))  # 出售批次
     buycontatcs = db.Column(db.String(255))  # 购买时联系人
-    sellcontacts = db.Column(db.String(255))  # 出售时联系人
+    sellcontatcs = db.Column(db.String(255))  # 出售时联系人
+    buyphone = db.Column(db.String(255))  # 购买时联系人电话
+    sellphone = db.Column(db.String(255))  # 出售时联系人电话
     buycity = db.Column(db.String(255))  # 购买时地点
     sellcity = db.Column(db.String(255))  # 出售时地点
     remarks = db.Column(db.String(255))  # 备注

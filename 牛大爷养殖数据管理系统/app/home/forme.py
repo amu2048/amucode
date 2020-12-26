@@ -193,11 +193,11 @@ class BuycattleFrom(FlaskForm):
     cattleid = StringField(
         label="肉牛编号",
         validators=[
-            DataRequired("请输入肉牛编号!")
+            DataRequired("请输入肉牛Id!")
         ],
         description="肉牛编号",
         render_kw={
-            "placeholder": "请输入肉牛编号"
+            "placeholder": "请输入肉牛Id"
         }
     )
     cattlename = StringField(
@@ -263,6 +263,13 @@ class BuycattleFrom(FlaskForm):
             "placeholder": "请输入购买时购买联系人"
         }
     )
+    buyphone = StringField(
+        label="电话",
+        description="电话",
+        render_kw={
+            "placeholder": "联系人电话",
+        }
+    )
     remarks = StringField(
         label="备注",
         render_kw={
@@ -298,30 +305,6 @@ class BuycattleFrom(FlaskForm):
 #添加出售记录
 class SellcattleFrom(FlaskForm):
     print("进入PurchaseFrom表单信息")
-    cattleid = StringField(
-        label="肉牛ID",
-        validators=[
-            DataRequired("请输入肉牛编号!")
-        ],
-        description="肉牛ID",
-        render_kw={
-
-            "class": "form-group",
-            "placeholder": "请输入肉牛编号"
-        }
-    )
-    cattlename = StringField(
-        label="肉牛昵称",
-        validators=[
-
-            DataRequired("请输入肉牛昵称!")
-        ],
-        description="肉牛昵称",
-        render_kw={
-            "class": "form-group",
-            "placeholder":"肉牛昵称"
-        }
-    )
     sellday = StringField(
         label="出栏时间",
         validators=[
@@ -350,7 +333,7 @@ class SellcattleFrom(FlaskForm):
         description="出栏时体重",
         render_kw={
             "class": "form-group",
-            "placeholder": "请输入出栏时的体重"
+            "placeholder": "请输入购出栏时的体重"
         }
     )
     sellfreight = StringField(
@@ -385,7 +368,13 @@ class SellcattleFrom(FlaskForm):
             "placeholder": "请输入卖出时联系人"
         }
     )
-
+    sellphone = StringField(
+        label="电话",
+        description="电话",
+        render_kw={
+            "placeholder": "联系人电话",
+        }
+    )
     sellcattlefild = FileField(
             label="肉牛图片",
             validators=[
@@ -409,6 +398,140 @@ class SellcattleFrom(FlaskForm):
         #如果 获取的数据为0条 证明无此账号
         if na == 0:
             raise ValidationError("没有该牛购买信息，请先添加购买信息再回来试试！")
+
+#修改买卖记录
+class CattleupFrom(FlaskForm):
+    cattlename = StringField(
+        label="肉牛昵称",
+        description="肉牛昵称",
+        render_kw={
+            "style": "width:100%",
+        }
+    )
+    buyprice = StringField(
+        label="购买总价",
+        description="购买总价",
+        render_kw={
+             "style": "width:45%",
+        }
+    )
+    sellprice = StringField(
+        label="卖出总价",
+        description="卖出总价",
+        render_kw={
+            "style": "width:45%",
+        }
+    )
+    buyweight = StringField(
+        label="购买体重",
+        description="购买时体重",
+        render_kw={
+             "style": "width:40%",
+        }
+    )
+    sellweight = StringField(
+        label="出栏体重",
+        description="出栏时体重",
+        render_kw={
+             "style": "width:40%",
+        }
+    )
+    buyunitprice = StringField(
+        label="购买单价",
+        description="购买单价",
+        render_kw={
+             "style": "width:40%",
+        }
+    )
+    sellunitprice = StringField(
+        label="出栏单价",
+        description="出栏单价",
+        render_kw={
+             "style": "width:40%",
+        }
+    )
+    buyday = StringField(
+        label="购买时间",
+        description="购买时间",
+        render_kw={
+            "id": "input_release_time",
+            "style": "width:45%",
+        }
+    )
+    sellday = StringField(
+        label="出栏时间",
+        description="出栏时间",
+        render_kw={
+            "id": "input_release_time1",
+            "style": "width:45%",
+        }
+    )
+    buynum = StringField(
+        label="购买批次号",
+        description="购买批次号",
+        render_kw={
+            "style": "width:45%",
+        }
+    )
+    sellnum = StringField(
+        label="出栏批次号",
+        description="出栏批次号",
+        render_kw={
+            "style": "width:45%",
+        }
+    )
+    buycity = StringField(
+        label="购买地点",
+        description="购买时地点",
+        render_kw={
+            "style": "width:45%",
+        }
+    )
+    sellcity = StringField(
+        label="出售地点",
+        description="出售时地点",
+        render_kw={
+            "style": "width:45%",
+        }
+    )
+    buycontatcs = StringField(
+        label="购买联系人",
+        description="购买时联系人",
+        render_kw={
+            "style": "width:45%",
+        }
+    )
+    sellcontatcs = StringField(
+        label="卖出联系人",
+        description="卖出联系人",
+        render_kw={
+            "style": "width:45%",
+        }
+    )
+    buyphone = StringField(
+        label="电话",
+        description="电话",
+        render_kw={
+            "style": "width:45%",
+        }
+    )
+    sellphone = StringField(
+        label="电话",
+        description="电话",
+        render_kw={
+            "style": "width:45%",
+        }
+    )
+    submit = SubmitField(
+        "保存",
+        render_kw={
+            "class": "btn btn-primary"
+        }
+    )
+
+
+
+
 
 #修改密码表单
 class PwdFrom(FlaskForm):

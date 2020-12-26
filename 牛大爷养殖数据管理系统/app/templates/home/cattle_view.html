@@ -22,7 +22,7 @@
                                 <tbody>
                                 <tr>
                                     <td class="td_bd">肉牛ID：</td>
-                                    <td>{{sales.id}}</td>
+                                    <td>{{sales.cattleid}}</td>
                                 </tr>
                                 <tr>
                                     <td class="td_bd">肉牛昵称：</td>
@@ -42,10 +42,18 @@
                                 </tr>
                                 <tr>
                                     <td class="td_bd">肉牛简介：</td>
-                                    <td><li>此牛于{{sales.buyday}}，在 [{{sales.buycity}}] 购买。以{{sales.buyprice}}元，合计单价{{sales.buyunitprice}}元购买成功。</li>
-                                    <li>此牛于{{sales.sellday}}，在 [{{sales.sellcity}}] 出售。以{{sales.sellprice}}元，合计单价{{sales.sellunitprice}}元出售成功。</li></td>
+                                    <td><ul>{{beefinfo.buy}}</ul>
+                                        <ul>{{beefinfo.sell}}</ul>
+                                    </td>
+
 
                                 </tr>
+                                   <tr>
+                                       <td >
+                                           <a class="btn btn-primary" href="{{url_for('home.cattle_list',page=1)  }}" type="submit">返回</a>
+                                       </td>
+                                  </tr>
+
                                 </tbody>
                             </table>
                         </div>
