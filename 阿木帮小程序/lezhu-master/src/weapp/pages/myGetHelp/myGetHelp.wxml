@@ -1,0 +1,70 @@
+<view class="container">
+    <view class="description" wx:for="{{getHelpArray}}" wx:for-index="idx" wx:for-item="itemName">
+        <view wx:if="{{itemName.star == 1}}" class="num1">
+            <text>我的求助{{idx+1}}</text>
+        </view>
+        <view wx:if="{{itemName.star == 2}}" class="num2">
+            <text>我的求助{{idx+1}}</text>
+        </view>
+        <view wx:if="{{itemName.star == 99}}" class="num3">
+            <text>我的求助{{idx+1}}</text>
+        </view>
+        <view wx:if="{{itemName.star == 200}}" class="num4">
+            <text>我的求助{{idx+1}}</text>
+        </view>
+        <view>
+            <text>{{itemName.srvTtitle}}</text>
+            <text class="cost fr">悬赏积分：{{itemName.srvCost}}</text>
+        </view>
+         <view class="desDetail">
+            <text>{{itemName.srvDesc}}</text>
+        </view>
+        <view class="itemStatus">
+            <text>求助状态:</text>
+            <view wx:if="{{itemName.star == 99}}" class="statusDetail">求助信息已发布，暂时没人来帮忙。
+                <view class="button-wrapper">
+                    <button size="mini" bindtap="cancelhelp" id="{{idx}}" class="buttonLeft">
+                        无人揭榜，取消求助！
+                    </button>
+                </view>
+            </view>
+            <view wx:elif="{{itemName.star == 2}}" class="statusDetail">
+                <view> 
+                    <view  class="headIconwe"> 
+                        <image class="headIcon" src="{{itemName.helplurl}}"></image>
+                    </view>
+                   揭榜人： {{itemName.helplerId}}，想要帮助您，Ta将通过电话与您取得联系。请确认要Ta帮您。</view>
+                <view>  确认后，只有当Ta完成帮助，并得到您的确认后，对方才能收到您悬赏的{{itemName.srvCost}}积分。</view>
+                <view class="button-wrapper">
+                    <button size="mini" bindtap="letHelpYes" id="{{idx}}-yes" class="buttonLeft">
+                        确认要Ta帮忙
+                    </button>
+                    <button size="mini" bindtap="letHelpNo" id="{{idx}}-no" class="buttonRight">
+                        不要Ta帮忙
+                    </button>
+                </view>
+            </view>
+            <view wx:elif="{{itemName.star == 1}}" class="statusDetail">
+                <view> 揭榜人： {{itemName.helplerId}}，正在帮助您。</view>
+                <view>  确认后，您悬赏的{{itemName.srvCost}}积分将扣除。只有当Ta完成帮助，并得到您的确认后，对方才能收到您的悬赏积分。</view>
+                <view class="button-wrapper">
+                    <button class="buttonLeft" size="mini" bindtap="confirmFinish" id="{{idx}}">
+                        Ta已经帮我，给Ta积分！
+                    </button>
+                </view>
+            </view>
+            <view wx:elif="{{itemName.star == 200}}" class="statusDetail">
+                <view  class="headIconwe"> 
+                     <image class="headIcon" src="{{itemName.helplurl}}"></image>
+                </view>
+                <view> 揭榜人： {{itemName.helplerId}}，您的求助已完成。</view>
+            </view>
+        </view>
+    </view>
+
+    <view class="hint" hidden="{{hintFlag}}">
+        您没有求助过！
+    </view>
+
+
+</view>

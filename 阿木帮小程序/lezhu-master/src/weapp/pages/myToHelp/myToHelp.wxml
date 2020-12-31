@@ -1,0 +1,50 @@
+<view class="container">
+    <view class="description" wx:for="{{toHelpArray}}" wx:for-index="idx" wx:for-item="itemName">
+        <view wx:if="{{itemName.star == 1}}" class="num1">
+            <text>我的帮助{{idx+1}}</text>
+        </view>
+        <view wx:if="{{itemName.star == 2}}" class="num2">
+            <text>我的帮助{{idx+1}}</text>
+        </view>
+        <view wx:if="{{itemName.star == 200}}" class="num3">
+            <text>我的帮助{{idx+1}}</text>
+        </view>
+        <view>
+            <text>{{itemName.srvTtitle}}</text>
+            <text class="cost fr">悬赏积分：{{itemName.srvCost}}</text>
+        </view>
+         <view class="desDetail">
+            <text>{{itemName.srvDesc}}</text>
+        </view>
+        <view class="itemHelp">
+            <text>联系方式:</text>
+            <text class="helpDetail" bindtap="takePhone" data-item="{{itemName.mobile}}" >{{itemName.mobile}}</text>
+        </view>
+        <view class="itemHelp">
+            <text>详细地址:</text>
+            <text class="helpDetail">{{itemName.posDes}}</text>
+        </view>
+        <view class="statusArea">
+            <view class="itemStatus">
+                <text>帮助状态:</text>
+                <view wx:if="{{itemName.star == 1}}" class="statusDetail">
+                    <view>对方同意要您帮忙，速去帮忙，就能获得悬赏。</view>
+                </view>
+                <view wx:elif="{{itemName.star == 2}}" class="statusDetail">
+                    <view>等待对方同意。请速与他取得联系。</view>
+                </view>
+                <view wx:elif="{{itemName.star == 200}}" class="statusDetail">
+                    <view>帮助已完成，已获得悬赏。</view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class="hint" hidden="{{hintFlag}}">
+        您没有帮助过，赶紧去帮忙！
+    </view>
+
+
+
+
+</view>

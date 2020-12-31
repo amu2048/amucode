@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/helpList/helpList",
+    "pages/helpInput/helpInput",
+    "pages/helpDetail/helpDetail",
+    "pages/myPage/myPage",
+    "pages/helpConfirmed/helpConfirmed",
+    "pages/myGetHelp/myGetHelp",
+    "pages/myToHelp/myToHelp",
+    "pages/login/login"
+  ],"permission": { "scope.userLocation": { "desc": "你的位置信息将用于小程序位置接口的效果展示" }},
+  "window": {
+    "navigationBarBackgroundColor": "#313131",
+    "navigationBarTitleText": "阿木帮",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#ffffff",
+    "selectedColor": "#e8ae26",
+    "backgroundColor": "#313131",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/helpList/helpList",
+        "iconPath": "images/tabIcon/toHelp1.png",
+        "selectedIconPath": "images/tabIcon/toHelp.png",
+        "text": "路见不平"
+      },
+      {
+        "pagePath": "pages/helpInput/helpInput",
+        "iconPath": "images/tabIcon/getHelp1.png",
+        "selectedIconPath": "images/tabIcon/getHelp.png",
+        "text": "江湖救急"
+      },
+      {
+        "pagePath": "pages/myPage/myPage",
+        "iconPath": "images/tabIcon/me1.png",
+        "selectedIconPath": "images/tabIcon/me.png",
+        "text": "阿舍"
+      }
+    ]
+  },
+  "debug": true,
+  "sitemapLocation": "sitemap.json"
+}
