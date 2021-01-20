@@ -1,0 +1,71 @@
+{% extends "admin/admin.html" %}
+{% block content %}
+
+<div class="content-wrapper">
+    <!--内容-->
+    <section class="content-header">
+        <h1>牛大爷养殖管理系统</h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> 买卖记录</a></li>
+            <li class="active">添加购买记录</li>
+        </ol>
+    </section>
+    <section class="content" id="showcontent">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-primary">
+                    <div class="box-header">
+                        <h3 class="box-title">兑换码生成</h3>
+                    </div>
+                    <div>
+                        <form id="sxtj">
+                            <div>
+                                <label> 积分值:</label>
+                                <input type="text" id='num'> <br/>
+                            </div>
+                            <div id='jifen'>
+                                <label> 兑换码:</label>
+                            </div>
+                            <br/>
+                            <input type='button' value='生成兑换码' onclick="sx()"/>
+                        </form>
+                        <script>
+                            function sx() {
+                                $.ajax({
+                                    type: "POST",
+                                    'Content-Type': "application/x-www-form-urlencoded",
+                                    url: "{{url_for('admin.Exchange')}}",
+                                    data: {num: $("#num").val()},
+                                    error: function (request) {
+                                        alert("网络连接错误");
+                                    },
+                                    success: function (data) {
+                                        $("#jifen").append(
+                                            ' <input type="text" id="data" value= ' + data + ' > ');
+
+
+                                    }
+                                });
+                                return false;
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock  %}
+{% block js %}
+<!--日期选择框-->
+<script>
+    $(document).ready(function () {
+        $('#input_release_time').datepicker({
+            autoclose: true,
+            format: 'yyyy-mm-dd',
+            language: 'zh-CN',
+        });
+    });
+</script>
+{% endblock %}
+
