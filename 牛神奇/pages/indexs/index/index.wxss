@@ -1,0 +1,43 @@
+/**index.wxss**/
+.banner-v {
+  width: 100%;
+  height: 250px;
+}
+
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.shenqi-text {
+  margin-top: 6px;
+  width: 56px;
+  height: 20px;
+  font-size: 14px;
+  font-family: Microsoft YaHei, Microsoft YaHei-Bold;
+  font-weight: Bold;
+  text-align: center;
+  color: #777777;
+  line-height: 6px;
+}
+
+
+
+.tui-table-view {
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.tui-col-3 {
+  flex: 0 0 auto;
+  width: 25%;
+  text-align: center;
+  color: #797979;
+  padding: 40rpx 0;
+  font-size: 30rpx;
+}

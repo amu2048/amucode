@@ -1,0 +1,31 @@
+<!--pages/technology/technology.wxml-->
+<view class="cards" wx:for="{{items}}" wx:for-item="item" wx:key="item">
+	<navigator class="nav" bindtap="toDetail" url="" data-url="{{item.url}}">
+		<!-- 左侧图片 -->
+		<view class="card card-url">
+			<image src="{{item.imgsrc}}" mode="widthFix"></image>
+		</view>
+		<!-- 右侧文本区域 -->
+		<view class=" card card-text">
+			<view class="card-title">{{item.title}}</view>
+			<view class="card-desc">{{item.desc}}</view>
+			<!-- 下方浏览等数据 -->
+			<view class="card-bottom">
+				<view>
+					<image src="/images/sysimg/watch.png"></image>
+					<text>{{item.watch}}</text>
+				</view>
+				<view>
+					<image src="/images/sysimg/pinglun.png"></image>
+					<text>{{item.pinglun}}</text>
+				</view>
+				<view>
+					<image src="/images/sysimg/like.png"></image>
+					<text>{{item.like}}</text>
+				</view>
+			</view>
+		</view>
+	</navigator>
+	<!-- 卡片与卡片的空白间隔 -->
+	<view class="space"></view>
+</view>

@@ -1,0 +1,3 @@
+<!--pages/Price/Price.wxml-->
+<view>吉林肉牛平均价格走势图</view>
+<ec-canvas id="businessTrend" class='mychart-businessTrend' canvas-id="mychart-businessTrend" ec="{{ line_ec }}"></ec-canvas>

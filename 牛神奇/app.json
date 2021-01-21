@@ -1,0 +1,56 @@
+{
+  "pages":[
+    "pages/indexs/index/index",
+    "pages/indexs/Weight/Weight",
+    "pages/indexs/cost/cost",
+    "pages/indexs/Price/Price",
+    "pages/indexs/technology/technology",
+    "pages/indexs/technology-1/technology-1",
+    "pages/luntan/luntan",
+    "pages/gongqiu/gongqiu",
+    "pages/myme/myme",
+    "pages/login/login",
+    "pages/logs/logs"
+  ],
+  "tabBar": {
+    "color": "#ffffff",
+    "selectedColor": "#e8ae26",
+    "backgroundColor": "#313131",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/indexs/index/index",
+        "iconPath": "images/tabIcon/niu1.png",
+        "selectedIconPath": "images/tabIcon/niu.png",
+        "text": "神器"
+      },
+      {
+        "pagePath": "pages/luntan/luntan",
+        "iconPath": "images/tabIcon/luntan1.png",
+        "selectedIconPath": "images/tabIcon/luntan.png",
+        "text": "论坛"
+      },
+      {
+        "pagePath": "pages/gongqiu/gongqiu",
+        "iconPath": "images/tabIcon/gongqiu1.png",
+        "selectedIconPath": "images/tabIcon/gongqiu.png",
+        "text": "供求"
+      },
+      {
+        "pagePath": "pages/myme/myme",
+        "iconPath": "images/tabIcon/myme1.png",
+        "selectedIconPath": "images/tabIcon/myme.png",
+        "text": "我的"
+      }
+     
+    ]
+  },
+  "window":{
+    
+    "navigationBarTitleText": "牛神奇",
+    "navigationBarBackgroundColor": "#313131",
+    "navigationBarTextStyle": "white"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

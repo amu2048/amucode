@@ -1,0 +1,39 @@
+<!--index.wxml-->
+<!--轮播图-->
+<view class="banner-v">
+
+  <swiper class="swiper" circular="true" indicator-dots="true" autoplay="true" interval="5000" duration="2000">
+    <block wx:for="{{movies}}" wx:for-index="index">
+      <swiper-item>
+        <image src="{{item}}" class="swiper" model="scaleToFill"/>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<!--功能-->
+<view>
+  <view class="section">
+    <view class="tui-table-view">
+      <view class="tui-col-3" bindtap="Weight">
+        <icon class="iconfont icon-tizhong" style='color : blue'></icon>
+        <view>体重估算</view>
+      </view>
+
+      <view class="tui-col-3" bindtap="cost">
+        <icon class="iconfont icon-icon03" style='color : blue'></icon>
+        <view>成本预算</view>
+      </view>
+
+      <view class="tui-col-3" bindtap="Price">
+        <icon class="iconfont icon-jiagezoushi" style='color : blue'></icon>
+        <view>肉牛价格</view>
+      </view>
+      <view class="tui-col-3" bindtap="technology">
+        <icon class="iconfont icon-yangzhidangan" style='color : blue'></icon>
+        <view>养殖技术</view>
+      </view>
+
+
+    </view>
+  </view>
+</view>
