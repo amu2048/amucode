@@ -1,4 +1,5 @@
 //获取应用实例
+var INTERFACES = require('../../../utils/interfaceUrls.js');
 var app = getApp();
 var cardTeams;
 Page({
@@ -58,7 +59,47 @@ Page({
         url: "../technology-1/technology-1?dataurl="+dataurl,
       })
   },
-  onLoad: function () {
+  onLoad: function () { 
+    var that = this;
    // console.log('onLoad:' + app.globalData.domain)
+   wx.request({
+    url: INTERFACES.technology, //调用INTERFACES中的文章列表接口
+    data: {"page":1},
+    method: "post",
+    header: {
+      'content-type': 'application/x-www-form-urlencoded',
+      "dataType": "json"
+    },
+    success: function (res) {
+      console.log('返回数据',res.data.items)
+      if (res.data.items) {
+        that.setData({
+          items: res.data.items
+        });
+    
+      } else {
+        wx.showModal({
+          title: '提示',
+          content: '获取数据失败!',
+          success: function (res) {
+            if (res.confirm) {
+              console.log('用户点击确定')
+            }
+          }
+        });
+      }
+    },
+    fail: function () {
+      wx.showModal({
+        title: '提示',
+        content: '网络失败!',
+        success: function (res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          }
+        }
+      });
+    }
+  });
   }
 })

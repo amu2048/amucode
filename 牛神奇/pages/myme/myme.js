@@ -1,66 +1,92 @@
-// pages/myme/myme.js
+// pages/myme/myme.js//获取应用实例
+var INTERFACES = require('../../utils/interfaceUrls.js');
+const app = getApp();
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    userInfo: '',
+    hasUserInfo: 'true'
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  onLoad: function () {
+    var that = this;
+    //如果没有openid就把我的页面hasUserInfo值假 显示微信登录按钮
+    if (app.globalData.openid != '') {
+      that.setData({
+        userInfo: app.globalData.userInfo,
+        hasUserInfo: false,
+      });
+    }
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  //用户点击微信登录按钮触发获取用户信息
+  bindGetUserInfo: function (e) {
+    if (e.detail.userInfo) {
+      //用户按了允许授权按钮
+      var that = this;
+      app.globalData.userInfo = e.detail.userInfo;
+      that.setData({
+        userInfo: e.detail.userInfo,
+        hasUserInfo: false,
+      });
+      wx.login({
+        success: res => {
+          console.log("登录微信获取code", res.code);
+          app.globalData.code = res.code;
+          var da = {};
+            da.code = res.code,
+            console.log("opid请求接口的code1", that.data.usercode);
+            da.nickName = that.data.userInfo.nickName,
+            da.avatarUrl = that.data.userInfo.avatarUrl,
+            da.gender = that.data.userInfo.gender,
+            da.country = that.data.userInfo.country,
+            da.province = that.data.userInfo.province,
+            da.citys = that.data.userInfo.city,
+            wx.request({
+              url: INTERFACES.getopenid, //调用INTERFACES中的注册登录接口
+              data: da,
+              header: {
+                'content-type': 'application/x-www-form-urlencoded',
+                "dataType": "json"
+              },
+              method: "POST",
+              success: function (res) {
+                app.globalData.openid = res.data.openid
+                //登录注册成功后,跳转进入小程序首页
+                wx.switchTab({
+                  url: '../myme/myme.js'
+                })
+              }
+            });
+          wx.getSetting({
+            success: function (res) {
+              if (res.authSetting['scope.userInfo']) {
+                console.log("已经授权");
+                wx.switchTab({
+                  url: '../myme/myme.js'
+                })
+              }
+            }
+          })
+        }
+      });
+    } else {
+      //用户按了拒绝按钮
+      wx.showModal({
+        title: '警告',
+        content: '您点击了拒绝授权，将无法进入小程序，请授权之后再进入!!!',
+        showCancel: false,
+        confirmText: '返回授权',
+        success: function (res) {
+          if (res.confirm) {
+            console.log('用户点击了“返回授权”')
+          }
+        }
+      })
+    }
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  // 事件处理函数
+  bindViewTap: function () {
+    wx.navigateTo({
+      url: '../logs/logs'
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
+  onShow: function () {}
 })

@@ -1,6 +1,9 @@
 // index.js
+var app = getApp();
 Page({
   data: {
+    userInfo:'',
+    openid:'',
     // Banner数据
     movies: [
       "http://img.zcool.cn/community/014056564bd8596ac7251c94eb5559.jpg",
@@ -28,12 +31,19 @@ Page({
     // 后边距，可用于露出后一项的一小部分，接受 px 和 rpx 值
     nextMargin: 0
   },
-
+get_globaldata:function(){
+  var that =this;
+  console.log("把全局变量数据写入初始data中")
+  that.setData({
+    userInfo:app.globalData.userInfo,
+    openid:app.globalData.openid,
+});
+},
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.get_globaldata()
   },
   //点击体重估算进入体重估算页面
   Weight:function(){
@@ -71,14 +81,14 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+   
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+   
   },
 
   /**

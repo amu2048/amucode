@@ -1,6 +1,6 @@
 var prefix = {
-    "develop":"http://127.0.0.1:2048/",
-    "test":"https://we.amuqitan.cn/",
+    "develop":"http://127.0.0.1:2048/niushenqi/",
+    "test":"https://we.amuqitan.cn/niushenqi/",
     "produce":"https://weapp.zhanghao90.cn/intl-console-web/user/"
 }
 ["test"];
@@ -8,7 +8,11 @@ var prefix = {
 module.exports = {
     //weightestimation体重估算接口
     "weightestimation":prefix + "weightestimation",
-
+    //technology体重估算接口
+    "technology":prefix + "technology",
+    //getopenid获取openid接口
+    "getopenid":prefix + "getopenid",
+    
 
     //helpList获取帮助信息列表
     "searchServiceNeeded":prefix + "searchServiceNeeded",

@@ -31,12 +31,13 @@ class User(db.Model):
     __tablename__ = "user"
     __table_args__ = {'extend_existing': True}
     id = db.Column(db.Integer, primary_key=True)  # 序号 primary_key 键
-    userid = db.Column(db.String(100)) #微信登录的名字
-    userUrl = db.Column(db.String(255)) #微信登录的头像
+    openid = db.Column(db.String(255)) #微信用户的唯一ID
+    nickName = db.Column(db.String(100)) #微信登录的名字
+    avatarUrl = db.Column(db.String(255)) #微信登录的头像
     usePoint =db.Column(db.Integer)  #剩余积分点
     gender =db.Column(db.Integer)  #性别 0女 1男
     province = db.Column(db.String(255)) #省份
-    city = db.Column(db.String(255))#城市
+    city = db.Column(db.String(255)) #城市
     country = db.Column(db.String(255))#国家
     star = db.Column(db.String(255))  #求助数据是否已完成
     addriqi = db.Column(db.DateTime, default=datetime.now)  # 添加时间
@@ -73,21 +74,28 @@ class Weight(db.Model):
     fat = db.Column(db.String(100))  # 偏胖
     def __repr__(self):
         return "<Weight %r>" % self.id
-# 牛神奇--添加养殖技术表
+# 牛神奇--养殖技术表
 class Addtechnology(db.Model):
-    print('进入积分兑换 牛神奇--添加养殖技术表')
+    print('牛神奇--养殖技术表')
     __tablename__ = "addtechnology"
     __table_args__ = {'extend_existing': True}
     id = db.Column(db.Integer, primary_key=True)  # 序号 primary_key 键
     imgsrc = db.Column(db.String(255))   #文章列表图片地址
-    count = db.Column(db.String(255))   #标题
-    name = db.Column(db.String(255))   #副标题
-    showDesc = db.Column(db.String(255))  # 转跳的url地址
+    title = db.Column(db.String(255))   #标题
+    desc = db.Column(db.String(255))   #简介
+    url = db.Column(db.String(255))  # 转跳的url地址
     star = db.Column(db.Integer)   #文章的状态
+    watch = db.Column(db.Integer)   #阅读数
+    like = db.Column(db.Integer)   #点赞数
+    pinglun = db.Column(db.Integer)   #评论数
     addriqi = db.Column(db.DateTime, default=datetime.now)  # 添加时间
-
+    def to_json(self):
+        dict = self.__dict__
+        if "_sa_instance_state" in dict:
+            del dict["_sa_instance_state"]
+        return dict
     def __repr__(self):
-        return "<Weight %r>" % self.id
+        return "<Addtechnology %r>" % self.id
 
 if __name__=="__main__":
     db.create_all()

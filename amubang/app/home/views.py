@@ -1,62 +1,8 @@
-from app.models import Helplist,User,Points,Weight
+from app.models import Helplist,User,Points
 from . import home
-from flask import flash, session, request, json
+from flask import request, json
 from app import db
 from  .cont import geodistance
-
-#体重估算
-@home.route('/weightestimation',methods=['POST'])
-def weightestimation():
-    print("触发体重估算接口" )
-    data = eval(json.dumps(request.form))  # 获取接收到请求的数据
-    xiongwei = float(data["xiongwei"])
-    index = data["index"]
-    print("触发体重估算接口，接收数据 胸围 %s,体型 %s " % (xiongwei, index))
-    weight= Weight.query.filter_by(cm=round(xiongwei)).first()  #查询出胸围对应的数据
-    if index == '0':  #正常
-        tall = weight.average
-    elif index == '1':
-        tall = weight.fat
-    else:
-        tall = weight.thin
-    res = {}
-    res['tall'] = tall
-    return res
-
-#登录注册
-@home.route('/login',methods=['POST'])
-def login():
-    data = eval(json.dumps(request.form))  # 获取接收到请求的数据
-    print('登录login接口：接收的数据data:', data)
-    usercount = User.query.filter_by(userid=data['userId']).count()
-    if usercount ==1:  #如果这个用户存在 那么不从写积分 更新数据
-            user = User.query.filter_by(userid=data['userId']).first()
-            user.userid=data['userId']
-            user.userUrl=data['userUrl']
-            user.gender=data['gender']
-            user.province=data['province']
-            user.city=data['city']
-            user.country=data['country']
-            db.session.commit()  # 提交
-            print('登录login接口：老用户直接更新用户信息:')
-
-    else: #否则 初始积分10
-        user = User(
-            userid=data['userId'],
-            userUrl=data['userUrl'],
-            gender=data['gender'],
-            province=data['province'],
-            city=data['city'],
-            country=data['country'],
-            usePoint = 10
-        )
-        db.session.add(user)
-        db.session.commit()
-        print('登录login接口：新用户添加成功:')
-
-
-    return '002'
-
 
 
 #添加求助数据
