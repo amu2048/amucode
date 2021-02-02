@@ -97,6 +97,21 @@ class Addtechnology(db.Model):
     def __repr__(self):
         return "<Addtechnology %r>" % self.id
 
+
+# 牛神奇--原材料
+class Addmaterial(db.Model):
+    print('牛神奇--添加原料表')
+    __tablename__ = "addmaterial"
+    __table_args__ = {'extend_existing': True}
+    id = db.Column(db.Integer, primary_key=True)  # 序号 primary_key 键
+    name = db.Column(db.String(255))   #原料名称  如 玉米  豆柏
+    price = db.Column(db.String(255))   #单价 公斤/元
+    dosage = db.Column(db.String(255))   #饲料配方的用量 kg
+    addriqi = db.Column(db.DateTime, default=datetime.now)  # 添加时间
+
+    def __repr__(self):
+        return "<Addmaterial %r>" % self.id
+
 if __name__=="__main__":
     db.create_all()
 
