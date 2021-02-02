@@ -9,10 +9,11 @@ Page({
    */
   onLoad: function (options) {
     
-    var dataurl = options.dataurl;
-    console.log("url是"+dataurl)
+    // var dataurl = options.dataurl;
+   var dataurl =  JSON.parse(decodeURIComponent(options.dataurl));
+    console.log("文章详情即将访问的url是"+dataurl.url)
     this.setData({
-      url: dataurl
+      url: dataurl.url
     });
   }
 })

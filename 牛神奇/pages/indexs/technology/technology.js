@@ -54,9 +54,11 @@ Page({
     ]
   },
   toDetail:function(e){
-      let dataurl = e.currentTarget.dataset.url;
+    var dataurl={}
+    dataurl.url= e.currentTarget.dataset.url;
+    console.log("dataurl:"+dataurl)
       wx.navigateTo({
-        url: "../technology-1/technology-1?dataurl="+dataurl,
+        url: "../technology-1/technology-1?dataurl="+ encodeURIComponent(JSON.stringify(dataurl)),
       })
   },
   onLoad: function () { 

@@ -1,0 +1,42 @@
+<view class='daohang'>
+  <view class='content_daohang'>
+    <navigator url="/pages/fabu1/fabus/fabus?select_val={{list1}}" hover-class="navigator-hover">
+      <view>
+        <image src='/images/sysimg/daohang_01.png'></image>
+        <view>房屋</view>
+      </view>
+    </navigator>
+    <navigator url="../fabu1/fabus/fabus?select_val=02" hover-class="navigator-hover">
+      <view>
+        <image src='/images/sysimg/daohang_02.png'></image>
+        <view>{{zhuanzu}}</view>
+      </view>
+    </navigator>
+    <navigator url="../fabu1/fabus/fabus?select_val={{quanzhi}}" hover-class="navigator-hover">
+      <view>
+        <image src='/images/sysimg/daohang_03.png'></image>
+        <view>{{quanzhi}}</view>
+      </view>
+    </navigator>
+  </view>
+  <view class='content_daohang content_daohang_02'>
+    <navigator url="../fabu1/fabus/fabus?select_val={{jianzhi}}" hover-class="navigator-hover">
+      <view>
+        <image src='/images/sysimg/daohang_04.png'></image>
+        <view>{{jianzhi}}</view>
+      </view>
+    </navigator>
+    <navigator url="../fabu1/fabus/fabus?={{ershouwupin}}" hover-class="navigator-hover">
+      <view>
+        <image src='/images/sysimg/daohang_05.png'></image>
+        <view>{{ershouwupin}}</view>
+      </view>
+    </navigator>
+    <navigator url="../fabu1/fabus/fabus?select_val={{congwu}}" hover-class="navigator-hover">
+      <view>
+        <image src='/images/sysimg/daohang_06.png'></image>
+        <view>{{congwu}}</view>
+      </view>
+    </navigator>
+  </view>
+</view>
