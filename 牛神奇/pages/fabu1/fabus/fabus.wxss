@@ -13,12 +13,17 @@ page {
   padding-left: 10rpx;
   padding-right: 10rpx;
 }
-
+.title{
+  width: 100%;
+  height:60rpx;
+  font-size: 16px;
+  background: #fff;
+}
 .textareas {
   width: 100%;
   height: 222rpx;
   /* border: 1px solid #bfbfbf; */
-  font-size: 13px;
+  font-size: 14px;
   background: #fff;
 }
 

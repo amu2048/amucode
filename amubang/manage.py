@@ -2,6 +2,7 @@
 from app import app
 if __name__ == '__main__':
     #生产地址
+
     app.run(debug=True,host='0.0.0.0',port=2048)
     # 测试地址
     #app.run(debug=True,port=2048)

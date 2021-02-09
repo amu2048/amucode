@@ -921,7 +921,7 @@
   };
 
   if (typeof define === 'function' && define.amd) {
-    define(['pace'], function() {
+    define(['app/static/admin/plugins/pace/pace'], function() {
       return Pace;
     });
   } else if (typeof exports === 'object') {

@@ -1,8 +1,250 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:pip" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:pip" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:amuwangpy" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="62b99499-20c2-4058-ac80-f2aac7257e5b" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="62b99499-20c2-4058-ac80-f2aac7257e5b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../amubang/app/niushenqi/lib.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../amubang/app/static/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../amubang/app/static/ionicons/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../amubang/app/static/ionicons/builder/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../amubang/app/static/ionicons/builder/scripts/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../amubang/app/templates/niushenqi/img.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/niushenqi/view.py" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/niushenqi/view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/documentation/build/include/components.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/documentation/build/include/components.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/documentation/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/documentation/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/pages/layout/fixed.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/pages/layout/fixed.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/pages/widgets.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/pages/widgets.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/old/ajax.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/old/ajax.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/old/api.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/old/api.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/old/appendto.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/old/appendto.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/old/datafiltering.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/old/datafiltering.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/old/dialog/dialog.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/old/dialog/dialog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/old/divreplace.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/old/divreplace.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/old/enterkey/enterkey.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/old/enterkey/enterkey.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/old/htmlwriter/outputforflash.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/old/htmlwriter/outputforflash.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/old/htmlwriter/outputhtml.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/old/htmlwriter/outputhtml.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/old/inlineall.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/old/inlineall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/old/inlinebycode.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/old/inlinebycode.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/old/inlinetextarea.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/old/inlinetextarea.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/old/jquery.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/old/jquery.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/old/magicline/magicline.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/old/magicline/magicline.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/old/readonly.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/old/readonly.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/old/replacebyclass.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/old/replacebyclass.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/old/replacebycode.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/old/replacebycode.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/old/tabindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/old/tabindex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/old/toolbar/toolbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/old/toolbar/toolbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/old/uicolor.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/old/uicolor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/old/uilanguages.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/old/uilanguages.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/old/wysiwygarea/fullpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/old/wysiwygarea/fullpage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/old/xhtmlstyle.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/old/xhtmlstyle.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/toolbarconfigurator/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/ckeditor/samples/toolbarconfigurator/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/colorpicker/bootstrap-colorpicker.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/colorpicker/bootstrap-colorpicker.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/AutoFill/examples/columns.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/AutoFill/examples/columns.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/AutoFill/examples/complete-callback.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/AutoFill/examples/complete-callback.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/AutoFill/examples/fill-both.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/AutoFill/examples/fill-both.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/AutoFill/examples/fill-horizontal.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/AutoFill/examples/fill-horizontal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/AutoFill/examples/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/AutoFill/examples/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/AutoFill/examples/scrolling.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/AutoFill/examples/scrolling.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/AutoFill/examples/simple.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/AutoFill/examples/simple.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/AutoFill/examples/step-callback.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/AutoFill/examples/step-callback.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColReorder/examples/alt_insert.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColReorder/examples/alt_insert.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColReorder/examples/col_filter.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColReorder/examples/col_filter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColReorder/examples/colvis.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColReorder/examples/colvis.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColReorder/examples/fixedcolumns.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColReorder/examples/fixedcolumns.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColReorder/examples/fixedheader.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColReorder/examples/fixedheader.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColReorder/examples/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColReorder/examples/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColReorder/examples/jqueryui.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColReorder/examples/jqueryui.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColReorder/examples/new_init.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColReorder/examples/new_init.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColReorder/examples/predefined.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColReorder/examples/predefined.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColReorder/examples/realtime.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColReorder/examples/realtime.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColReorder/examples/reset.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColReorder/examples/reset.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColReorder/examples/scrolling.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColReorder/examples/scrolling.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColReorder/examples/server_side.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColReorder/examples/server_side.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColReorder/examples/simple.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColReorder/examples/simple.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColReorder/examples/state_save.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColReorder/examples/state_save.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColVis/examples/button_order.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColVis/examples/button_order.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColVis/examples/exclude_columns.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColVis/examples/exclude_columns.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColVis/examples/group_columns.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColVis/examples/group_columns.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColVis/examples/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColVis/examples/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColVis/examples/jqueryui.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColVis/examples/jqueryui.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColVis/examples/mouseover.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColVis/examples/mouseover.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColVis/examples/new_init.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColVis/examples/new_init.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColVis/examples/restore.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColVis/examples/restore.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColVis/examples/simple.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColVis/examples/simple.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColVis/examples/text.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColVis/examples/text.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColVis/examples/title_callback.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColVis/examples/title_callback.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColVis/examples/two_tables.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColVis/examples/two_tables.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColVis/examples/two_tables_identical.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/ColVis/examples/two_tables_identical.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/FixedColumns/examples/bootstrap.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/FixedColumns/examples/bootstrap.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/FixedColumns/examples/col_filter.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/FixedColumns/examples/col_filter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/FixedColumns/examples/colvis.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/FixedColumns/examples/colvis.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/FixedColumns/examples/css_size.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/FixedColumns/examples/css_size.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/FixedColumns/examples/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/FixedColumns/examples/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/FixedColumns/examples/index_column.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/FixedColumns/examples/index_column.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/FixedColumns/examples/left_right_columns.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/FixedColumns/examples/left_right_columns.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/FixedColumns/examples/right_column.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/FixedColumns/examples/right_column.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/FixedColumns/examples/rowspan.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/FixedColumns/examples/rowspan.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/FixedColumns/examples/server-side-processing.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/FixedColumns/examples/server-side-processing.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/FixedColumns/examples/simple.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/FixedColumns/examples/simple.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/FixedColumns/examples/size_fixed.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/FixedColumns/examples/size_fixed.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/FixedColumns/examples/size_fluid.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/FixedColumns/examples/size_fluid.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/FixedColumns/examples/two_columns.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/FixedColumns/examples/two_columns.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/FixedHeader/examples/header_footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/FixedHeader/examples/header_footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/FixedHeader/examples/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/FixedHeader/examples/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/FixedHeader/examples/simple.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/FixedHeader/examples/simple.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/FixedHeader/examples/top_left_right.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/FixedHeader/examples/top_left_right.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/FixedHeader/examples/two_tables.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/FixedHeader/examples/two_tables.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/FixedHeader/examples/zIndexes.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/FixedHeader/examples/zIndexes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/KeyTable/examples/events.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/KeyTable/examples/events.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/KeyTable/examples/html.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/KeyTable/examples/html.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/KeyTable/examples/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/KeyTable/examples/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/KeyTable/examples/scrolling.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/KeyTable/examples/scrolling.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/KeyTable/examples/simple.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/KeyTable/examples/simple.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/child-rows/column-control.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/child-rows/column-control.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/child-rows/custom-renderer.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/child-rows/custom-renderer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/child-rows/disable-child-rows.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/child-rows/disable-child-rows.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/child-rows/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/child-rows/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/child-rows/right-column.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/child-rows/right-column.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/child-rows/whole-row-control.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/child-rows/whole-row-control.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/display-control/auto.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/display-control/auto.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/display-control/classes.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/display-control/classes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/display-control/complexHeader.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/display-control/complexHeader.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/display-control/fixedHeader.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/display-control/fixedHeader.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/display-control/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/display-control/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/display-control/init-classes.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/display-control/init-classes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/initialisation/ajax.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/initialisation/ajax.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/initialisation/className.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/initialisation/className.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/initialisation/default.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/initialisation/default.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/initialisation/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/initialisation/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/initialisation/new.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/initialisation/new.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/initialisation/option.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/initialisation/option.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/styling/bootstrap.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/styling/bootstrap.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/styling/compact.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/styling/compact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/styling/foundation.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/styling/foundation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/styling/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/styling/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/styling/scrolling.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Responsive/examples/styling/scrolling.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Scroller/examples/api_scrolling.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Scroller/examples/api_scrolling.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Scroller/examples/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Scroller/examples/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Scroller/examples/large_js_source.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Scroller/examples/large_js_source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Scroller/examples/server-side_processing.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Scroller/examples/server-side_processing.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Scroller/examples/simple.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Scroller/examples/simple.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Scroller/examples/state_saving.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/Scroller/examples/state_saving.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/TableTools/examples/ajax.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/TableTools/examples/ajax.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/TableTools/examples/alter_buttons.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/TableTools/examples/alter_buttons.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/TableTools/examples/bootstrap.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/TableTools/examples/bootstrap.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/TableTools/examples/button_text.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/TableTools/examples/button_text.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/TableTools/examples/collection.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/TableTools/examples/collection.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/TableTools/examples/defaults.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/TableTools/examples/defaults.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/TableTools/examples/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/TableTools/examples/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/TableTools/examples/jqueryui.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/TableTools/examples/jqueryui.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/TableTools/examples/multi_instance.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/TableTools/examples/multi_instance.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/TableTools/examples/multiple_tables.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/TableTools/examples/multiple_tables.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/TableTools/examples/new_init.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/TableTools/examples/new_init.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/TableTools/examples/pdf_message.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/TableTools/examples/pdf_message.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/TableTools/examples/plug-in.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/TableTools/examples/plug-in.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/TableTools/examples/select_column.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/TableTools/examples/select_column.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/TableTools/examples/select_multi.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/TableTools/examples/select_multi.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/TableTools/examples/select_os.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/TableTools/examples/select_os.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/TableTools/examples/select_single.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/TableTools/examples/select_single.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/TableTools/examples/simple.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/TableTools/examples/simple.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/TableTools/examples/swf_path.html" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/extensions/TableTools/examples/swf_path.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/jquery.dataTables.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/datatables/jquery.dataTables.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/daterangepicker/daterangepicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/daterangepicker/daterangepicker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/pace/pace.js" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/pace/pace.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/pace/pace.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/admin/plugins/pace/pace.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/fonts/css/font-awesome.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/fonts/css/font-awesome.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/ionicons/css/ionicons.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/ionicons/css/ionicons.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/lazyload/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/lazyload/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/ueditor/dialogs/attachment/attachment.css" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/ueditor/dialogs/attachment/attachment.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/ueditor/dialogs/image/image.css" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/ueditor/dialogs/image/image.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/ueditor/dialogs/template/template.js" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/ueditor/dialogs/template/template.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/ueditor/dialogs/video/video.css" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/ueditor/dialogs/video/video.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/ueditor/themes/default/dialogbase.css" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/ueditor/themes/default/dialogbase.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/ueditor/third-party/SyntaxHighlighter/shCore.js" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/ueditor/third-party/SyntaxHighlighter/shCore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/ueditor/third-party/webuploader/webuploader.custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/ueditor/third-party/webuploader/webuploader.custom.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/ueditor/third-party/webuploader/webuploader.flashonly.js" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/ueditor/third-party/webuploader/webuploader.flashonly.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/ueditor/third-party/webuploader/webuploader.html5only.js" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/ueditor/third-party/webuploader/webuploader.html5only.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/ueditor/third-party/webuploader/webuploader.js" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/ueditor/third-party/webuploader/webuploader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/ueditor/third-party/webuploader/webuploader.withoutimage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/ueditor/third-party/webuploader/webuploader.withoutimage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/ueditor/ueditor.all.js" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/ueditor/ueditor.all.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/app/static/ueditor/ueditor.all.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/app/static/ueditor/ueditor.all.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../amubang/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/../amubang/manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../牛神奇/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/../牛神奇/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../牛神奇/app.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../牛神奇/app.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../牛神奇/imagess/1444983318907-_DSC1826.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../牛神奇/imagess/24213.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../牛神奇/imagess/24280.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../牛神奇/imagess/bottom_tab.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../牛神奇/imagess/icon1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../牛神奇/imagess/icon8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../牛神奇/imagess/icon9.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../牛神奇/imagess/index_scroll.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../牛神奇/imagess/navigation.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../牛神奇/imagess/top_tab.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../牛神奇/imagess/v_discovery.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../牛神奇/imagess/v_index.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../牛神奇/pages/Messagelist/Messagelist.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../牛神奇/pages/Messagelist/Messagelist.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../牛神奇/pages/Messagelist/Messagelist.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../牛神奇/pages/Messagelist/Messagelist.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../牛神奇/pages/fabu1/fabu/fabu.js" beforeDir="false" afterPath="$PROJECT_DIR$/../牛神奇/pages/fabu1/fabu/fabu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../牛神奇/pages/fabu1/fabu/fabu.json" beforeDir="false" afterPath="$PROJECT_DIR$/../牛神奇/pages/fabu1/fabu/fabu.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../牛神奇/pages/fabu1/fabu/fabu.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../牛神奇/pages/fabu1/fabu/fabu.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../牛神奇/pages/fabu1/fabus/fabus.js" beforeDir="false" afterPath="$PROJECT_DIR$/../牛神奇/pages/fabu1/fabus/fabus.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../牛神奇/pages/fabu1/fabus/fabus.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../牛神奇/pages/fabu1/fabus/fabus.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../牛神奇/pages/fabu1/fabus/fabus.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../牛神奇/pages/fabu1/fabus/fabus.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../牛神奇/pages/indexs/index/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../牛神奇/pages/indexs/index/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../牛神奇/pages/indexs/index/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../牛神奇/pages/indexs/index/index.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../牛神奇/pages/indexs/index/index.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../牛神奇/pages/indexs/index/index.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../牛神奇/pages/luntan/luntan.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../牛神奇/pages/luntan/luntan.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../牛神奇/pages/luntan/luntan.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../牛神奇/pages/luntan/luntan.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../牛神奇/utils/interfaceUrls.js" beforeDir="false" afterPath="$PROJECT_DIR$/../牛神奇/utils/interfaceUrls.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,198 +256,6 @@
     <SUITE FILE_PATH="coverage/$clsregistry.coverage" NAME="clsregistry Coverage Results" MODIFIED="1607769998459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/Lib/site-packages/sqlalchemy/ext/declarative" />
     <SUITE FILE_PATH="coverage/$models.coverage" NAME="models Coverage Results" MODIFIED="1608019022152" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />
     <SUITE FILE_PATH="coverage/$test.coverage" NAME="test Coverage Results" MODIFIED="1608274237029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-  </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="-178822128">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="11" />
-          <entry key="project.open.time.0" value="2" />
-          <entry key="project.open.time.4" value="1" />
-          <entry key="project.open.time.5" value="4" />
-          <entry key="project.open.time.6" value="3" />
-          <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="11" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="css" value="48" />
-          <entry key="har" value="1" />
-          <entry key="html" value="273" />
-          <entry key="jpg" value="2" />
-          <entry key="js" value="11" />
-          <entry key="less" value="6" />
-          <entry key="map" value="1" />
-          <entry key="png" value="3" />
-          <entry key="py" value="100" />
-          <entry key="rnc" value="3" />
-          <entry key="scss" value="2" />
-          <entry key="ts" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="CSS" value="48" />
-          <entry key="HTML" value="273" />
-          <entry key="Image" value="5" />
-          <entry key="JavaScript" value="11" />
-          <entry key="Less" value="6" />
-          <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="100" />
-          <entry key="RNG Compact" value="3" />
-          <entry key="SCSS" value="2" />
-          <entry key="SourceMap" value="1" />
-          <entry key="TypeScript" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="css" value="111" />
-          <entry key="dummy" value="6" />
-          <entry key="html" value="5000" />
-          <entry key="js" value="26" />
-          <entry key="py" value="7829" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="CSS" value="111" />
-          <entry key="HTML" value="5000" />
-          <entry key="JavaScript" value="26" />
-          <entry key="PLAIN_TEXT" value="6" />
-          <entry key="Python" value="7829" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="1007247597">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="16" />
-          <entry key="project.open.time.4" value="5" />
-          <entry key="project.open.time.5" value="7" />
-          <entry key="project.open.time.6" value="2" />
-          <entry key="project.open.time.7" value="2" />
-          <entry key="project.opened" value="16" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="css" value="4" />
-          <entry key="html" value="186" />
-          <entry key="jpg" value="3" />
-          <entry key="js" value="2" />
-          <entry key="png" value="4" />
-          <entry key="py" value="103" />
-          <entry key="txt" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="CSS" value="4" />
-          <entry key="HTML" value="186" />
-          <entry key="Image" value="7" />
-          <entry key="JavaScript" value="2" />
-          <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="103" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="css" value="34" />
-          <entry key="html" value="2415" />
-          <entry key="py" value="3602" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="CSS" value="34" />
-          <entry key="HTML" value="2415" />
-          <entry key="Python" value="3602" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/home/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
-              <folding>
-                <element signature="e#35#122#1" />
-                <element signature="e#1088#1218#0" />
-                <element signature="e#1274#1651#0" />
-                <element signature="e#1717#3106#0" />
-                <element signature="e#3179#5168#0" />
-                <element signature="e#5255#5725#0" />
-                <marker date="1608559531720" expanded="true" signature="7100:11445" ph="..." />
-                <marker date="1608559531720" expanded="true" signature="16535:18062" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2781">
-              <caret line="104" column="4" selection-start-line="104" selection-start-column="4" selection-end-line="104" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/home/cattle_list.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4347">
-              <caret line="161" column="33" selection-start-line="161" selection-start-column="33" selection-end-line="161" selection-end-column="33" />
-              <folding>
-                <element signature="e#11554#11560#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/home/forme.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8856">
-              <caret line="463" column="19" selection-start-line="463" selection-start-column="19" selection-end-line="463" selection-end-column="19" />
-              <folding>
-                <element signature="e#1527#1618#0" />
-                <element signature="e#1658#4725#0" />
-                <element signature="e#7574#7622#0" />
-                <element signature="e#7670#7792#0" />
-                <element signature="e#7869#7917#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/home/cattle_up.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2538">
-              <caret line="100" column="31" selection-start-line="100" selection-start-column="31" selection-end-line="100" selection-end-column="31" />
-              <folding>
-                <element signature="n#section#0;n#div#0;n#!!top" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/home/sellcattle_add.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3807">
-              <caret line="141" selection-start-line="141" selection-end-line="141" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -238,131 +288,26 @@
       <find>100x100</find>
     </findStrings>
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/app/static/admin/bootstrap/css/bootstrap.min.css" />
-        <option value="$PROJECT_DIR$/app/static/admin/bootstrap/css/bootstrap.css" />
-        <option value="$PROJECT_DIR$/app/templates/HTML/movie_add.html" />
-        <option value="$PROJECT_DIR$/app/static/admin/dist/css/AdminLTE.min.css" />
-        <option value="$PROJECT_DIR$/app/templates/home1/userList.html" />
-        <option value="$PROJECT_DIR$/app/templates/home1/123.html" />
-        <option value="$PROJECT_DIR$/app/templates/ui/home_page.html" />
-        <option value="$PROJECT_DIR$/app/templates/home/user_view.html" />
-        <option value="$PROJECT_DIR$/app/templates/home/pwd.html" />
-        <option value="$PROJECT_DIR$/app/templates/home/pwd_up.html" />
-        <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/app/templates/admin/login.html" />
-        <option value="$PROJECT_DIR$/app/templates/admin/index.html" />
-        <option value="$PROJECT_DIR$/app/templates/admin/pwd_up.html" />
-        <option value="$PROJECT_DIR$/app/templates/home/login.html" />
-        <option value="$PROJECT_DIR$/app/templates/admin/adminloginlog_list.html" />
-        <option value="$PROJECT_DIR$/app/templates/admin/oplog_list.html" />
-        <option value="$PROJECT_DIR$/app/templates/admin/admin_list.html" />
-        <option value="$PROJECT_DIR$/app/static/js/holder.min.js" />
-        <option value="$PROJECT_DIR$/app/templates/home/userloginlog_list.html" />
-        <option value="$PROJECT_DIR$/app/templates/admin/cattle_list.html" />
-        <option value="$PROJECT_DIR$/app/templates/admin/cattle_view.html" />
-        <option value="$PROJECT_DIR$/app/templates/home/register.html" />
-        <option value="$PROJECT_DIR$/app/templates/admin/user_list.html" />
-        <option value="$PROJECT_DIR$/app/templates/admin/userloginlog_list.html" />
-        <option value="$PROJECT_DIR$/app/templates/home/oplog_list.html" />
-        <option value="$PROJECT_DIR$/app/templates/home/user_list.html" />
-        <option value="$PROJECT_DIR$/app/templates/admin/notice_add.html" />
-        <option value="$PROJECT_DIR$/app/templates/admin/notice_up.html" />
-        <option value="$PROJECT_DIR$/app/templates/admin/notice_list.html" />
-        <option value="$PROJECT_DIR$/app/templates/home/adminloginlog_list.html" />
-        <option value="$PROJECT_DIR$/manage.py" />
-        <option value="$PROJECT_DIR$/app/templates/home/index.html" />
-        <option value="$PROJECT_DIR$/app/static/lcss/css.css" />
-        <option value="$PROJECT_DIR$/app/templates/admin/admin_add.html" />
-        <option value="$PROJECT_DIR$/app/admin/forme.py" />
-        <option value="$PROJECT_DIR$/app/templates/admin/home.html" />
-        <option value="$PROJECT_DIR$/app/templates/admin/admin_view.html" />
-        <option value="$PROJECT_DIR$/app/templates/home/userUpdate.html" />
-        <option value="$PROJECT_DIR$/app/templates/admin/user_view.html" />
-        <option value="$PROJECT_DIR$/app/admin/views.py" />
-        <option value="$PROJECT_DIR$/app/__init__.py" />
-        <option value="$PROJECT_DIR$/app/templates/home/buycattle_add.html" />
-        <option value="$PROJECT_DIR$/app/templates/home/home.html" />
-        <option value="$PROJECT_DIR$/app/templates/home/sellcattle_add.html" />
-        <option value="$PROJECT_DIR$/app/templates/home/cattle_view.html" />
-        <option value="$PROJECT_DIR$/app/templates/home/cattle_list.html" />
-        <option value="$PROJECT_DIR$/app/models.py" />
-        <option value="$PROJECT_DIR$/app/templates/home/cattle_up.html" />
-        <option value="$PROJECT_DIR$/app/home/forme.py" />
-        <option value="$PROJECT_DIR$/app/home/views.py" />
-      </list>
-    </option>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="NodePackageJsonFileManager">
-    <packageJsonPaths>
-      <path value="$PROJECT_DIR$/app/static/admin/package.json" />
-      <path value="$PROJECT_DIR$/app/static/lazyload/package.json" />
-    </packageJsonPaths>
-  </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-36" />
-    <option name="width" value="1940" />
-    <option name="height" value="1047" />
-  </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="牛大爷养殖数据管理系统" type="b2602c69:ProjectViewProjectNode" />
-              <item name="牛大爷养殖数据管理系统" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="牛大爷养殖数据管理系统" type="b2602c69:ProjectViewProjectNode" />
-              <item name="牛大爷养殖数据管理系统" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="牛大爷养殖数据管理系统" type="b2602c69:ProjectViewProjectNode" />
-              <item name="牛大爷养殖数据管理系统" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="牛大爷养殖数据管理系统" type="b2602c69:ProjectViewProjectNode" />
-              <item name="牛大爷养殖数据管理系统" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="牛大爷养殖数据管理系统" type="b2602c69:ProjectViewProjectNode" />
-              <item name="牛大爷养殖数据管理系统" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="牛大爷养殖数据管理系统" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+  <component name="ProjectId" id="1nxaGrsOOhKdlb9ny39ES0YQlW8" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/venv/Scripts/python.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -382,18 +327,6 @@
       <recent name="F:\work\pythonwork\牛大爷养殖数据管理系统\app\static\limg\cattleimg" />
       <recent name="F:\work\pythonwork\牛大爷养殖数据管理系统\app\static\limg\userimg" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Python.manage">
     <configuration name="clsregistry" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -533,6 +466,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1607660977526</updated>
+      <workItem from="1612334104600" duration="864000" />
+      <workItem from="1612486915009" duration="34000" />
+      <workItem from="1612515345635" duration="419000" />
+      <workItem from="1612516005936" duration="320000" />
+      <workItem from="1612516687849" duration="41000" />
+      <workItem from="1612855554526" duration="1913000" />
     </task>
     <servers />
   </component>
@@ -545,386 +484,26 @@
       <is-autoscroll-to-source value="true" />
     </todo-panel>
   </component>
-  <component name="ToolWindowManager">
-    <frame x="-36" y="0" width="1940" height="1047" extended-state="0" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17872341" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3248848" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.112814896" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.26506025" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Docker" order="6" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="TODO" order="10" weight="0.328341" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.328341" />
-      <window_info anchor="bottom" id="Python Console" order="12" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
-    </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17712766" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3248848" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33436853" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.26506025" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Docker" order="6" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="TODO" order="10" weight="0.328341" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.328341" />
-      <window_info anchor="bottom" id="Python Console" order="12" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
-    </layout-to-restore>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/static/js/holder.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-375">
-          <caret line="119" column="21" lean-forward="true" selection-start-line="119" selection-start-column="21" selection-end-line="119" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/home/userloginlog_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="44" column="75" selection-start-line="44" selection-start-column="75" selection-end-line="44" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/admin/cattle_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="146" column="37" lean-forward="true" selection-start-line="146" selection-start-column="37" selection-end-line="146" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/admin/cattle_view.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1161">
-          <caret column="17" selection-start-column="17" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/home1/userUpdate.html" />
-    <entry file="file://$PROJECT_DIR$/app/templates/admin/userloginlog_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="38" column="49" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/static/limg/cattleimg/ndy.png" />
-    <entry file="file://$PROJECT_DIR$/app/templates/home/oplog_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="446">
-          <caret line="57" column="30" lean-forward="true" selection-start-line="53" selection-start-column="24" selection-end-line="57" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/home/auth_add.html" />
-    <entry file="file://$PROJECT_DIR$/app/templates/home/user_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="68" column="116" selection-start-line="68" selection-start-column="71" selection-end-line="68" selection-end-column="116" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/admin/notice_add.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/admin/notice_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="38" column="40" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/home/admin_add.html" />
-    <entry file="file://$PROJECT_DIR$/app/templates/home/admin_list.html" />
-    <entry file="file://$PROJECT_DIR$/app/templates/home/adminloginlog_list.html" />
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/admin/notice_up.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="34" column="49" lean-forward="true" selection-start-line="34" selection-start-column="49" selection-end-line="34" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/admin/pwd_up.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-694">
-          <caret column="17" selection-start-column="17" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/static/limg/faceimg/userimg.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/static/limg/faceimg/adminuser5-128x128.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/static/limg/faceimg/144dc96b0ae540c2b56a5c2982f64430user4-128x128.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/home/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1524">
-          <caret line="26" column="55" lean-forward="true" selection-start-line="26" selection-start-column="55" selection-end-line="26" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/static/admin/bootstrap/css/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="256" column="5" selection-start-line="256" selection-start-column="5" selection-end-line="256" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/static/lcss/css.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="11" column="23" lean-forward="true" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/admin/admin_add.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="30" column="40" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/static/base/css/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="2727" lean-forward="true" selection-start-line="2727" selection-end-line="2732" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/admin/forme.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="199" column="23" selection-start-line="199" selection-start-column="23" selection-end-line="199" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/admin/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3883">
-          <caret line="74" column="94" selection-start-line="74" selection-start-column="94" selection-end-line="74" selection-end-column="94" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/admin/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="20" column="66" lean-forward="true" selection-start-line="20" selection-start-column="66" selection-end-line="20" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/admin/admin_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1636">
-          <caret line="62" column="125" selection-start-line="62" selection-start-column="125" selection-end-line="62" selection-end-column="125" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/admin/admin_view.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="49" column="64" lean-forward="true" selection-start-line="49" selection-start-column="64" selection-end-line="49" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/static/limg/faceimg/0.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/admin/user_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1053">
-          <caret line="39" column="40" selection-start-line="33" selection-start-column="28" selection-end-line="39" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/admin/user_view.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1323">
-          <caret line="49" column="112" selection-start-line="49" selection-start-column="112" selection-end-line="49" selection-end-column="112" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/admin/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2052">
-          <caret line="76" column="26" selection-start-line="76" selection-start-column="26" selection-end-line="76" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/flask/globals.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1323">
-          <caret line="52" column="18" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="8" column="13" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/home/user_view.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="55" column="37" lean-forward="true" selection-start-line="55" selection-start-column="37" selection-end-line="55" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/home/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="49" column="22" lean-forward="true" selection-start-line="45" selection-start-column="14" selection-end-line="49" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/home/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="96" column="38" selection-start-line="96" selection-start-column="24" selection-end-line="96" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/home/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="134" column="37" lean-forward="true" selection-start-line="134" selection-start-column="37" selection-end-line="134" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/home/buycattle_add.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3078">
-          <caret line="120" column="31" selection-start-line="120" selection-start-column="31" selection-end-line="125" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/home/userUpdate.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1458">
-          <caret line="60" column="149" selection-start-line="60" selection-start-column="149" selection-end-line="60" selection-end-column="149" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/home/cattle_view.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="46" column="41" lean-forward="true" selection-start-line="46" selection-start-column="41" selection-end-line="46" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/home/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
-          <folding>
-            <element signature="e#35#122#1" />
-            <element signature="e#1088#1218#0" />
-            <element signature="e#1274#1651#0" />
-            <element signature="e#1717#3106#0" />
-            <element signature="e#3179#5168#0" />
-            <element signature="e#5255#5725#0" />
-            <marker date="1608559531720" expanded="true" signature="7100:11445" ph="..." />
-            <marker date="1608559531720" expanded="true" signature="16535:18062" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2781">
-          <caret line="104" column="4" selection-start-line="104" selection-start-column="4" selection-end-line="104" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/home/cattle_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4347">
-          <caret line="161" column="33" selection-start-line="161" selection-start-column="33" selection-end-line="161" selection-end-column="33" />
-          <folding>
-            <element signature="e#11554#11560#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/home/forme.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8856">
-          <caret line="463" column="19" selection-start-line="463" selection-start-column="19" selection-end-line="463" selection-end-column="19" />
-          <folding>
-            <element signature="e#1527#1618#0" />
-            <element signature="e#1658#4725#0" />
-            <element signature="e#7574#7622#0" />
-            <element signature="e#7670#7792#0" />
-            <element signature="e#7869#7917#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/home/cattle_up.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2538">
-          <caret line="100" column="31" selection-start-line="100" selection-start-column="31" selection-end-line="100" selection-end-column="31" />
-          <folding>
-            <element signature="n#section#0;n#div#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/home/sellcattle_add.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3807">
-          <caret line="141" selection-start-line="141" selection-end-line="141" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
+  <component name="WindowStateProjectService">
+    <state x="465" y="4" key="#manage" timestamp="1612486936427">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="465" y="4" key="#manage/0.0.1536.824@0.0.1536.824" timestamp="1612486936427" />
   </component>
   <component name="masterDetails">
     <states>

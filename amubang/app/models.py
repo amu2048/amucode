@@ -25,7 +25,6 @@ class Helplist(db.Model):
 
     def __repr__(self):
         return "<User %r>" % self.id
-
 class User(db.Model):
     print('进入会员数据表 Users表模型')
     __tablename__ = "user"
@@ -44,8 +43,6 @@ class User(db.Model):
 
     def __repr__(self):
         return "<User %r>" % self.id
-
-
 #积分兑换详情表
 class Points(db.Model):
     print('进入积分兑换 Points表模型')
@@ -96,8 +93,6 @@ class Addtechnology(db.Model):
         return dict
     def __repr__(self):
         return "<Addtechnology %r>" % self.id
-
-
 # 牛神奇--原材料
 class Addmaterial(db.Model):
     print('牛神奇--添加原料表')
@@ -111,6 +106,40 @@ class Addmaterial(db.Model):
 
     def __repr__(self):
         return "<Addmaterial %r>" % self.id
+# 牛神奇--供求消息表
+class News(db.Model):
+    print('牛神奇--供求消息表')
+    __tablename__ = "news"
+    __table_args__ = {'extend_existing':True}
+    id = db.Column(db.Integer, primary_key=True)  # 序号 primary_key 键
+    userimg = db.Column(db.String(300))   # 发布者的头像地址
+    username =  db.Column(db.String(255))  # 发布者的名字
+    openid = db.Column(db.String(255))  # 发布者的微信id
+    select_val =  db.Column(db.String(255))   # 发布的消息类型
+    title =  db.Column(db.String(255))   # 发布者的文章标题
+    neirong =  db.Column(db.String(255))   # 发布者的文章内容
+    dizhi =  db.Column(db.String(255))  # 发布者的地址
+    haoma =  db.Column(db.String(255))  # 发布者的电话
+    imgurl_01 =  db.Column(db.String(255))   # 文章附加的图片
+    imgurl_02 =  db.Column(db.String(255))   # 文章附加的图片
+    imgurl_03 =  db.Column(db.String(255))   # 文章附加的图片
+    imgurl_04 =  db.Column(db.String(255))   # 文章附加的图片
+    imgurl_05 =  db.Column(db.String(255))   # 文章附加的图片
+    imgurl_06 =  db.Column(db.String(255))   # 文章附加的图片
+    pinglun = db.Column(db.Integer)  #评论数
+    dianzan = db.Column(db.Integer)  #点赞数
+    liulanliang = db.Column(db.Integer)  #浏览量数
+    star = db.Column(db.Integer)    #有效无效 0有 1失效
+    addriqi = db.Column(db.DateTime, default=datetime.now)  # 添加时间
+    def to_json(self):
+        dict = self.__dict__
+        if "_sa_instance_state" in dict:
+            del dict["_sa_instance_state"]
+        return dict
+    def __repr__(self):
+        return "<News %r>" % self.id
+
+
 
 if __name__=="__main__":
     db.create_all()

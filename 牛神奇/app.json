@@ -2,17 +2,18 @@
   "pages":[
     "pages/indexs/index/index",
     "pages/login/login",
-    "pages/Messagelist/Messagelist",
+    "pages/luntan/Messagelist/Messagelist",
+    "pages/luntan/Messagelists/Messagelists",
     "pages/answer/answer",
     "pages/indexs/Weight/Weight",
     "pages/indexs/cost/cost",
     "pages/indexs/Price/Price",
     "pages/indexs/technology/technology",
     "pages/indexs/technology-1/technology-1",
-    "pages/luntan/luntan",
     "pages/fabu1/fabu/fabu",
     "pages/fabu1/fabus/fabus",
-    "pages/myme/myme",
+    "pages/myme/mymes/mymes",
+    "pages/myme/mytitle/mytitle",
     "pages/logs/logs"
   ],
   "tabBar": {
@@ -28,7 +29,7 @@
         "text": "神器"
       },
       {
-        "pagePath": "pages/Messagelist/Messagelist",
+        "pagePath": "pages/luntan/Messagelist/Messagelist",
         "iconPath": "images/tabIcon/luntan1.png",
         "selectedIconPath": "images/tabIcon/luntan.png",
         "text": "论坛"
@@ -40,7 +41,7 @@
         "text": "发布"
       },
       {
-        "pagePath": "pages/myme/myme",
+        "pagePath": "pages/myme/mymes/mymes",
         "iconPath": "images/tabIcon/myme1.png",
         "selectedIconPath": "images/tabIcon/myme.png",
         "text": "我的"

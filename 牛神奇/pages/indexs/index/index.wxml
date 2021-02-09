@@ -5,33 +5,68 @@
   <swiper class="swiper" circular="true" indicator-dots="true" autoplay="true" interval="5000" duration="2000">
     <block wx:for="{{movies}}" wx:for-index="index">
       <swiper-item>
-        <image src="{{item}}" class="swiper" model="scaleToFill"/>
+        <image src="{{item}}" class="swiper" model="scaleToFill" />
       </swiper-item>
     </block>
   </swiper>
 </view>
-<!--功能-->
-<view>
-  <view class="section">
-    <view class="tui-table-view">
-      <view class="tui-col-3" bindtap="Weight">
-        <icon class="iconfont icon-tizhong" style='color : blue'></icon>
-        <view>体重估算</view>
-      </view>
-
-      <view class="tui-col-3" bindtap="cost">
-        <icon class="iconfont icon-icon03" style='color : blue'></icon>
-        <view>成本预算</view>
-      </view>
-
-      <view class="tui-col-3" bindtap="Price">
-        <icon class="iconfont icon-jiagezoushi" style='color : blue'></icon>
-        <view>肉牛价格</view>
-      </view>
-      <view class="tui-col-3" bindtap="technology">
-        <icon class="iconfont icon-yangzhidangan" style='color : blue'></icon>
-        <view>养殖技术</view>
-      </view>
+<!-- 广播 -->
+<view class='content_guangbo'>
+  <image class='guangbo_img' src='/images/sysimg/guangbo_img.png'></image>
+  <swiper class="swiper_container" vertical="true" autoplay="true" circular="true" interval="3000">
+    <block wx:for="{{guangbo}}" wx:for-index="index">
+      <swiper-item>
+        <view class="swiper_item">{{item}}</view>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- <view class='guangbo_gt'>></view> -->
+</view>
+<text>{{openid}}</text>
+<!--导航块功能列表-->
+<view class='daohang'>
+    <view class='content_daohang'>
+      <navigator url="../Weight/Weight">
+        <view>
+          <icon class="iconfont icon-tizhong" style='color : blue'></icon>
+          <view>体重估算</view>
+        </view>
+      </navigator>
+      <navigator url="../cost/cost">
+        <view>
+          <icon class="iconfont icon-icon03" style='color : blue'></icon>
+          <view>成本预算</view>
+        </view>
+      </navigator>
+      <navigator url="../Price/Price">
+        <view>
+          <icon class="iconfont icon-jiagezoushi" style='color : blue'></icon>
+          <view>肉牛价格</view>
+        </view>
+      </navigator>
+    </view>
+    <view class='content_daohang content_daohang_02'>
+      <navigator url="../technology/technology">
+        <view>
+          <icon class="iconfont icon-yangzhidangan" style='color : blue'></icon>
+          <view>养殖技术</view>
+        </view>
+      </navigator>
+      <navigator url="">
+        <view>
+          <image src='/images/sysimg/daohang_05.png'></image>
+          <view>功能5{{ershouwupin}}</view>
+        </view>
+      </navigator>
+      <navigator url="">
+        <view>
+          <image src='/images/sysimg/daohang_06.png'></image>
+          <view>功能6</view>
+        </view>
+      </navigator>
     </view>
   </view>
-</view>
+
+
+
+

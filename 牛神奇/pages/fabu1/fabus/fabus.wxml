@@ -2,7 +2,8 @@
 <!--pages/fabu/fabu-1/fabu-1.wxml-->
 <view class='content_fb'>
   <form bindsubmit="formSubmit" bindreset="formReset">
-    <textarea class='textareas' name="textarea" value='{{textarea_val}}' maxlength='800' placeholder='{{shurufabuval}}请输入消息内容'></textarea>
+    <input class='title' name="title" placeholder='请输入标题'></input>
+    <textarea class='textareas' name="textarea"  maxlength='800' placeholder='请输入消息内容'></textarea>
     <view class='img_value'>
       <block wx:for="{{imageList}}" wx:for-index="idx" wx:for-item="itemName" wx:key="">
         <view class='content_up_del'>
@@ -14,15 +15,14 @@
     </view>
     <view class='dizhi' bindtap='dizhi'>
       <image src='/images/sysimg/dizhi_img.png'></image>
-      {{dizhis}}地址
+      地址
       <text>{{address}}</text>
     </view>
     <view class='dianhua'>
       <image src='/images/sysimg/dianhua_img.png'></image>
-      <input name="dianhua" value='{{dianhua_val}}' placeholder='{{shurudianhua}}请输入电话号'></input>
+      <input name="dianhua" placeholder='请输入电话号'></input>
     </view>
-    <button formType="submit" bindtap='up_img' class='fab'>
-      {{lijifabu}}发布消息
+    <button  formType="submit"  class='fab'>发布消息
     </button>
   </form>
 </view>

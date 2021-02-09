@@ -26,8 +26,8 @@ App({
             },
             method: "POST",
             success: function (res) {
-              that.globalData.openid = res.openid
-              console.log("插入小程序登录用户信息成功！");
+              that.globalData.openid = res.data.openid
+              console.log("插入小程序登录用户信息成功！获取的openid"+ res.data.openid);
               //登录注册成功后,跳转进入小程序首页
               wx.switchTab({
                 url: '/pages/indexs/index/index'

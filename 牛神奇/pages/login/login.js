@@ -69,7 +69,8 @@ Page({
           },
           method: "POST",
           success: function (res) {
-            app.globalData.openid = res.openid
+            
+            app.globalData.openid = res.data.openid;
             console.log("插入小程序登录用户信息成功！");
             //登录注册成功后,跳转进入小程序首页
             wx.switchTab({
@@ -90,7 +91,7 @@ Page({
       });
       wx.login({
         success: res => {
-          console.log("登录微信获取code", res.code);
+         
           app.globalData.code = res.code;
           that.setData({
             usercode: res.code

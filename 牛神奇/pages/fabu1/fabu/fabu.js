@@ -5,30 +5,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list1:"01"
+    userInfo:'',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
+
   onLoad: function(options) {
-    var that = this;
-    wx.request({
-      url: 'https://www.xxx.com/wx/life.json',
-      header: {
-        'content-type': 'application/json'
-      },
-      success(res) {
-        that.setData({
-          fangyuan: res.data.life[0].fangyuan,
-          zhuanzu: res.data.life[0].zhuanzu,
-          quanzhi: res.data.life[0].quanzhi,
-          jianzhi: res.data.life[0].jianzhi,
-          ershouwupin: res.data.life[0].ershouwupin,
-          congwu: res.data.life[0].congwu,
-        })
-      }
-    })
   },
 
   /**
