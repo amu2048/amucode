@@ -1,3 +1,4 @@
 <!--pages/Price/Price.wxml-->
-<view>吉林肉牛平均价格走势图</view>
-<ec-canvas id="businessTrend" class='mychart-businessTrend' canvas-id="mychart-businessTrend" ec="{{ line_ec }}"></ec-canvas>
+<view class="if_noxinxi">
+  <view class='noxinxi'>  在线超市商品展销商铺火爆招商中，请添加微信 liu10-5 申请入住</view>
+</view>

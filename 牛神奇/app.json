@@ -32,7 +32,7 @@
         "pagePath": "pages/luntan/Messagelist/Messagelist",
         "iconPath": "images/tabIcon/luntan1.png",
         "selectedIconPath": "images/tabIcon/luntan.png",
-        "text": "论坛"
+        "text": "供求"
       },
       {
         "pagePath": "pages/fabu1/fabu/fabu",

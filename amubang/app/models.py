@@ -139,6 +139,23 @@ class News(db.Model):
     def __repr__(self):
         return "<News %r>" % self.id
 
+# 牛神奇--供求消息的点赞表
+class Newszan(db.Model):
+    print('牛神奇--供求消息点赞表')
+    __tablename__ = "newszan"
+    __table_args__ = {'extend_existing':True}
+    id = db.Column(db.Integer, primary_key=True)  # 序号 primary_key 键
+    messageid =  db.Column(db.Integer)  #消息id
+    useropenid =  db.Column(db.String(255))  # 点赞人的openid
+    ifdianzan  =  db.Column(db.Integer)  #是否点赞 0 一点赞 1 未点赞
+    addriqi = db.Column(db.DateTime, default=datetime.now)  # 添加时间
+    def to_json(self):
+        dict = self.__dict__
+        if "_sa_instance_state" in dict:
+            del dict["_sa_instance_state"]
+        return dict
+    def __repr__(self):
+        return "<Newszan %r>" % self.id
 
 
 if __name__=="__main__":

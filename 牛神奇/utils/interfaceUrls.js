@@ -3,7 +3,7 @@ var prefix = {
         "test": "https://we.amuqitan.cn/niushenqi/",
         "produce": "https://weapp.zhanghao90.cn/intl-console-web/user/"
     }
-    ["develop"];
+    ["test"];
 
 module.exports = {
     //weightestimation体重估算接口
@@ -22,6 +22,10 @@ module.exports = {
     "luntansearch": prefix + "luntansearch",
     //获取供求消息接口详情
     "getmessages": prefix + "getmessages",
+     //给指定id的消息点赞
+     "ifdianzan": prefix + "ifdianzan",
+     //删除供求消息接口
+    "delmessage": prefix + "delmessage",
     //删除指定名字的图片
     "delimg": prefix + "delimg",
     //获取供求消息的点赞数接口

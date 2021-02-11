@@ -4,7 +4,7 @@ import random
 
 import requests
 
-from app.models import User, Weight, Addtechnology,News
+from app.models import User, Weight, Addtechnology,News,Newszan
 from . import niushenqi
 from flask import request, json,render_template,jsonify,send_from_directory,make_response
 from app import db
@@ -143,7 +143,7 @@ def getopenid():
 def Upimg():
     print("进入上传图片接口")
 
-    fn = time.strftime("%Y%m%d%H%M%S", time.localtime()) + '_%d' % random.randint(0, 100) + '.png'
+    fn = time.strftime("%Y%m%d%H%M%S", time.localtime()) + '_%d' % random.randint(10, 100) + '.png'
     avata = request.files.get('img')
     print("上传图片的图片ID信息",eval(json.dumps(request.form)))
     # new = compression_img(avata)
@@ -219,7 +219,7 @@ def Newsrelease():
                 imgurl_06=imgurl_06,  # 文章附加的图片
                 pinglun= 0,  # 文章初始评论数
                 dianzan=0,  # 文章初始点赞数
-                liulianliang=0,  # 文章初始浏览数
+                liulanliang=0,  # 文章初始浏览数
                 star=0  # 文章有效性
 
             )
@@ -242,8 +242,8 @@ def Getmessage():
     print('获取消息Getmessage:', data)
     # uslongitude = data['longitude']  # 用户当前经度
     # uslatitude = data['latitude']  # 用户当前纬度
-    if data['openid'] !="":
-        message = News.query.filter_by(star=0,openid=data["openid"]).order_by(News.addriqi.desc()).all()  # 按发布日期倒叙排序 有效数据
+    if data['myopenid'] !="":
+        message = News.query.filter_by(star=0,openid=data["myopenid"]).order_by(News.addriqi.desc()).all()  # 按发布日期倒叙排序 有效数据
     else:
         message = News.query.filter_by(star=0).order_by(News.addriqi.desc()).all() #按发布日期倒叙排序 有效数据
     res = []
@@ -259,15 +259,83 @@ def Getmessage():
         des["imgurl_02"] = i.imgurl_02,
         des["imgurl_03"] = i.imgurl_03,
         des["dianzan"] = i.dianzan,
+        des["liulanliang"] = i.liulanliang,
         des["dizhi"] = i.dizhi
 
         # des['taskId'] = i.taskId
         #des['srvDistance'] = geodistance(uslongitude, uslatitude, des['longitude'],
         #des['latitude'])  # 米数KM 传入经度1 纬度1 经度2 纬度2
         res.append(des)
-    res = json.dumps(res, ensure_ascii=False)
+    if len(res) <1:
+        res = json.dumps([{"select_val":""}], ensure_ascii=False)
+    else:
+        res = json.dumps(res, ensure_ascii=False)
     print('获取消息接口响应数据res:', res)
     return res
+
+# 牛神奇--删除供求消息
+@niushenqi.route('/delmessage', methods=['POST'])
+def Delmessage():
+    data = eval(json.dumps(request.form))  # 获取接收到亲求的数据
+    print('删除消息Getmessage:', data)
+    message = News.query.filter_by(id=data["delid"]).first()  # 按发布日期倒叙排序 有效数据
+    message.star = 1 #用户删除数据 数据状态置为1
+    db.session.commit()
+    if message.imgurl_01 != "undefined":
+        imgnames = message.imgurl_01
+        imgnamess = imgnames[-22:-1]
+        print("要删除的图片名字："+ imgnamess)
+        file_name = IMG_PATH + imgnamess
+        if os.path.exists(file_name):
+            os.remove(file_name)
+            print('成功删除文件:', file_name)
+    if message.imgurl_02 != "undefined":
+        imgnames = message.imgurl_02
+        imgnamess = imgnames[-22:-1]
+        print("要删除的图片名字："+ imgnamess)
+        file_name = IMG_PATH + imgnamess
+        if os.path.exists(file_name):
+            os.remove(file_name)
+            print('成功删除文件:', file_name)
+    if message.imgurl_03 != "undefined":
+        imgnames = message.imgurl_03
+        imgnamess = imgnames[-22:-1]
+        print("要删除的图片名字："+ imgnamess)
+        file_name = IMG_PATH + imgnamess
+        if os.path.exists(file_name):
+            os.remove(file_name)
+            print('成功删除文件:', file_name)
+
+    if message.imgurl_04 != "undefined":
+        imgnames = message.imgurl_04
+        imgnamess = imgnames[-22:-1]
+        print("要删除的图片名字："+ imgnamess)
+        file_name = IMG_PATH + imgnamess
+        if os.path.exists(file_name):
+            os.remove(file_name)
+            print('成功删除文件:', file_name)
+
+    if message.imgurl_05 != "undefined":
+        imgnames = message.imgurl_05
+        imgnamess = imgnames[-22:-1]
+        print("要删除的图片名字："+ imgnamess)
+        file_name = IMG_PATH + imgnamess
+        if os.path.exists(file_name):
+            os.remove(file_name)
+            print('成功删除文件:', file_name)
+
+    if message.imgurl_06 != "undefined":
+        imgnames = message.imgurl_06
+        imgnamess = imgnames[-22:-1]
+        print("要删除的图片名字："+ imgnamess)
+        file_name = IMG_PATH + imgnamess
+        if os.path.exists(file_name):
+            os.remove(file_name)
+            print('成功删除文件:', file_name)
+
+    res="0"
+    return res
+
 
 # 牛神奇--获取供求消息详情
 @niushenqi.route('/getmessages', methods=['POST'])
@@ -276,6 +344,12 @@ def Getmessages():
     print('获取消息详情Getmessages:', data)
     # uslongitude = data['longitude']  # 用户当前经度
     # uslatitude = data['latitude']  # 用户当前纬度
+    zan = Newszan.query.filter_by(messageid=data["id"], useropenid=data["openid"]).first()  # 获取这条消息和指定点赞人的数据
+    if zan !=None:
+        dianzan_off=zan.ifdianzan
+    else:
+        dianzan_off = 1
+
     message = News.query.filter_by(id = data["id"]).all() #查找指定id的供求信息详情
     res = []
     for i in message:
@@ -296,6 +370,7 @@ def Getmessages():
         des["imgurl_06"] = i.imgurl_06,
         des["liulanliang"] = i.liulanliang,
         des["dianzan"] = i.dianzan,
+        des["dianzan_off"] = dianzan_off,
         des["dizhi"] = i.dizhi
         #des['srvDistance'] = geodistance(uslongitude, uslatitude, des['longitude'],
         #des['latitude'])  # 米数KM 传入经度1 纬度1 经度2 纬度2
@@ -348,11 +423,46 @@ def Luntansearch():
     print('搜索数据响应数据res:', res)
     return res
 
+# 牛神奇--点赞和取消点赞
+@niushenqi.route('/ifdianzan', methods=['POST'])
+def Ifdianzan():
+    data = eval(json.dumps(request.form))  # 获取接收到亲求的数据
+    print('点赞接口:', data)
+    messageid = data['messageid'] #给那条消息点赞
+    ifdianzan = data["ifdianzan"]  #读取是否点赞 如果已经点赞那就开始取消点赞否则添加点赞
+    useropenid = data['useropenid']  #点赞人的opid
+    zan = Newszan.query.filter_by(messageid=messageid, useropenid=useropenid).first()  # 获取这条消息和指定点赞人的数据
+    message = News.query.filter_by(id=messageid).first()  # 按发布日期倒叙排序 有效数据
+    print("获取点赞表成功")
+    if ifdianzan == "1" :
+        print("给这个消息id消息点赞")
 
-
-
-
-
+        if zan != None:  #如果存在点赞数据 那么就更是否点赞的值
+            print("添加点赞信息")
+            zan.ifdianzan = 0 # 是否点赞 0 一点赞 1 未点赞
+            db.session.commit()
+            message.dianzan = message.dianzan + 1
+            db.session.commit()
+        else:
+            print("没有这个人的点赞信息 添加点赞信息")
+            dianzan = Newszan(
+                useropenid=useropenid,  # 发布者的头像地址
+                messageid=messageid,  # 消息id
+                ifdianzan=0  # 是否点赞 0 一点赞 1 未点赞
+            )
+            db.session.add(dianzan)
+            db.session.commit()
+            message.dianzan = message.dianzan + 1
+            db.session.commit()
+    elif ifdianzan == "0":
+        print("取消点赞")
+        zan.ifdianzan = 1
+        db.session.commit()
+        message.dianzan = message.dianzan - 1
+        db.session.commit()
+    dianzan_off = Newszan.query.filter_by(messageid=messageid, useropenid=useropenid).first()  # 获取这条消息和指定点赞人的数据
+    res = dianzan_off.ifdianzan
+    return str(res)
 
 # 牛神奇--获取供求消息的点赞数
 @niushenqi.route('/like', methods=['POST'])

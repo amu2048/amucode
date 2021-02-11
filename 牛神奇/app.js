@@ -86,6 +86,7 @@ App({
   globalData: {
     userInfo: '',
     code: '',
-    openid: ''
+    openid: '',
+    myluntan: ''
   }
 })
