@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>阿木帮后台</title>
+</head>
+<body>
+{% import "ui/page.html" as pg %}
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<br/>
+<br/>
+<!--积分生成-->
+<div>
+    <div>
+        <h1>兑换码生成</h1>
+    </div>
+    <form id="sxtj">
+        <div>
+            <label> 积分值:</label>
+            <input type="text" id='num'> <br/>
+        </div>
+        <div id='jifen'>
+            <label> 兑换码:</label>
+        </div>
+        <br/>
+        <input type='button' value='生成兑换码' onclick="sx()"/>
+    </form>
+    <script>
+        function sx() {
+            $.ajax({
+                type: "POST",
+                'Content-Type': "application/x-www-form-urlencoded",
+                url: "{{url_for('admin.Exchange')}}",
+                data: {num: $("#num").val()},
+                error: function (request) {
+                    alert("网络连接错误");
+                },
+                success: function (data) {
+                    $("#jifen").append(
+                        ' <input type="text" id="data" value= ' + data + ' > ');
+
+
+                }
+            });
+            return false;
+        }
+    </script>
+</div>
+<!--积分列表-->
+<div>
+    <div><h1>积分列表</h1></div>
+    <div>
+        <table>
+            <tbody>
+            <tr>
+                <th>id</th>
+                <th>兑换码</th>
+                <th>积分值</th>
+                <th>是否兑换</th>
+                <th>兑换人</th>
+                <th>备注</th>
+                <th>操作</th>
+            </tr>
+            {% for x in range(page_data.items|count) %}
+            <tr>
+                <td>{{10*(page_data.page -1)+x+1}}</td>
+                <td>{{page_data.items[x].account}}</td>
+
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="box-footer clearfix">
+        <ul class="pagination pagination-sm no-margin pull-right">
+            {{ pg.page(page_data,'admin.index') }}
+        </ul>
+    </div>
+</div>
+
+
+</body>
+</html>

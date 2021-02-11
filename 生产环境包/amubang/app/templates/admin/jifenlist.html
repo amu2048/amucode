@@ -1,0 +1,98 @@
+{% extends "admin/admin.html" %}
+{% import "ui/page.html" as pg %}
+{% block content %}
+<div class="content-wrapper">
+    <!--内容-->
+    <section class="content-header">
+        <h1>牛大爷养殖管理系统</h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> 买卖管理</a></li>
+            <li class="active">买卖记录列表</li>
+        </ol>
+    </section>
+    <section class="content" id="showcontent">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">买卖记录列表</h3>
+                        <div class="box-tools">
+                            <div class="input-group input-group-sm" style="width: 150px;">
+                                <input type="text" name="table_search" class="form-control pull-right"
+                                       placeholder="请输入关键字...">
+
+                                <div class="input-group-btn">
+                                    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-body table-responsive no-padding">
+                        {% for msg in get_flashed_messages(category_filter=["ok"]) %}
+                        <div class="alert alert-success alert-dismissable">
+                            <button type="reset" class="close" data-dismiss="alert"></button>
+                            <h4><i class="icon fa fa-check"></i> 操作成功</h4>
+                            {{ msg }}
+                        </div>
+                        {% endfor %}
+
+                        <table class="table table-hover">
+                            <tbody>
+                            <tr>
+                                <th>id</th>
+                                <th>兑换码</th>
+                                <th>积分值</th>
+                                <th>是否兑换</th>
+                                <th>生成时间</th>
+                                <th>兑换人</th>
+                                <th>备注</th>
+                                <th>操作</th>
+                            </tr>
+                            {% for x in range(page_data.items|count) %}
+                            <tr>
+                                <td>{{10*(page_data.page -1)+x+1}}</td>
+                                <td>{{page_data.items[x].code}}</td>
+                                <td>{{page_data.items[x].integral}}</td>
+                                <td>
+                                    {% if page_data.items[x].star == 0 %}
+                                    未兑换
+                                    {% elif page_data.items[x].star == 1 %}
+                                    已兑换
+                                    {% elif page_data.items[x].star == 2 %}
+                                    已退款
+                                    {% elif page_data.items[x].star == 3 %}
+                                    已失效
+                                    {% endif%}
+                                </td>
+                                <td>{{page_data.items[x].addriqi}}</td>
+                                <td>
+                                    {% if page_data.items[x].userid != None %}
+                                    {{page_data.items[x].userid}}
+                                    {% endif%}
+                                </td>
+                                <td>{% if page_data.items[x].zb != None %}
+                                    {{page_data.items[x].zb}}
+                                    {% endif%}
+                                </td>
+                                <td>
+                                    <a class="label label-danger"
+                                       href="{{url_for('admin.tuikuan',id=page_data.items[x].id)}}">退款</a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="box-footer clearfix">
+                        <ul class="pagination pagination-sm no-margin pull-right">
+                            {{ pg.page(page_data,'admin.jifenlist') }}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--内容-->
+</div>
+{% endblock %}

@@ -1,0 +1,142 @@
+<!--pages/luntan/Messagelists/Messagelists.wxml-->
+<block wx:for="{{datas}}" wx:for-index="idx" wx:for-item="dataName" wx:key="datas_key">
+  <!-- 顶部栏 -->
+  <view class='content_content'>
+    <view>
+      <!-- 头像 评论量  -->
+      <view>
+        <text class='content_value_title'>#{{dataName.select_val}}#</text>
+        <!-- <block wx:for="{{liulan}}" wx:for-index="idx" wx:for-item="liulanName" wx:key="liulan_key"> -->
+          <!-- <text class='liulanliang_4' wx:if="{{dataName.id==liulanName.id?true:false}}"> -->
+            <text class='liulanliang_4'>
+            浏览量：{{dataName.liulanliang}}
+          </text>
+        <!-- </block> -->
+        <!-- 下拉按钮 -->
+        <view bindtap='select_del' class='content_del'>
+          <text class='del_'></text>
+        </view>
+      </view>
+      <view class='del_val' wx:if="{{if_del_val}}">
+        <view bindtap='del' id='{{dataName.id}}' wx:if="{{dataName.openid==openid?true:false}}"
+          data-url01='{{dataName.imgurl_01}}' data-url02='{{dataName.imgurl_02}}' data-url03='{{dataName.imgurl_03}}'
+          data-url04='{{dataName.imgurl_04}}' data-url05='{{dataName.imgurl_05}}' data-url06='{{dataName.imgurl_06}}'>删除
+        </view>
+        <view bindtap='jbao'>举报</view>
+      </view>
+      <view bindtap='select_del' class='zhezhao' wx:if="{{if_del_val}}"></view>
+    </view>
+    <!-- 用户部分信息 -->
+    <view class='yonghuxinxi'>
+      <image src="{{dataName.userimg}}"></image>
+      <view class='yonghux_img'>
+        <text class='username'>{{dataName.username}}</text>
+        <view wx:if="{{dataName.dizhi=='undefined'?false:true}}" class='dizhi'>
+          <image src='/images/sysimg/dizhi_img.png'></image>
+          <text class='dizhi_name'>{{dataName.dizhi}}</text>
+        </view>
+      </view>
+    </view>
+    <!-- 详情正文 -->
+    <view class='content_value'>
+      <view class='content_value_01'>
+        <text>{{dataName.title}}</text>
+        <text>{{dataName.neirong}}</text>
+      </view>
+    </view>
+    <!-- 展示详情图片 -->
+    <view class='content_imgs'>
+      <image bindtap='bindtap_img' mode="widthFix" wx:if="{{dataName.imgurl_01=='undefined'?false:true}}"
+        id="{{dataName.imgurl_01}}" src="{{dataName.imgurl_01}}"></image>
+      <image bindtap='bindtap_img' mode="widthFix" wx:if="{{dataName.imgurl_02=='undefined'?false:true}}"
+        id="{{dataName.imgurl_02}}" src="{{dataName.imgurl_02}}"></image>
+      <image bindtap='bindtap_img' mode="widthFix" wx:if="{{dataName.imgurl_03=='undefined'?false:true}}"
+        id="{{dataName.imgurl_03}}" src="{{dataName.imgurl_03}}"></image>
+      <image bindtap='bindtap_img' mode="widthFix" wx:if="{{dataName.imgurl_04=='undefined'?false:true}}"
+        id="{{dataName.imgurl_04}}" src="{{dataName.imgurl_04}}"></image>
+      <image bindtap='bindtap_img' mode="widthFix" wx:if="{{dataName.imgurl_05=='undefined'?false:true}}"
+        id="{{dataName.imgurl_05}}" src="{{dataName.imgurl_05}}"></image>
+      <image bindtap='bindtap_img' mode="widthFix" wx:if="{{dataName.imgurl_06=='undefined'?false:true}}"
+        id="{{dataName.imgurl_06}}" src="{{dataName.imgurl_06}}"></image>
+    </view>
+    <!-- 全部评论 -->
+    <view class='ping_zhanshi'>
+      <view class='quanbupinglun'>
+        全部评论（{{ly_size}}）
+      </view>
+      <block wx:for="{{ping_val}}" wx:for-index="idx" wx:for-item="ping_val_Name" wx:key="ping_val_key">
+        <view class='ping_contents' wx:if="{{ping_val_Name.idx==dataName.id?true:false}}">
+          <text bindtap='useame' class='ping_useame_01' wx:if="{{ping_val_Name.ping_val==''?false:true}}"
+            data-hui_useame='{{ping_val_Name.useame_01}}'
+            data-hui="{{ping_val_Name.useame_01}}">{{ping_val_Name.useame_01}}</text>
+          <text class='ping_times' wx:if="{{ping_val_Name.ping_val==''?false:true}}">{{ping_val_Name.times}}</text>
+          <image bindtap='useame' class='hui_img' wx:if="{{ping_val_Name.ping_val==''?false:true}}"
+            data-hui_useame='{{ping_val_Name.useame_01}}' data-hui="{{ping_val_Name.useame_01}}"
+            src='../images/ly_img.png'></image>
+          <text class='ping_val'>{{ping_val_Name.ping_val}}</text>
+          <view class='huifu_content' wx:if="{{ping_val_Name.useame_02==''?false:true}}">
+            <text>1{{ping_val_Name.useame_01}}</text>
+            <text class='ping_hui'>{{ping_val_Name.ping_hui}}</text>
+            <text>2{{ping_val_Name.useame_02}}</text>
+            <text>：3{{ping_val_Name.hui_val}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <!-- 评论框 -->
+  <form bindsubmit="ping_form">
+    <view class='ping_content' wx:if="{{if_guanbi}}">
+      <view class='ping_title'>
+        <text>评论</text>
+        <text bindtap='ping_guan' class='ping_guanbi'>关闭</text>
+      </view>
+      <view class='ping_text'>
+        <textarea name="ping_txt" fixed="true" cursor-spacing='120' placeholder='{{ping_placeholder}}'
+          placeholder-style="font-size:10px;"></textarea>
+      </view>
+      <view class='ping_btn'>
+        <button formType="submit">发送</button>
+      </view>
+    </view>
+  </form>
+  <form bindsubmit="hui_form">
+    <view class='ping_content' wx:if="{{hui_guan}}">
+      <view class='ping_title'>
+        <text>评论</text>
+        <text bindtap='hui_guan' class='ping_guanbi'>关闭</text>
+      </view>
+      <view class='ping_text'>
+        <textarea name="hui_txt" fixed="true" cursor-spacing='120' placeholder='{{ping_placeholder}}'
+          placeholder-style="font-size:10px;"></textarea>
+      </view>
+      <view class='ping_btn'>
+        <button formType="submit">发送</button>
+      </view>
+    </view>
+  </form>
+  <!-- footer -->
+  <view class='footer'>
+    <view bindtap='shouye' class='footer_daohang'>
+      <image src='/images/sysimg/shouye_img.png'></image>
+      <view>首页</view>
+    </view>
+    <button open-type="share" class='footer_daohang footer_fenxiang' id='{{dataName.id}}'
+      data-title='{{dataName.neirong}}'>
+      <image src='/images/sysimg/fx_img.png'></image>
+      <view>分享</view>
+    </button>
+    <view bindtap='ping_guan' data-ping="{{dataName.username}}" class='footer_daohang'>
+      <image src='/images/sysimg/ly_img.png'></image>
+      <view>评论</view>
+    </view>
+    <view bindtap='dianzan' class='footer_daohang'>
+      <image class='dianz_img' wx:if="{{ifzan=='1'?true:false}}" src='/images/sysimg/nodianzan.png'></image>
+      <image class='dianz_img'  wx:else src='/images/sysimg/dianzan.png'></image>
+      <view>点赞</view>
+    </view>
+    <view bindtap='boda' id='{{dataName.haoma}}' class='footer_daohang lianxta_'>
+      <view>联系他</view>
+    </view>
+  </view>
+</block>
