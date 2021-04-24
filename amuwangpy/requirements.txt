@@ -18,7 +18,7 @@ Flask-SocketIO==3.1.2
 Flask-SQLAlchemy==2.3.2
 gevent==1.4.0
 greenlet==0.4.15
-httplib2==0.18.1
+httplib2==0.19.0
 idna==2.8
 isodate==0.6.0
 itsdangerous==1.1.0
