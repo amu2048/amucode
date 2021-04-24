@@ -1,5 +1,0 @@
-<!--pages/cost/cost.wxml-->
-<view class="if_noxinxi">
-  <view class='noxinxi'>  您还没开通牛大爷养殖数据管理平台的成本维护，请登录 ndy.amuqitan.cn 开通成本核算功能！</view>
-</view>
-
