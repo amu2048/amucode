@@ -33,7 +33,7 @@ packaging==20.4
 pandas==1.0.5
 paramiko==2.4.2
 pathtools==0.1.2
-Pillow==5.4.1
+Pillow==8.3.2
 prov==1.5.3
 psutil==5.4.8
 pyasn1==0.4.5
